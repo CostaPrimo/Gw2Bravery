@@ -8,12 +8,14 @@ class ArmourComponent {
   private val runeRoller = new Runes()
   private val infusionRoller = new Infusions()
 
-  private val helmet = new Armour(statRoller, runeRoller, infusionRoller)
-  private val shoulders = new Armour(statRoller, runeRoller, infusionRoller)
-  private val chest = new Armour(statRoller, runeRoller, infusionRoller)
-  private val gloves = new Armour(statRoller, runeRoller, infusionRoller)
-  private val leggings = new Armour(statRoller, runeRoller, infusionRoller)
-  private val boots = new Armour(statRoller, runeRoller, infusionRoller)
+  private val helmet = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
+  private val shoulders = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
+  private val chest = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
+  private val gloves = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
+  private val leggings = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
+  private val boots = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
+
+  private val pvpStats = statRoller.pvpBravery
 
   def toJsonString: String = {
     "{" +
@@ -28,14 +30,14 @@ class ArmourComponent {
 
   def toSimpleJsonString: String = {
     "{" +
-      "\"Stat\": \"" + helmet.getStat + "\"," +
+      "\"Stat\": \"" + helmet.getStats + "\"," +
       "\"Rune\": \"" + helmet.getRune + "\"" +
     "}"
   }
 
   def toPvPJsonString: String = {
     "{" +
-      "\"Stat\": \"" + helmet.getPvPStats + "\"," +
+      "\"Stat\": \"" + pvpStats + "\"," +
       "\"Rune\": \"" + helmet.getRune + "\"" +
     "}"
   }

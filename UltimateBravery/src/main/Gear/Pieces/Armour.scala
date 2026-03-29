@@ -1,13 +1,12 @@
 package UltimateBravery.src.main.Gear.Pieces
 
-import UltimateBravery.src.main.Gear.Collections.{Infusions, Runes, Stats}
+class Armour(stats: String, rune: String, infusion: String) {
 
-class Armour(statRoller: Stats, runeRoller: Runes, infusionRoller: Infusions) {
+  def getStats: String = this.stats
 
-  private val stats = statRoller.ultimateBravery
-  private val pvpStats = statRoller.pvpBravery
-  private val rune = runeRoller.ultimateBravery
-  private val infusion = infusionRoller.ultimateBravery
+  def getRune: String = this.rune
+
+  def getInfusion: String = this.infusion
 
   def toJsonString: String = {
     "{\"Stats\": \"" + stats + "\"," +
@@ -15,15 +14,11 @@ class Armour(statRoller: Stats, runeRoller: Runes, infusionRoller: Infusions) {
     "\"Infusion\": \"" + infusion + "\"}"
   }
 
-  def getStat: String = {
-    this.stats
+  def compareTo(armour: Armour): Boolean = {
+    if (this.stats.equalsIgnoreCase(armour.stats)
+      && this.rune.equalsIgnoreCase(armour.rune)
+      && this.infusion.equalsIgnoreCase(armour.infusion)) return true
+    false
   }
 
-  def getRune: String = {
-    this.rune
-  }
-
-  def getPvPStats: String = {
-    this.pvpStats
-  }
 }

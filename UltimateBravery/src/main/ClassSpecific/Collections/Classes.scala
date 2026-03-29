@@ -6,95 +6,113 @@ class Classes {
   val DRAGONHUNTER = "Dragonhunter"
   val FIREBRAND = "Firebrand"
   val WILLBENDER = "Willbender"
+  val LUMINARY = "Luminary"
   val WARRIOR = "Warrior"
   val BERSERKER = "Berserker"
   val SPELLBREAKER = "Spellbreaker"
   val BLADESWORN = "Bladesworn"
+  val PARAGON = "Paragon"
   val REVENANT = "Revenant"
   val HERALD = "Herald"
   val RENEGADE = "Renegade"
   val VINDICATOR = "Vindicator"
+  val CONDUIT = "Conduit"
   val RANGER = "Ranger"
   val DRUID = "Druid"
   val SOULBEAST = "Soulbeast"
   val UNTAMED = "Untamed"
+  val GALESHOT = "Galeshot"
   val THIEF = "Thief"
   val DAREDEVIL = "Daredevil"
   val DEADEYE = "Deadeye"
   val SPECTER = "Specter"
+  val ANTIQUARY = "Antiquary"
   val ENGINEER = "Engineer"
   val SCRAPPER = "Scrapper"
   val HOLOSMITH = "Holosmith"
   val MECHANIST = "Mechanist"
+  val AMALGAM = "Amalgam"
   val MESMER = "Mesmer"
   val CHRONOMANCER = "Chronomancer"
   val MIRAGE = "Mirage"
   val VIRTUOSO = "Virtuoso"
+  val TROUBADOUR = "Troubadour"
   val NECROMANCER = "Necromancer"
   val REAPER = "Reaper"
   val SCOURGE = "Scourge"
   val HARBINGER = "Harbinger"
+  val RITUALIST = "Ritualist"
   val ELEMENTALIST = "Elementalist"
   val TEMPEST = "Tempest"
   val WEAVER = "Weaver"
   val CATALYST = "Catalyst"
+  val EVOKER = "Evoker"
 
   val guardianClasses: List[String] = List(
     GUARDIAN,
     DRAGONHUNTER,
     FIREBRAND,
-    WILLBENDER
+    WILLBENDER,
+    LUMINARY
   )
 
   val warriorClasses: List[String] = List(
     WARRIOR,
     BERSERKER,
     SPELLBREAKER,
-    BLADESWORN
+    BLADESWORN,
+    PARAGON
   )
 
   val revenantClasses: List[String] = List(
     REVENANT,
     HERALD,
     RENEGADE,
-    VINDICATOR
+    VINDICATOR,
+    CONDUIT
   )
 
   val engineerClasses:List[String] = List(
     ENGINEER,
     SCRAPPER,
     HOLOSMITH,
-    MECHANIST
+    MECHANIST,
+    AMALGAM
   )
   val thiefClasses:List[String] = List(
     THIEF,
     DAREDEVIL,
     DEADEYE,
-    SPECTER
+    SPECTER,
+    ANTIQUARY
   )
   val rangerClasses:List[String] = List(
     RANGER,
     DRUID,
     SOULBEAST,
-    UNTAMED
+    UNTAMED,
+    GALESHOT
   )
   val mesmerClasses:List[String] = List(
     MESMER,
     CHRONOMANCER,
     MIRAGE,
-    VIRTUOSO
+    VIRTUOSO,
+    TROUBADOUR
   )
   val necromancerClasses:List[String] = List(
     NECROMANCER,
     REAPER,
     SCOURGE,
-    HARBINGER
+    HARBINGER,
+    RITUALIST
   )
   val elementalistClasses:List[String] = List(
     ELEMENTALIST,
     TEMPEST,
     WEAVER,
-    CATALYST
+    CATALYST,
+    EVOKER
   )
 
   val coreClasses:List[String] = List(
