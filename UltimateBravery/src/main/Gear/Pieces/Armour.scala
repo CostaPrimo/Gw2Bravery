@@ -15,9 +15,9 @@ class Armour(stats: String, rune: String, infusion: String) {
   }
 
   def compareTo(armour: Armour): Boolean = {
-    if (this.stats.equalsIgnoreCase(armour.stats)
-      && this.rune.equalsIgnoreCase(armour.rune)
-      && this.infusion.equalsIgnoreCase(armour.infusion)) return true
+    if (this.stats.equalsIgnoreCase(armour.getStats)
+      && this.rune.equalsIgnoreCase(armour.getRune)
+      && this.infusion.equalsIgnoreCase(armour.getInfusion)) return true
     false
   }
 
