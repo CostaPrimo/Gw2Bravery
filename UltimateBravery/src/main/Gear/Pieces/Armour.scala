@@ -14,7 +14,7 @@ class Armour(stats: String, rune: String, infusion: String) {
     "\"Infusion\": \"" + infusion + "\"}"
   }
 
-  def compareTo(armour: Armour): Boolean = {
+  def equals(armour: Armour): Boolean = {
     if (this.stats.equalsIgnoreCase(armour.getStats)
       && this.rune.equalsIgnoreCase(armour.getRune)
       && this.infusion.equalsIgnoreCase(armour.getInfusion)) return true
