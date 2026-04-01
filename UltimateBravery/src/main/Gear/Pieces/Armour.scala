@@ -17,7 +17,15 @@ class Armour(stats: String, rune: String, infusion: String) {
   def equals(armour: Armour): Boolean = {
     if (this.stats.equalsIgnoreCase(armour.getStats)
       && this.rune.equalsIgnoreCase(armour.getRune)
-      && this.infusion.equalsIgnoreCase(armour.getInfusion)) return true
+      && this.infusion.equalsIgnoreCase(armour.getInfusion)
+    ) return true
+    false
+  }
+
+  def equalsLite(armour: Armour): Boolean = {
+    if (this.stats.equalsIgnoreCase(armour.getStats)
+      && this.rune.equalsIgnoreCase(armour.getRune)
+    ) return true
     false
   }
 

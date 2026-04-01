@@ -1,13 +1,22 @@
 package UltimateBravery.src.main.Gear.Pieces
 
-import UltimateBravery.src.main.Gear.Collections.{Infusions, Stats}
-
-class Accessory(statRoller: Stats, infusionRoller: Infusions) {
-  private val stats = statRoller.ultimateBravery
-  private val infusion = infusionRoller.ultimateBravery
+class Accessory(stats: String, infusion: String) {
+  def getStats: String = this.stats
+  def getInfusion: String = this.infusion
 
   def toJsonString: String = {
-    "{\"Stats\": \"" + stats + "\"," +
-    "\"Infusion\": \"" + infusion + "\"}"
+    "{\"Stats\": \"" + this.getStats + "\"," +
+    "\"Infusion\": \"" + this.getInfusion + "\"}"
+  }
+
+  def equals(accessory: Accessory): Boolean = {
+    if (this.stats.equalsIgnoreCase(accessory.getStats)
+      && this.infusion.equalsIgnoreCase(accessory.getInfusion)
+    ) return true
+    false
+  }
+
+  def equalsLite(accessory: Accessory): Boolean = {
+    this.stats.equalsIgnoreCase(accessory.getStats)
   }
 }
