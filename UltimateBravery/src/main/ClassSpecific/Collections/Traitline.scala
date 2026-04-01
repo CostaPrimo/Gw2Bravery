@@ -1,6 +1,7 @@
 package UltimateBravery.src.main.ClassSpecific.Collections
 
-class Traitline(id: Int, column1Traits: List[Trait], column2Traits: List[Trait], column3Traits: List[Trait]) {
+class Traitline(name: String, id: Int, column1Traits: List[Trait], column2Traits: List[Trait], column3Traits: List[Trait]) {
+  def getName: String = this.name
   def getId: Int = this.id
   def getColumn1Traits: List[Trait] = this.column1Traits
   def getColumn2Traits: List[Trait] = this.column2Traits
