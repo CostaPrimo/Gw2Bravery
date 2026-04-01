@@ -502,7 +502,7 @@ class Traitlines {
     traitRow(roll)
   }
 
-  def eliteUltimateBravery(classRoll: String): (Int, List[(String, Int)]) = {
+  def eliteUltimateBravery(classRoll: String): (Int, List[Trait]) = {
     val classes = new Classes
     classRoll match {
       case classes.DRAGONHUNTER => randomizeTraitline(List(dragonhunterTraits), 0)
@@ -545,7 +545,7 @@ class Traitlines {
     }
   }
 
-  def newUltimateBravery(baseClass: String): (Int, List[(String, Int)]) = {
+  def newUltimateBravery(baseClass: String): (Int, List[Trait]) = {
     val classes = new Classes
     val roll = Math.round(Math.random() * 4).toInt
     baseClass match {
@@ -562,10 +562,10 @@ class Traitlines {
     }
   }
 
-  def randomizeTraitline(traitlines: List[Traitline], roll: Int): (Int, List[(String, Int)]) = {
+  def randomizeTraitline(traitlines: List[Traitline], roll: Int): (Int, List[Trait]) = {
     val traitline: Traitline = traitlines(roll)
 
-    var traits: List[(String,Int)] = List()
+    var traits: List[Trait] = List()
 
     for (i <- 0 to 2) {
       val traitRoll = Math.round(Math.random() * 2).toInt
@@ -573,7 +573,7 @@ class Traitlines {
         case 0 => traits = traitline.getColumn1Traits(traitRoll) :: traits
         case 1 => traits = traitline.getColumn2Traits(traitRoll) :: traits
         case 2 => traits = traitline.getColumn3Traits(traitRoll) :: traits
-        case _ => traits = ("error", 0) :: traits
+        case _ => traits = new Trait("error", 0) :: traits
       }
     }
     (traitline.getId, traits)
