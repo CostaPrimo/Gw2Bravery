@@ -12,401 +12,401 @@ class Traitlines {
     "Bottom"
   )
 
-  private val guardianTraitsV2: List[TraitObject] = List(
-    new TraitObject(42,
-      List((TOP, 563), (MIDDLE,634), (BOTTOM, 1925)),
-      List((TOP, 628), (MIDDLE, 653), (BOTTOM, 1556)),
-      List((TOP, 635), (MIDDLE, 637), (BOTTOM, 2017))),
-    new TraitObject(16,
-      List((TOP, 577), (MIDDLE, 566), (BOTTOM, 574)),
-      List((TOP, 578), (MIDDLE, 567), (BOTTOM, 565)),
-      List((TOP, 1686), (MIDDLE, 579), (BOTTOM, 1683))),
-    new TraitObject(13,
-      List((TOP, 588), (MIDDLE, 581), (BOTTOM, 633)),
-      List((TOP, 580), (MIDDLE, 584), (BOTTOM, 1684)),
-      List((TOP, 585), (MIDDLE, 586), (BOTTOM, 589))),
-    new TraitObject(49,
-      List((TOP, 1899), (MIDDLE, 559), (BOTTOM, 654)),
-      List((TOP, 557), (MIDDLE, 549), (BOTTOM, 562)),
-      List((TOP, 553), (MIDDLE, 558), (BOTTOM, 1682))),
-    new TraitObject(46,
-      List((TOP, 624), (MIDDLE, 625), (BOTTOM, 617)),
-      List((TOP, 603), (MIDDLE, 610), (BOTTOM, 587)),
-      List((TOP, 622), (MIDDLE, 554), (BOTTOM, 612)))
+  private val guardianTraitsV2: List[Traitline] = List(
+    new Traitline(42,
+      List(new Trait(TOP, 563), new Trait(MIDDLE,634), new Trait(BOTTOM, 1925)),
+      List(new Trait(TOP, 628), new Trait(MIDDLE, 653), new Trait(BOTTOM, 1556)),
+      List(new Trait(TOP, 635), new Trait(MIDDLE, 637), new Trait(BOTTOM, 2017))),
+    new Traitline(16,
+      List(new Trait(TOP, 577), new Trait(MIDDLE, 566), new Trait(BOTTOM, 574)),
+      List(new Trait(TOP, 578), new Trait(MIDDLE, 567), new Trait(BOTTOM, 565)),
+      List(new Trait(TOP, 1686), new Trait(MIDDLE, 579), new Trait(BOTTOM, 1683))),
+    new Traitline(13,
+      List(new Trait(TOP, 588), new Trait(MIDDLE, 581), new Trait(BOTTOM, 633)),
+      List(new Trait(TOP, 580), new Trait(MIDDLE, 584), new Trait(BOTTOM, 1684)),
+      List(new Trait(TOP, 585), new Trait(MIDDLE, 586), new Trait(BOTTOM, 589))),
+    new Traitline(49,
+      List(new Trait(TOP, 1899), new Trait(MIDDLE, 559), new Trait(BOTTOM, 654)),
+      List(new Trait(TOP, 557), new Trait(MIDDLE, 549), new Trait(BOTTOM, 562)),
+      List(new Trait(TOP, 553), new Trait(MIDDLE, 558), new Trait(BOTTOM, 1682))),
+    new Traitline(46,
+      List(new Trait(TOP, 624), new Trait(MIDDLE, 625), new Trait(BOTTOM, 617)),
+      List(new Trait(TOP, 603), new Trait(MIDDLE, 610), new Trait(BOTTOM, 587)),
+      List(new Trait(TOP, 622), new Trait(MIDDLE, 554), new Trait(BOTTOM, 612)))
   )
 
-  private val dragonhunterTraits: TraitObject =
-    new TraitObject(27,
-      List((TOP, 1898), (MIDDLE, 1983), (BOTTOM, 1911)),
-      List((TOP, 2037), (MIDDLE, 1835), (BOTTOM, 1943)),
-      List((TOP, 1908), (MIDDLE, 1963), (BOTTOM, 1955)))
-  private val firebrandTraits: TraitObject =
-    new TraitObject(62,
-      List((TOP, 2075), (MIDDLE, 2101), (BOTTOM, 2086)),
-      List((TOP, 2063), (MIDDLE, 2076), (BOTTOM, 2116)),
-      List((TOP, 2105), (MIDDLE, 2179), (BOTTOM, 2159)))
-  private val willbenderTraits: TraitObject =
-    new TraitObject(65,
-      List((TOP, 2191), (MIDDLE, 2190), (BOTTOM, 2187)),
-      List((TOP, 2197), (MIDDLE, 2210), (BOTTOM, 2199)),
-      List((TOP, 2195), (MIDDLE, 2201), (BOTTOM, 2198)))
-  private val luminaryTraits: TraitObject =
-    new TraitObject(81,
-      List((TOP, 2410), (MIDDLE, 2417), (BOTTOM, 2329)),
-      List((TOP, 2330), (MIDDLE, 2401), (BOTTOM, 2419)),
-      List((TOP, 2368), (MIDDLE, 2328), (BOTTOM, 2388)))
+  private val dragonhunterTraits: Traitline =
+    new Traitline(27,
+      List(new Trait(TOP, 1898), new Trait(MIDDLE, 1983), new Trait(BOTTOM, 1911)),
+      List(new Trait(TOP, 2037), new Trait(MIDDLE, 1835), new Trait(BOTTOM, 1943)),
+      List(new Trait(TOP, 1908), new Trait(MIDDLE, 1963), new Trait(BOTTOM, 1955)))
+  private val firebrandTraits: Traitline =
+    new Traitline(62,
+      List(new Trait(TOP, 2075), new Trait(MIDDLE, 2101), new Trait(BOTTOM, 2086)),
+      List(new Trait(TOP, 2063), new Trait(MIDDLE, 2076), new Trait(BOTTOM, 2116)),
+      List(new Trait(TOP, 2105), new Trait(MIDDLE, 2179), new Trait(BOTTOM, 2159)))
+  private val willbenderTraits: Traitline =
+    new Traitline(65,
+      List(new Trait(TOP, 2191), new Trait(MIDDLE, 2190), new Trait(BOTTOM, 2187)),
+      List(new Trait(TOP, 2197), new Trait(MIDDLE, 2210), new Trait(BOTTOM, 2199)),
+      List(new Trait(TOP, 2195), new Trait(MIDDLE, 2201), new Trait(BOTTOM, 2198)))
+  private val luminaryTraits: Traitline =
+    new Traitline(81,
+      List(new Trait(TOP, 2410), new Trait(MIDDLE, 2417), new Trait(BOTTOM, 2329)),
+      List(new Trait(TOP, 2330), new Trait(MIDDLE, 2401), new Trait(BOTTOM, 2419)),
+      List(new Trait(TOP, 2368), new Trait(MIDDLE, 2328), new Trait(BOTTOM, 2388)))
 
-  private val revenantTraitsV2: List[TraitObject] = List(
-    new TraitObject(3,
-      List((TOP, 1732), (MIDDLE, 1761), (BOTTOM, 1784)),
-      List((TOP, 1774), (MIDDLE, 1760), (BOTTOM, 1781)),
-      List((TOP, 1749), (MIDDLE, 1791), (BOTTOM, 1719))),
-    new TraitObject(12,
-      List( (TOP, 1823), (MIDDLE, 1824), (BOTTOM, 1822)),
-      List((TOP, 1819), (MIDDLE, 1817), (BOTTOM, 1818)),
-      List((TOP, 1815), (MIDDLE, 1825), (BOTTOM, 1820))),
-    new TraitObject(9,
-      List((TOP, 1811), (MIDDLE, 1728), (BOTTOM, 1810)),
-      List((TOP, 1766), (MIDDLE, 1782), (BOTTOM, 1740)),
-      List((TOP, 1779), (MIDDLE, 1770), (BOTTOM, 1790))),
-    new TraitObject(14,
-      List((TOP, 1793), (MIDDLE, 1789), (BOTTOM, 1741)),
-      List((TOP, 1727), (MIDDLE, 1726), (BOTTOM, 1714)),
-      List((TOP, 1795), (MIDDLE, 1720), (BOTTOM, 1721))),
-    new TraitObject(15,
-      List((TOP, 1776), (MIDDLE, 1767), (BOTTOM, 1755)),
-      List((TOP, 1786), (MIDDLE, 1765), (BOTTOM, 1802)),
-      List((TOP, 1715), (MIDDLE, 1800), (BOTTOM, 1754)))
+  private val revenantTraitsV2: List[Traitline] = List(
+    new Traitline(3,
+      List(new Trait(TOP, 1732), new Trait(MIDDLE, 1761), new Trait(BOTTOM, 1784)),
+      List(new Trait(TOP, 1774), new Trait(MIDDLE, 1760), new Trait(BOTTOM, 1781)),
+      List(new Trait(TOP, 1749), new Trait(MIDDLE, 1791), new Trait(BOTTOM, 1719))),
+    new Traitline(12,
+      List( new Trait(TOP, 1823), new Trait(MIDDLE, 1824), new Trait(BOTTOM, 1822)),
+      List(new Trait(TOP, 1819), new Trait(MIDDLE, 1817), new Trait(BOTTOM, 1818)),
+      List(new Trait(TOP, 1815), new Trait(MIDDLE, 1825), new Trait(BOTTOM, 1820))),
+    new Traitline(9,
+      List(new Trait(TOP, 1811), new Trait(MIDDLE, 1728), new Trait(BOTTOM, 1810)),
+      List(new Trait(TOP, 1766), new Trait(MIDDLE, 1782), new Trait(BOTTOM, 1740)),
+      List(new Trait(TOP, 1779), new Trait(MIDDLE, 1770), new Trait(BOTTOM, 1790))),
+    new Traitline(14,
+      List(new Trait(TOP, 1793), new Trait(MIDDLE, 1789), new Trait(BOTTOM, 1741)),
+      List(new Trait(TOP, 1727), new Trait(MIDDLE, 1726), new Trait(BOTTOM, 1714)),
+      List(new Trait(TOP, 1795), new Trait(MIDDLE, 1720), new Trait(BOTTOM, 1721))),
+    new Traitline(15,
+      List(new Trait(TOP, 1776), new Trait(MIDDLE, 1767), new Trait(BOTTOM, 1755)),
+      List(new Trait(TOP, 1786), new Trait(MIDDLE, 1765), new Trait(BOTTOM, 1802)),
+      List(new Trait(TOP, 1715), new Trait(MIDDLE, 1800), new Trait(BOTTOM, 1754)))
   )
 
-  private val heraldTraits: TraitObject =
-    new TraitObject(52,
-      List((TOP, 1813), (MIDDLE, 1806), (BOTTOM, 1716)),
-      List((TOP, 1738), (MIDDLE, 1743), (BOTTOM, 1730)),
-      List((TOP, 1746), (MIDDLE, 1772), (BOTTOM, 1803)))
-  private val renegadeTraits: TraitObject =
-    new TraitObject(63,
-      List((TOP, 2166), (MIDDLE, 2079), (BOTTOM, 2120)),
-      List((TOP, 2133), (MIDDLE, 2092), (BOTTOM, 2108)),
-      List((TOP, 2094), (MIDDLE, 2100), (BOTTOM, 2182)))
-  private val vindicatorTraits: TraitObject =
-    new TraitObject(69,
-      List((TOP, 2258), (MIDDLE, 2248), (BOTTOM, 2228)),
-      List((TOP, 2259), (MIDDLE, 2243), (BOTTOM, 2255)),
-      List((TOP, 2257), (MIDDLE, 2232), (BOTTOM, 2238)))
-  private val conduitTraits: TraitObject =
-    new TraitObject(79,
-      List((TOP, 2390), (MIDDLE, 2355), (BOTTOM, 2407)),
-      List((TOP, 2411), (MIDDLE, 2358), (BOTTOM, 2416)),
-      List((TOP, 2429), (MIDDLE, 2379), (BOTTOM, 2352)))
+  private val heraldTraits: Traitline =
+    new Traitline(52,
+      List(new Trait(TOP, 1813), new Trait(MIDDLE, 1806), new Trait(BOTTOM, 1716)),
+      List(new Trait(TOP, 1738), new Trait(MIDDLE, 1743), new Trait(BOTTOM, 1730)),
+      List(new Trait(TOP, 1746), new Trait(MIDDLE, 1772), new Trait(BOTTOM, 1803)))
+  private val renegadeTraits: Traitline =
+    new Traitline(63,
+      List(new Trait(TOP, 2166), new Trait(MIDDLE, 2079), new Trait(BOTTOM, 2120)),
+      List(new Trait(TOP, 2133), new Trait(MIDDLE, 2092), new Trait(BOTTOM, 2108)),
+      List(new Trait(TOP, 2094), new Trait(MIDDLE, 2100), new Trait(BOTTOM, 2182)))
+  private val vindicatorTraits: Traitline =
+    new Traitline(69,
+      List(new Trait(TOP, 2258), new Trait(MIDDLE, 2248), new Trait(BOTTOM, 2228)),
+      List(new Trait(TOP, 2259), new Trait(MIDDLE, 2243), new Trait(BOTTOM, 2255)),
+      List(new Trait(TOP, 2257), new Trait(MIDDLE, 2232), new Trait(BOTTOM, 2238)))
+  private val conduitTraits: Traitline =
+    new Traitline(79,
+      List(new Trait(TOP, 2390), new Trait(MIDDLE, 2355), new Trait(BOTTOM, 2407)),
+      List(new Trait(TOP, 2411), new Trait(MIDDLE, 2358), new Trait(BOTTOM, 2416)),
+      List(new Trait(TOP, 2429), new Trait(MIDDLE, 2379), new Trait(BOTTOM, 2352)))
 
-  private val warriorTraitsV2: List[TraitObject] = List(
-    new TraitObject(4,
-      List((TOP, 1447), (MIDDLE, 1451), (BOTTOM, 1444)),
-      List((TOP, 2000), (MIDDLE, 1338), (BOTTOM, 1449)),
-      List((TOP, 1437), (MIDDLE, 1454), (BOTTOM, 1440))),
-    new TraitObject(11,
-      List((TOP, 1469), (MIDDLE, 1474), (BOTTOM, 1471)),
-      List((TOP, 1486), (MIDDLE, 1479), (BOTTOM, 1482)),
-      List((TOP, 1667), (MIDDLE, 1470), (BOTTOM, 1711))),
-    new TraitObject(22,
-      List((TOP, 1376), (MIDDLE, 1488), (BOTTOM, 1372)),
-      List((TOP, 1368), (MIDDLE, 1379), (BOTTOM, 1367)),
-      List((TOP, 1375), (MIDDLE, 1649), (BOTTOM, 1708))),
-    new TraitObject(36,
-      List((TOP, 1455), (MIDDLE, 1344), (BOTTOM, 1334)),
-      List((TOP, 1315), (MIDDLE, 1316), (BOTTOM, 1333)),
-      List((TOP, 1336), (MIDDLE, 1346), (BOTTOM, 1707))),
-    new TraitObject(51,
-      List((TOP, 1329), (MIDDLE, 1413), (BOTTOM, 1381)),
-      List((TOP, 1484), (MIDDLE, 1489), (BOTTOM, 1709)),
-      List((TOP, 1369), (MIDDLE, 1317), (BOTTOM, 1657)))
+  private val warriorTraitsV2: List[Traitline] = List(
+    new Traitline(4,
+      List(new Trait(TOP, 1447), new Trait(MIDDLE, 1451), new Trait(BOTTOM, 1444)),
+      List(new Trait(TOP, 2000), new Trait(MIDDLE, 1338), new Trait(BOTTOM, 1449)),
+      List(new Trait(TOP, 1437), new Trait(MIDDLE, 1454), new Trait(BOTTOM, 1440))),
+    new Traitline(11,
+      List(new Trait(TOP, 1469), new Trait(MIDDLE, 1474), new Trait(BOTTOM, 1471)),
+      List(new Trait(TOP, 1486), new Trait(MIDDLE, 1479), new Trait(BOTTOM, 1482)),
+      List(new Trait(TOP, 1667), new Trait(MIDDLE, 1470), new Trait(BOTTOM, 1711))),
+    new Traitline(22,
+      List(new Trait(TOP, 1376), new Trait(MIDDLE, 1488), new Trait(BOTTOM, 1372)),
+      List(new Trait(TOP, 1368), new Trait(MIDDLE, 1379), new Trait(BOTTOM, 1367)),
+      List(new Trait(TOP, 1375), new Trait(MIDDLE, 1649), new Trait(BOTTOM, 1708))),
+    new Traitline(36,
+      List(new Trait(TOP, 1455), new Trait(MIDDLE, 1344), new Trait(BOTTOM, 1334)),
+      List(new Trait(TOP, 1315), new Trait(MIDDLE, 1316), new Trait(BOTTOM, 1333)),
+      List(new Trait(TOP, 1336), new Trait(MIDDLE, 1346), new Trait(BOTTOM, 1707))),
+    new Traitline(51,
+      List(new Trait(TOP, 1329), new Trait(MIDDLE, 1413), new Trait(BOTTOM, 1381)),
+      List(new Trait(TOP, 1484), new Trait(MIDDLE, 1489), new Trait(BOTTOM, 1709)),
+      List(new Trait(TOP, 1369), new Trait(MIDDLE, 1317), new Trait(BOTTOM, 1657)))
   )
 
-  private val berserkerTraits: TraitObject =
-    new TraitObject(18,
-      List((TOP, 2049), (MIDDLE, 2039), (BOTTOM, 1977)),
-      List((TOP, 2011), (MIDDLE, 2042), (BOTTOM, 2002)),
-      List((TOP, 1928), (MIDDLE, 2038), (BOTTOM, 2307)))
-  private val spellbreakerTraits: TraitObject =
-    new TraitObject(61,
-      List((TOP, 2107), (MIDDLE, 2153), (BOTTOM, 2140)),
-      List((TOP, 2126), (MIDDLE, 2097), (BOTTOM, 2095)),
-      List((TOP, 2163), (MIDDLE, 2168), (BOTTOM, 2060)))
-  private val bladeswornTraits: TraitObject =
-    new TraitObject(68,
-      List((TOP, 2237), (MIDDLE, 2260), (BOTTOM, 2225)),
-      List((TOP, 2253), (MIDDLE, 2302), (BOTTOM, 2303)),
-      List((TOP, 2261), (MIDDLE, 2239), (BOTTOM, 2245)))
-  private val paragonTraits: TraitObject =
-    new TraitObject(74,
-      List((TOP, 2345), (MIDDLE, 2433), (BOTTOM, 2357)),
-      List((TOP, 2385), (MIDDLE, 2426), (BOTTOM, 2399)),
-      List((TOP, 2369), (MIDDLE, 2375), (BOTTOM, 2428)))
+  private val berserkerTraits: Traitline =
+    new Traitline(18,
+      List(new Trait(TOP, 2049), new Trait(MIDDLE, 2039), new Trait(BOTTOM, 1977)),
+      List(new Trait(TOP, 2011), new Trait(MIDDLE, 2042), new Trait(BOTTOM, 2002)),
+      List(new Trait(TOP, 1928), new Trait(MIDDLE, 2038), new Trait(BOTTOM, 2307)))
+  private val spellbreakerTraits: Traitline =
+    new Traitline(61,
+      List(new Trait(TOP, 2107), new Trait(MIDDLE, 2153), new Trait(BOTTOM, 2140)),
+      List(new Trait(TOP, 2126), new Trait(MIDDLE, 2097), new Trait(BOTTOM, 2095)),
+      List(new Trait(TOP, 2163), new Trait(MIDDLE, 2168), new Trait(BOTTOM, 2060)))
+  private val bladeswornTraits: Traitline =
+    new Traitline(68,
+      List(new Trait(TOP, 2237), new Trait(MIDDLE, 2260), new Trait(BOTTOM, 2225)),
+      List(new Trait(TOP, 2253), new Trait(MIDDLE, 2302), new Trait(BOTTOM, 2303)),
+      List(new Trait(TOP, 2261), new Trait(MIDDLE, 2239), new Trait(BOTTOM, 2245)))
+  private val paragonTraits: Traitline =
+    new Traitline(74,
+      List(new Trait(TOP, 2345), new Trait(MIDDLE, 2433), new Trait(BOTTOM, 2357)),
+      List(new Trait(TOP, 2385), new Trait(MIDDLE, 2426), new Trait(BOTTOM, 2399)),
+      List(new Trait(TOP, 2369), new Trait(MIDDLE, 2375), new Trait(BOTTOM, 2428)))
 
-  private val engineerTraitsV2: List[TraitObject] = List(
-    new TraitObject(6,
-      List((TOP, 514), (MIDDLE, 525), (BOTTOM, 1882)),
-      List((TOP, 482), (MIDDLE, 1892), (BOTTOM, 1944)),
-      List((TOP, 1541), (MIDDLE, 505), (BOTTOM, 1947))),
-    new TraitObject(21,
-      List((TOP, 532), (MIDDLE, 1997), (BOTTOM, 531)),
-      List((TOP, 512), (MIDDLE, 1946), (BOTTOM, 1832)),
-      List((TOP, 1856), (MIDDLE, 523), (BOTTOM, 1679))),
-    new TraitObject(29,
-      List((TOP, 396), (MIDDLE, 509), (BOTTOM, 521)),
-      List((TOP, 520), (MIDDLE, 469), (BOTTOM, 470)),
-      List((TOP, 473), (MIDDLE, 1871), (BOTTOM, 1854))),
-    new TraitObject(38,
-      List((TOP, 1878), (MIDDLE, 1930), (BOTTOM, 1914)),
-      List((TOP, 1984), (MIDDLE, 2006), (BOTTOM, 1923)),
-      List((TOP, 510), (MIDDLE, 526), (BOTTOM, 433))),
-    new TraitObject(47,
-      List((TOP, 394), (MIDDLE, 1901), (BOTTOM, 507)),
-      List((TOP, 1678), (MIDDLE, 1834), (BOTTOM, 445)),
-      List((TOP, 472), (MIDDLE, 1680), (BOTTOM, 1916)))
+  private val engineerTraitsV2: List[Traitline] = List(
+    new Traitline(6,
+      List(new Trait(TOP, 514), new Trait(MIDDLE, 525), new Trait(BOTTOM, 1882)),
+      List(new Trait(TOP, 482), new Trait(MIDDLE, 1892), new Trait(BOTTOM, 1944)),
+      List(new Trait(TOP, 1541), new Trait(MIDDLE, 505), new Trait(BOTTOM, 1947))),
+    new Traitline(21,
+      List(new Trait(TOP, 532), new Trait(MIDDLE, 1997), new Trait(BOTTOM, 531)),
+      List(new Trait(TOP, 512), new Trait(MIDDLE, 1946), new Trait(BOTTOM, 1832)),
+      List(new Trait(TOP, 1856), new Trait(MIDDLE, 523), new Trait(BOTTOM, 1679))),
+    new Traitline(29,
+      List(new Trait(TOP, 396), new Trait(MIDDLE, 509), new Trait(BOTTOM, 521)),
+      List(new Trait(TOP, 520), new Trait(MIDDLE, 469), new Trait(BOTTOM, 470)),
+      List(new Trait(TOP, 473), new Trait(MIDDLE, 1871), new Trait(BOTTOM, 1854))),
+    new Traitline(38,
+      List(new Trait(TOP, 1878), new Trait(MIDDLE, 1930), new Trait(BOTTOM, 1914)),
+      List(new Trait(TOP, 1984), new Trait(MIDDLE, 2006), new Trait(BOTTOM, 1923)),
+      List(new Trait(TOP, 510), new Trait(MIDDLE, 526), new Trait(BOTTOM, 433))),
+    new Traitline(47,
+      List(new Trait(TOP, 394), new Trait(MIDDLE, 1901), new Trait(BOTTOM, 507)),
+      List(new Trait(TOP, 1678), new Trait(MIDDLE, 1834), new Trait(BOTTOM, 445)),
+      List(new Trait(TOP, 472), new Trait(MIDDLE, 1680), new Trait(BOTTOM, 1916)))
   )
 
-  private val scrapperTraits: TraitObject =
-    new TraitObject(43,
-      List((TOP, 1917), (MIDDLE, 1971), (BOTTOM, 1867)),
-      List((TOP, 1954), (MIDDLE, 1999), (BOTTOM, 1860)),
-      List((TOP, 1981), (MIDDLE, 2052), (BOTTOM, 1849)))
-  private val holosmithTraits: TraitObject =
-    new TraitObject(57,
-      List((TOP, 2114), (MIDDLE, 2157), (BOTTOM, 2106)),
-      List((TOP, 2103), (MIDDLE, 2152), (BOTTOM, 2091)),
-      List((TOP, 2066), (MIDDLE, 2137), (BOTTOM, 2064)))
-  private val mechanistTraits: TraitObject =
-    new TraitObject(70,
-      List((TOP, 2282), (MIDDLE, 2296), (BOTTOM, 2279)),
-      List((TOP, 2270), (MIDDLE, 2276), (BOTTOM, 2294)),
-      List((TOP, 2292), (MIDDLE, 2281), (BOTTOM, 2298)))
-  private val amalgamTraits: TraitObject =
-    new TraitObject(75,
-      List((TOP, 2366), (MIDDLE, 2395), (BOTTOM, 2434)),
-      List((TOP, 2383), (MIDDLE, 2420), (BOTTOM, 2349)),
-      List((TOP, 2406), (MIDDLE, 2387), (BOTTOM, 2334)))
+  private val scrapperTraits: Traitline =
+    new Traitline(43,
+      List(new Trait(TOP, 1917), new Trait(MIDDLE, 1971), new Trait(BOTTOM, 1867)),
+      List(new Trait(TOP, 1954), new Trait(MIDDLE, 1999), new Trait(BOTTOM, 1860)),
+      List(new Trait(TOP, 1981), new Trait(MIDDLE, 2052), new Trait(BOTTOM, 1849)))
+  private val holosmithTraits: Traitline =
+    new Traitline(57,
+      List(new Trait(TOP, 2114), new Trait(MIDDLE, 2157), new Trait(BOTTOM, 2106)),
+      List(new Trait(TOP, 2103), new Trait(MIDDLE, 2152), new Trait(BOTTOM, 2091)),
+      List(new Trait(TOP, 2066), new Trait(MIDDLE, 2137), new Trait(BOTTOM, 2064)))
+  private val mechanistTraits: Traitline =
+    new Traitline(70,
+      List(new Trait(TOP, 2282), new Trait(MIDDLE, 2296), new Trait(BOTTOM, 2279)),
+      List(new Trait(TOP, 2270), new Trait(MIDDLE, 2276), new Trait(BOTTOM, 2294)),
+      List(new Trait(TOP, 2292), new Trait(MIDDLE, 2281), new Trait(BOTTOM, 2298)))
+  private val amalgamTraits: Traitline =
+    new Traitline(75,
+      List(new Trait(TOP, 2366), new Trait(MIDDLE, 2395), new Trait(BOTTOM, 2434)),
+      List(new Trait(TOP, 2383), new Trait(MIDDLE, 2420), new Trait(BOTTOM, 2349)),
+      List(new Trait(TOP, 2406), new Trait(MIDDLE, 2387), new Trait(BOTTOM, 2334)))
 
-  private val rangerTraitsV2: List[TraitObject] = List(
-    new TraitObject(8,
-      List((TOP, 1021), (MIDDLE, 1014), (BOTTOM, 986)),
-      List((TOP, 1001), (MIDDLE, 1000), (BOTTOM, 1070)),
-      List((TOP, 996), (MIDDLE, 1015), (BOTTOM, 1698))),
-    new TraitObject(25,
-      List((TOP, 1062), (MIDDLE, 978), (BOTTOM, 1060)),
-      List((TOP, 1054), (MIDDLE, 965), (BOTTOM, 964)),
-      List((TOP, 1038), (MIDDLE, 1988), (BOTTOM, 1697))),
-    new TraitObject(30,
-      List((TOP, 1069), (MIDDLE, 1067), (BOTTOM, 1075)),
-      List((TOP, 1016), (MIDDLE, 1700), (BOTTOM, 1846)),
-      List((TOP, 1064), (MIDDLE, 1912), (BOTTOM, 1888))),
-    new TraitObject(32,
-      List((TOP, 1861), (MIDDLE, 1072), (BOTTOM, 1606)),
-      List((TOP, 975), (MIDDLE, 1047), (BOTTOM, 970)),
-      List((TOP, 1945), (MIDDLE, 968), (BOTTOM, 1066))),
-    new TraitObject(33,
-      List((TOP, 1098), (MIDDLE, 1086), (BOTTOM, 1099)),
-      List((TOP, 1101), (MIDDLE, 2032), (BOTTOM, 1100)),
-      List((TOP, 1094), (MIDDLE, 1699), (BOTTOM, 1701)))
+  private val rangerTraitsV2: List[Traitline] = List(
+    new Traitline(8,
+      List(new Trait(TOP, 1021), new Trait(MIDDLE, 1014), new Trait(BOTTOM, 986)),
+      List(new Trait(TOP, 1001), new Trait(MIDDLE, 1000), new Trait(BOTTOM, 1070)),
+      List(new Trait(TOP, 996), new Trait(MIDDLE, 1015), new Trait(BOTTOM, 1698))),
+    new Traitline(25,
+      List(new Trait(TOP, 1062), new Trait(MIDDLE, 978), new Trait(BOTTOM, 1060)),
+      List(new Trait(TOP, 1054), new Trait(MIDDLE, 965), new Trait(BOTTOM, 964)),
+      List(new Trait(TOP, 1038), new Trait(MIDDLE, 1988), new Trait(BOTTOM, 1697))),
+    new Traitline(30,
+      List(new Trait(TOP, 1069), new Trait(MIDDLE, 1067), new Trait(BOTTOM, 1075)),
+      List(new Trait(TOP, 1016), new Trait(MIDDLE, 1700), new Trait(BOTTOM, 1846)),
+      List(new Trait(TOP, 1064), new Trait(MIDDLE, 1912), new Trait(BOTTOM, 1888))),
+    new Traitline(32,
+      List(new Trait(TOP, 1861), new Trait(MIDDLE, 1072), new Trait(BOTTOM, 1606)),
+      List(new Trait(TOP, 975), new Trait(MIDDLE, 1047), new Trait(BOTTOM, 970)),
+      List(new Trait(TOP, 1945), new Trait(MIDDLE, 968), new Trait(BOTTOM, 1066))),
+    new Traitline(33,
+      List(new Trait(TOP, 1098), new Trait(MIDDLE, 1086), new Trait(BOTTOM, 1099)),
+      List(new Trait(TOP, 1101), new Trait(MIDDLE, 2032), new Trait(BOTTOM, 1100)),
+      List(new Trait(TOP, 1094), new Trait(MIDDLE, 1699), new Trait(BOTTOM, 1701)))
   )
 
-  private val druidTraits: TraitObject =
-    new TraitObject(5,
-      List((TOP, 1868), (MIDDLE, 2016), (BOTTOM, 1935)),
-      List((TOP, 2053), (MIDDLE, 2001), (BOTTOM, 2056)),
-      List((TOP, 2057), (MIDDLE, 2058), (BOTTOM, 2055)))
-  private val soulbeastTraits: TraitObject =
-    new TraitObject(55,
-      List((TOP, 2134), (MIDDLE, 2071), (BOTTOM, 2072)),
-      List((TOP, 2119), (MIDDLE, 2085), (BOTTOM, 2161)),
-      List((TOP, 2155), (MIDDLE, 2128), (BOTTOM, 2143)))
-  private val untamedTraits: TraitObject =
-    new TraitObject(72,
-      List((TOP, 2297), (MIDDLE, 2277), (BOTTOM, 2301)),
-      List((TOP, 2263), (MIDDLE, 2287), (BOTTOM, 2278)),
-      List((TOP, 2271), (MIDDLE, 2283), (BOTTOM, 2274)))
-  private val galeshotTraits: TraitObject =
-    new TraitObject(78,
-      List((TOP, 2402), (MIDDLE, 2370), (BOTTOM, 2360)),
-      List((TOP, 2408), (MIDDLE, 2413), (BOTTOM, 2396)),
-      List((TOP, 2425), (MIDDLE, 2336), (BOTTOM, 2372)))
+  private val druidTraits: Traitline =
+    new Traitline(5,
+      List(new Trait(TOP, 1868), new Trait(MIDDLE, 2016), new Trait(BOTTOM, 1935)),
+      List(new Trait(TOP, 2053), new Trait(MIDDLE, 2001), new Trait(BOTTOM, 2056)),
+      List(new Trait(TOP, 2057), new Trait(MIDDLE, 2058), new Trait(BOTTOM, 2055)))
+  private val soulbeastTraits: Traitline =
+    new Traitline(55,
+      List(new Trait(TOP, 2134), new Trait(MIDDLE, 2071), new Trait(BOTTOM, 2072)),
+      List(new Trait(TOP, 2119), new Trait(MIDDLE, 2085), new Trait(BOTTOM, 2161)),
+      List(new Trait(TOP, 2155), new Trait(MIDDLE, 2128), new Trait(BOTTOM, 2143)))
+  private val untamedTraits: Traitline =
+    new Traitline(72,
+      List(new Trait(TOP, 2297), new Trait(MIDDLE, 2277), new Trait(BOTTOM, 2301)),
+      List(new Trait(TOP, 2263), new Trait(MIDDLE, 2287), new Trait(BOTTOM, 2278)),
+      List(new Trait(TOP, 2271), new Trait(MIDDLE, 2283), new Trait(BOTTOM, 2274)))
+  private val galeshotTraits: Traitline =
+    new Traitline(78,
+      List(new Trait(TOP, 2402), new Trait(MIDDLE, 2370), new Trait(BOTTOM, 2360)),
+      List(new Trait(TOP, 2408), new Trait(MIDDLE, 2413), new Trait(BOTTOM, 2396)),
+      List(new Trait(TOP, 2425), new Trait(MIDDLE, 2336), new Trait(BOTTOM, 2372)))
 
-  private val thiefTraitsV2: List[TraitObject] = List(
-    new TraitObject(20,
-      List((TOP, 1160), (MIDDLE, 1293), (BOTTOM, 1284)),
-      List((TOP, 1297), (MIDDLE, 1130), (BOTTOM, 1300)),
-      List((TOP, 1134), (MIDDLE, 1135), (BOTTOM, 1162))),
-    new TraitObject(28,
-      List((TOP, 1245), (MIDDLE, 1276), (BOTTOM, 1164)),
-      List((TOP, 1169), (MIDDLE, 1292), (BOTTOM, 1704)),
-      List((TOP, 1291), (MIDDLE, 1167), (BOTTOM, 1269))),
-    new TraitObject(35,
-      List((TOP, 1209), (MIDDLE, 1267), (BOTTOM, 1268)),
-      List((TOP, 1170), (MIDDLE, 1272), (BOTTOM, 1299)),
-      List((TOP, 1904), (MIDDLE, 1215), (BOTTOM, 1702))),
-    new TraitObject(44,
-      List((TOP, 1159), (MIDDLE, 1252), (BOTTOM, 1163)),
-      List((TOP, 1277), (MIDDLE, 1286), (BOTTOM, 1190)),
-      List((TOP, 1187), (MIDDLE, 1158), (BOTTOM, 1706))),
-    new TraitObject(54,
-      List((TOP, 1112), (MIDDLE, 1289), (BOTTOM, 1237)),
-      List((TOP, 1241), (MIDDLE, 1192), (BOTTOM, 1290)),
-      List((TOP, 1238), (MIDDLE, 1295), (BOTTOM, 1703)))
+  private val thiefTraitsV2: List[Traitline] = List(
+    new Traitline(20,
+      List(new Trait(TOP, 1160), new Trait(MIDDLE, 1293), new Trait(BOTTOM, 1284)),
+      List(new Trait(TOP, 1297), new Trait(MIDDLE, 1130), new Trait(BOTTOM, 1300)),
+      List(new Trait(TOP, 1134), new Trait(MIDDLE, 1135), new Trait(BOTTOM, 1162))),
+    new Traitline(28,
+      List(new Trait(TOP, 1245), new Trait(MIDDLE, 1276), new Trait(BOTTOM, 1164)),
+      List(new Trait(TOP, 1169), new Trait(MIDDLE, 1292), new Trait(BOTTOM, 1704)),
+      List(new Trait(TOP, 1291), new Trait(MIDDLE, 1167), new Trait(BOTTOM, 1269))),
+    new Traitline(35,
+      List(new Trait(TOP, 1209), new Trait(MIDDLE, 1267), new Trait(BOTTOM, 1268)),
+      List(new Trait(TOP, 1170), new Trait(MIDDLE, 1272), new Trait(BOTTOM, 1299)),
+      List(new Trait(TOP, 1904), new Trait(MIDDLE, 1215), new Trait(BOTTOM, 1702))),
+    new Traitline(44,
+      List(new Trait(TOP, 1159), new Trait(MIDDLE, 1252), new Trait(BOTTOM, 1163)),
+      List(new Trait(TOP, 1277), new Trait(MIDDLE, 1286), new Trait(BOTTOM, 1190)),
+      List(new Trait(TOP, 1187), new Trait(MIDDLE, 1158), new Trait(BOTTOM, 1706))),
+    new Traitline(54,
+      List(new Trait(TOP, 1112), new Trait(MIDDLE, 1289), new Trait(BOTTOM, 1237)),
+      List(new Trait(TOP, 1241), new Trait(MIDDLE, 1192), new Trait(BOTTOM, 1290)),
+      List(new Trait(TOP, 1238), new Trait(MIDDLE, 1295), new Trait(BOTTOM, 1703)))
   )
 
-  private val daredevilTraits: TraitObject =
-    new TraitObject(7,
-      List((TOP, 1933), (MIDDLE, 2023), (BOTTOM, 1949)),
-      List((TOP, 1884), (MIDDLE, 1893), (BOTTOM, 1975)),
-      List((TOP, 1833), (MIDDLE, 1964), (BOTTOM, 2047)))
-  private val deadeyeTraits: TraitObject =
-    new TraitObject(58,
-      List((TOP, 2145), (MIDDLE, 2173), (BOTTOM, 2136)),
-      List((TOP, 2118), (MIDDLE, 2078), (BOTTOM, 2160)),
-      List((TOP, 2111), (MIDDLE, 2093), (BOTTOM, 2146)))
-  private val specterTraits: TraitObject =
-    new TraitObject(71,
-      List((TOP, 2284), (MIDDLE, 2299), (BOTTOM, 2275)),
-      List((TOP, 2290), (MIDDLE, 2288), (BOTTOM, 2285)),
-      List((TOP, 2264), (MIDDLE, 2300), (BOTTOM, 2289)))
-  private val antiquaryTraits: TraitObject =
-    new TraitObject(77,
-      List((TOP, 2423), (MIDDLE, 2365), (BOTTOM, 2346)),
-      List((TOP, 2400), (MIDDLE, 2431), (BOTTOM, 2350)),
-      List((TOP, 2409), (MIDDLE, 2393), (BOTTOM, 2348)))
+  private val daredevilTraits: Traitline =
+    new Traitline(7,
+      List(new Trait(TOP, 1933), new Trait(MIDDLE, 2023), new Trait(BOTTOM, 1949)),
+      List(new Trait(TOP, 1884), new Trait(MIDDLE, 1893), new Trait(BOTTOM, 1975)),
+      List(new Trait(TOP, 1833), new Trait(MIDDLE, 1964), new Trait(BOTTOM, 2047)))
+  private val deadeyeTraits: Traitline =
+    new Traitline(58,
+      List(new Trait(TOP, 2145), new Trait(MIDDLE, 2173), new Trait(BOTTOM, 2136)),
+      List(new Trait(TOP, 2118), new Trait(MIDDLE, 2078), new Trait(BOTTOM, 2160)),
+      List(new Trait(TOP, 2111), new Trait(MIDDLE, 2093), new Trait(BOTTOM, 2146)))
+  private val specterTraits: Traitline =
+    new Traitline(71,
+      List(new Trait(TOP, 2284), new Trait(MIDDLE, 2299), new Trait(BOTTOM, 2275)),
+      List(new Trait(TOP, 2290), new Trait(MIDDLE, 2288), new Trait(BOTTOM, 2285)),
+      List(new Trait(TOP, 2264), new Trait(MIDDLE, 2300), new Trait(BOTTOM, 2289)))
+  private val antiquaryTraits: Traitline =
+    new Traitline(77,
+      List(new Trait(TOP, 2423), new Trait(MIDDLE, 2365), new Trait(BOTTOM, 2346)),
+      List(new Trait(TOP, 2400), new Trait(MIDDLE, 2431), new Trait(BOTTOM, 2350)),
+      List(new Trait(TOP, 2409), new Trait(MIDDLE, 2393), new Trait(BOTTOM, 2348)))
 
-  private val elementalistTraitsV2: List[TraitObject] = List(
-    new TraitObject(17,
-      List((TOP, 348), (MIDDLE, 363), (BOTTOM, 360)),
-      List((TOP, 364), (MIDDLE, 358), (BOTTOM, 349)),
-      List((TOP, 362), (MIDDLE, 361), (BOTTOM, 2028))),
-    new TraitObject(26,
-      List((TOP, 282), (MIDDLE, 1507), (BOTTOM, 289)),
-      List((TOP, 275), (MIDDLE, 281), (BOTTOM, 277)),
-      List((TOP, 1508), (MIDDLE, 287), (BOTTOM, 1674))),
-    new TraitObject(31,
-      List((TOP, 296), (MIDDLE, 328), (BOTTOM, 335)),
-      List((TOP, 325), (MIDDLE, 340), (BOTTOM, 334)),
-      List((TOP, 1510), (MIDDLE, 294), (BOTTOM, 1675))),
-    new TraitObject(37,
-      List((TOP, 253), (MIDDLE, 266), (BOTTOM, 1487)),
-      List((TOP, 265), (MIDDLE, 1673), (BOTTOM, 257)),
-      List((TOP, 238), (MIDDLE, 263), (BOTTOM, 1511))),
-    new TraitObject(41,
-      List((TOP, 227), (MIDDLE, 224), (BOTTOM, 232)),
-      List((TOP, 229), (MIDDLE, 214), (BOTTOM, 1502)),
-      List((TOP, 226), (MIDDLE, 1503), (BOTTOM, 1672)))
+  private val elementalistTraitsV2: List[Traitline] = List(
+    new Traitline(17,
+      List(new Trait(TOP, 348), new Trait(MIDDLE, 363), new Trait(BOTTOM, 360)),
+      List(new Trait(TOP, 364), new Trait(MIDDLE, 358), new Trait(BOTTOM, 349)),
+      List(new Trait(TOP, 362), new Trait(MIDDLE, 361), new Trait(BOTTOM, 2028))),
+    new Traitline(26,
+      List(new Trait(TOP, 282), new Trait(MIDDLE, 1507), new Trait(BOTTOM, 289)),
+      List(new Trait(TOP, 275), new Trait(MIDDLE, 281), new Trait(BOTTOM, 277)),
+      List(new Trait(TOP, 1508), new Trait(MIDDLE, 287), new Trait(BOTTOM, 1674))),
+    new Traitline(31,
+      List(new Trait(TOP, 296), new Trait(MIDDLE, 328), new Trait(BOTTOM, 335)),
+      List(new Trait(TOP, 325), new Trait(MIDDLE, 340), new Trait(BOTTOM, 334)),
+      List(new Trait(TOP, 1510), new Trait(MIDDLE, 294), new Trait(BOTTOM, 1675))),
+    new Traitline(37,
+      List(new Trait(TOP, 253), new Trait(MIDDLE, 266), new Trait(BOTTOM, 1487)),
+      List(new Trait(TOP, 265), new Trait(MIDDLE, 1673), new Trait(BOTTOM, 257)),
+      List(new Trait(TOP, 238), new Trait(MIDDLE, 263), new Trait(BOTTOM, 1511))),
+    new Traitline(41,
+      List(new Trait(TOP, 227), new Trait(MIDDLE, 224), new Trait(BOTTOM, 232)),
+      List(new Trait(TOP, 229), new Trait(MIDDLE, 214), new Trait(BOTTOM, 1502)),
+      List(new Trait(TOP, 226), new Trait(MIDDLE, 1503), new Trait(BOTTOM, 1672)))
   )
 
-  private val tempestTraits: TraitObject =
-    new TraitObject(48,
-      List((TOP, 1952), (MIDDLE, 1962), (BOTTOM, 1886)),
-      List((TOP, 1891), (MIDDLE, 1902), (BOTTOM, 2015)),
-      List((TOP, 1839), (MIDDLE, 2033), (BOTTOM, 1986)))
-  private val weaverTraits: TraitObject =
-    new TraitObject(56,
-      List((TOP, 2177), (MIDDLE, 2165), (BOTTOM, 2115)),
-      List((TOP, 2180), (MIDDLE, 2061), (BOTTOM, 2170)),
-      List((TOP, 2131), (MIDDLE, 2090), (BOTTOM, 2138)))
-  private val catalystTraits: TraitObject =
-    new TraitObject(67,
-      List((TOP, 2230), (MIDDLE, 2252), (BOTTOM, 2224)),
-      List((TOP, 2247), (MIDDLE, 2249), (BOTTOM, 2234)),
-      List((TOP, 2233), (MIDDLE, 2241), (BOTTOM, 2251)))
-  private val evokerTraits: TraitObject =
-    new TraitObject(80,
-      List((TOP, 2391), (MIDDLE, 2415), (BOTTOM, 2354)),
-      List((TOP, 2342), (MIDDLE, 2380), (BOTTOM, 2438)),
-      List((TOP, 2335), (MIDDLE, 2436), (BOTTOM, 2437)))
+  private val tempestTraits: Traitline =
+    new Traitline(48,
+      List(new Trait(TOP, 1952), new Trait(MIDDLE, 1962), new Trait(BOTTOM, 1886)),
+      List(new Trait(TOP, 1891), new Trait(MIDDLE, 1902), new Trait(BOTTOM, 2015)),
+      List(new Trait(TOP, 1839), new Trait(MIDDLE, 2033), new Trait(BOTTOM, 1986)))
+  private val weaverTraits: Traitline =
+    new Traitline(56,
+      List(new Trait(TOP, 2177), new Trait(MIDDLE, 2165), new Trait(BOTTOM, 2115)),
+      List(new Trait(TOP, 2180), new Trait(MIDDLE, 2061), new Trait(BOTTOM, 2170)),
+      List(new Trait(TOP, 2131), new Trait(MIDDLE, 2090), new Trait(BOTTOM, 2138)))
+  private val catalystTraits: Traitline =
+    new Traitline(67,
+      List(new Trait(TOP, 2230), new Trait(MIDDLE, 2252), new Trait(BOTTOM, 2224)),
+      List(new Trait(TOP, 2247), new Trait(MIDDLE, 2249), new Trait(BOTTOM, 2234)),
+      List(new Trait(TOP, 2233), new Trait(MIDDLE, 2241), new Trait(BOTTOM, 2251)))
+  private val evokerTraits: Traitline =
+    new Traitline(80,
+      List(new Trait(TOP, 2391), new Trait(MIDDLE, 2415), new Trait(BOTTOM, 2354)),
+      List(new Trait(TOP, 2342), new Trait(MIDDLE, 2380), new Trait(BOTTOM, 2438)),
+      List(new Trait(TOP, 2335), new Trait(MIDDLE, 2436), new Trait(BOTTOM, 2437)))
 
-  private val necromancerTraitsV2: List[TraitObject] = List(
-    new TraitObject(2,
-      List((TOP, 820), (MIDDLE, 857), (BOTTOM, 1922)),
-      List((TOP, 858), (MIDDLE, 860), (BOTTOM, 855)),
-      List((TOP, 842), (MIDDLE, 1940), (BOTTOM, 1694))),
-    new TraitObject(19,
-      List((TOP, 780), (MIDDLE, 788), (BOTTOM, 1876)),
-      List((TOP, 789), (MIDDLE, 799), (BOTTOM, 1844)),
-      List((TOP, 782), (MIDDLE, 1692), (BOTTOM, 778))),
-    new TraitObject(39,
-      List((TOP, 1883), (MIDDLE, 2013), (BOTTOM, 815)),
-      List((TOP, 816), (MIDDLE, 1693), (BOTTOM, 812)),
-      List((TOP, 813), (MIDDLE, 1696), (BOTTOM, 801))),
-    new TraitObject(50,
-      List((TOP, 875), (MIDDLE, 898), (BOTTOM, 888)),
-      List((TOP, 894), (MIDDLE, 861), (BOTTOM, 892)),
-      List((TOP, 889), (MIDDLE, 893), (BOTTOM, 905))),
-    new TraitObject(53,
-      List((TOP, 914), (MIDDLE, 916), (BOTTOM, 1863)),
-      List((TOP, 899), (MIDDLE, 829), (BOTTOM, 909)),
-      List((TOP, 919), (MIDDLE, 853), (BOTTOM, 903)))
+  private val necromancerTraitsV2: List[Traitline] = List(
+    new Traitline(2,
+      List(new Trait(TOP, 820), new Trait(MIDDLE, 857), new Trait(BOTTOM, 1922)),
+      List(new Trait(TOP, 858), new Trait(MIDDLE, 860), new Trait(BOTTOM, 855)),
+      List(new Trait(TOP, 842), new Trait(MIDDLE, 1940), new Trait(BOTTOM, 1694))),
+    new Traitline(19,
+      List(new Trait(TOP, 780), new Trait(MIDDLE, 788), new Trait(BOTTOM, 1876)),
+      List(new Trait(TOP, 789), new Trait(MIDDLE, 799), new Trait(BOTTOM, 1844)),
+      List(new Trait(TOP, 782), new Trait(MIDDLE, 1692), new Trait(BOTTOM, 778))),
+    new Traitline(39,
+      List(new Trait(TOP, 1883), new Trait(MIDDLE, 2013), new Trait(BOTTOM, 815)),
+      List(new Trait(TOP, 816), new Trait(MIDDLE, 1693), new Trait(BOTTOM, 812)),
+      List(new Trait(TOP, 813), new Trait(MIDDLE, 1696), new Trait(BOTTOM, 801))),
+    new Traitline(50,
+      List(new Trait(TOP, 875), new Trait(MIDDLE, 898), new Trait(BOTTOM, 888)),
+      List(new Trait(TOP, 894), new Trait(MIDDLE, 861), new Trait(BOTTOM, 892)),
+      List(new Trait(TOP, 889), new Trait(MIDDLE, 893), new Trait(BOTTOM, 905))),
+    new Traitline(53,
+      List(new Trait(TOP, 914), new Trait(MIDDLE, 916), new Trait(BOTTOM, 1863)),
+      List(new Trait(TOP, 899), new Trait(MIDDLE, 829), new Trait(BOTTOM, 909)),
+      List(new Trait(TOP, 919), new Trait(MIDDLE, 853), new Trait(BOTTOM, 903)))
   )
 
-  private val reaperTraits: TraitObject =
-    new TraitObject(34,
-      List((TOP, 1974), (MIDDLE, 2020), (BOTTOM, 2026)),
-      List((TOP, 1969), (MIDDLE, 2008), (BOTTOM, 2031)),
-      List((TOP, 1932), (MIDDLE, 1919), (BOTTOM, 2021)))
-  private val scourgeTraits: TraitObject =
-    new TraitObject(60,
-      List((TOP, 2167), (MIDDLE, 2074), (BOTTOM, 2102)),
-      List((TOP, 2059), (MIDDLE, 2067), (BOTTOM, 2123)),
-      List((TOP, 2112), (MIDDLE, 2164), (BOTTOM, 2080)))
-  private val harbingerTraits: TraitObject =
-    new TraitObject(64,
-      List((TOP, 2188), (MIDDLE, 2219), (BOTTOM, 2185)),
-      List((TOP, 2192), (MIDDLE, 2220), (BOTTOM, 2209)),
-      List((TOP, 2218), (MIDDLE, 2194), (BOTTOM, 2203)))
-  private val ritualistTraits: TraitObject =
-    new TraitObject(76,
-      List((TOP, 2327), (MIDDLE, 2378), (BOTTOM, 2339)),
-      List((TOP, 2384), (MIDDLE, 2405), (BOTTOM, 2421)),
-      List((TOP, 2376), (MIDDLE, 2333), (BOTTOM, 2392)))
+  private val reaperTraits: Traitline =
+    new Traitline(34,
+      List(new Trait(TOP, 1974), new Trait(MIDDLE, 2020), new Trait(BOTTOM, 2026)),
+      List(new Trait(TOP, 1969), new Trait(MIDDLE, 2008), new Trait(BOTTOM, 2031)),
+      List(new Trait(TOP, 1932), new Trait(MIDDLE, 1919), new Trait(BOTTOM, 2021)))
+  private val scourgeTraits: Traitline =
+    new Traitline(60,
+      List(new Trait(TOP, 2167), new Trait(MIDDLE, 2074), new Trait(BOTTOM, 2102)),
+      List(new Trait(TOP, 2059), new Trait(MIDDLE, 2067), new Trait(BOTTOM, 2123)),
+      List(new Trait(TOP, 2112), new Trait(MIDDLE, 2164), new Trait(BOTTOM, 2080)))
+  private val harbingerTraits: Traitline =
+    new Traitline(64,
+      List(new Trait(TOP, 2188), new Trait(MIDDLE, 2219), new Trait(BOTTOM, 2185)),
+      List(new Trait(TOP, 2192), new Trait(MIDDLE, 2220), new Trait(BOTTOM, 2209)),
+      List(new Trait(TOP, 2218), new Trait(MIDDLE, 2194), new Trait(BOTTOM, 2203)))
+  private val ritualistTraits: Traitline =
+    new Traitline(76,
+      List(new Trait(TOP, 2327), new Trait(MIDDLE, 2378), new Trait(BOTTOM, 2339)),
+      List(new Trait(TOP, 2384), new Trait(MIDDLE, 2405), new Trait(BOTTOM, 2421)),
+      List(new Trait(TOP, 2376), new Trait(MIDDLE, 2333), new Trait(BOTTOM, 2392)))
 
-  private val mesmerTraitsV2: List[TraitObject] = List(
-    new TraitObject(1,
-      List((TOP, 701), (MIDDLE, 705), (BOTTOM, 700)),
-      List((TOP, 1889), (MIDDLE, 1960), (BOTTOM, 708)),
-      List((TOP, 692), (MIDDLE, 1950), (BOTTOM, 704))),
-    new TraitObject(10,
-      List((TOP, 686), (MIDDLE, 682), (BOTTOM, 687)),
-      List((TOP, 693), (MIDDLE, 713), (BOTTOM, 712)),
-      List((TOP, 681), (MIDDLE, 680), (BOTTOM, 1688))),
-    new TraitObject(23,
-      List((TOP, 756), (MIDDLE, 738), (BOTTOM, 744)),
-      List((TOP, 751), (MIDDLE, 740), (BOTTOM, 1980)),
-      List((TOP, 2005), (MIDDLE, 1866), (BOTTOM, 752))),
-    new TraitObject(24,
-      List((TOP, 721), (MIDDLE, 1869), (BOTTOM, 691)),
-      List((TOP, 722), (MIDDLE, 729), (BOTTOM, 1690)),
-      List((TOP, 733), (MIDDLE, 2035), (BOTTOM, 753))),
-    new TraitObject(45,
-      List((TOP, 670), (MIDDLE, 675), (BOTTOM, 677)),
-      List((TOP, 673), (MIDDLE, 668), (BOTTOM, 669)),
-      List((TOP, 671), (MIDDLE, 674), (BOTTOM, 1687)))
+  private val mesmerTraitsV2: List[Traitline] = List(
+    new Traitline(1,
+      List(new Trait(TOP, 701), new Trait(MIDDLE, 705), new Trait(BOTTOM, 700)),
+      List(new Trait(TOP, 1889), new Trait(MIDDLE, 1960), new Trait(BOTTOM, 708)),
+      List(new Trait(TOP, 692), new Trait(MIDDLE, 1950), new Trait(BOTTOM, 704))),
+    new Traitline(10,
+      List(new Trait(TOP, 686), new Trait(MIDDLE, 682), new Trait(BOTTOM, 687)),
+      List(new Trait(TOP, 693), new Trait(MIDDLE, 713), new Trait(BOTTOM, 712)),
+      List(new Trait(TOP, 681), new Trait(MIDDLE, 680), new Trait(BOTTOM, 1688))),
+    new Traitline(23,
+      List(new Trait(TOP, 756), new Trait(MIDDLE, 738), new Trait(BOTTOM, 744)),
+      List(new Trait(TOP, 751), new Trait(MIDDLE, 740), new Trait(BOTTOM, 1980)),
+      List(new Trait(TOP, 2005), new Trait(MIDDLE, 1866), new Trait(BOTTOM, 752))),
+    new Traitline(24,
+      List(new Trait(TOP, 721), new Trait(MIDDLE, 1869), new Trait(BOTTOM, 691)),
+      List(new Trait(TOP, 722), new Trait(MIDDLE, 729), new Trait(BOTTOM, 1690)),
+      List(new Trait(TOP, 733), new Trait(MIDDLE, 2035), new Trait(BOTTOM, 753))),
+    new Traitline(45,
+      List(new Trait(TOP, 670), new Trait(MIDDLE, 675), new Trait(BOTTOM, 677)),
+      List(new Trait(TOP, 673), new Trait(MIDDLE, 668), new Trait(BOTTOM, 669)),
+      List(new Trait(TOP, 671), new Trait(MIDDLE, 674), new Trait(BOTTOM, 1687)))
   )
 
-  private val chronomancerTraits: TraitObject =
-    new TraitObject(40,
-      List((TOP, 1838), (MIDDLE, 1995), (BOTTOM, 1987)),
-      List((TOP, 2009), (MIDDLE, 1913), (BOTTOM, 1978)),
-      List((TOP, 1942), (MIDDLE, 2022), (BOTTOM, 1890)))
-  private val mirageTraits: TraitObject =
-    new TraitObject(59,
-      List((TOP, 2141), (MIDDLE, 2082), (BOTTOM, 2110)),
-      List((TOP, 2178), (MIDDLE, 2174), (BOTTOM, 2098)),
-      List((TOP, 2070), (MIDDLE, 2113), (BOTTOM, 2169)))
-  private val virtuosoTraits: TraitObject =
-    new TraitObject(66,
-      List((TOP, 2212), (MIDDLE, 2208), (BOTTOM, 2202)),
-      List((TOP, 2215), (MIDDLE, 2205), (BOTTOM, 2207)),
-      List((TOP, 2211), (MIDDLE, 2206), (BOTTOM, 2223)))
-  private val troubadourTraits: TraitObject =
-    new TraitObject(73,
-      List((TOP, 2427), (MIDDLE, 2326), (BOTTOM, 2432)),
-      List((TOP, 2343), (MIDDLE, 2367), (BOTTOM, 2422)),
-      List((TOP, 2353), (MIDDLE, 2414), (BOTTOM, 2441)))
+  private val chronomancerTraits: Traitline =
+    new Traitline(40,
+      List(new Trait(TOP, 1838), new Trait(MIDDLE, 1995), new Trait(BOTTOM, 1987)),
+      List(new Trait(TOP, 2009), new Trait(MIDDLE, 1913), new Trait(BOTTOM, 1978)),
+      List(new Trait(TOP, 1942), new Trait(MIDDLE, 2022), new Trait(BOTTOM, 1890)))
+  private val mirageTraits: Traitline =
+    new Traitline(59,
+      List(new Trait(TOP, 2141), new Trait(MIDDLE, 2082), new Trait(BOTTOM, 2110)),
+      List(new Trait(TOP, 2178), new Trait(MIDDLE, 2174), new Trait(BOTTOM, 2098)),
+      List(new Trait(TOP, 2070), new Trait(MIDDLE, 2113), new Trait(BOTTOM, 2169)))
+  private val virtuosoTraits: Traitline =
+    new Traitline(66,
+      List(new Trait(TOP, 2212), new Trait(MIDDLE, 2208), new Trait(BOTTOM, 2202)),
+      List(new Trait(TOP, 2215), new Trait(MIDDLE, 2205), new Trait(BOTTOM, 2207)),
+      List(new Trait(TOP, 2211), new Trait(MIDDLE, 2206), new Trait(BOTTOM, 2223)))
+  private val troubadourTraits: Traitline =
+    new Traitline(73,
+      List(new Trait(TOP, 2427), new Trait(MIDDLE, 2326), new Trait(BOTTOM, 2432)),
+      List(new Trait(TOP, 2343), new Trait(MIDDLE, 2367), new Trait(BOTTOM, 2422)),
+      List(new Trait(TOP, 2353), new Trait(MIDDLE, 2414), new Trait(BOTTOM, 2441)))
 
   private val guardianTraits: List[String] = List(
     "Zeal",
@@ -562,17 +562,17 @@ class Traitlines {
     }
   }
 
-  def randomizeTraitline(traitlines: List[TraitObject], roll: Int): (Int, List[(String, Int)]) = {
-    val traitline: TraitObject = traitlines(roll)
+  def randomizeTraitline(traitlines: List[Traitline], roll: Int): (Int, List[(String, Int)]) = {
+    val traitline: Traitline = traitlines(roll)
 
     var traits: List[(String,Int)] = List()
 
     for (i <- 0 to 2) {
       val traitRoll = Math.round(Math.random() * 2).toInt
       i match {
-        case 0 => traits = traitline.getColumn1Ids(traitRoll) :: traits
-        case 1 => traits = traitline.getColumn2Ids(traitRoll) :: traits
-        case 2 => traits = traitline.getColumn3Ids(traitRoll) :: traits
+        case 0 => traits = traitline.getColumn1Traits(traitRoll) :: traits
+        case 1 => traits = traitline.getColumn2Traits(traitRoll) :: traits
+        case 2 => traits = traitline.getColumn3Traits(traitRoll) :: traits
         case _ => traits = ("error", 0) :: traits
       }
     }
