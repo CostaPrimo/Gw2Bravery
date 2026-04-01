@@ -48,6 +48,8 @@ class Classes {
   val CATALYST = "Catalyst"
   val EVOKER = "Evoker"
 
+  val BLACK = "Evoker" //Added as an inside joke
+
   val guardianClasses: List[String] = List(
     GUARDIAN,
     DRAGONHUNTER,

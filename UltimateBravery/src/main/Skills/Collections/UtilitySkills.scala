@@ -6,6 +6,45 @@ class UtilitySkills {
 
   private val classes = new Classes
 
+  private val warriorSkillsV2: List[(String, Int, String)] = List(
+    ("On Your Knees!",77114, classes.PARAGON),
+    ("Brace Yourselves!",76934, classes.PARAGON),
+    ("Never Surrender!",76769, classes.PARAGON),
+    ("Find Their Weakness!",77040, classes.PARAGON),
+    ("Dragonspike Mine",62960, classes.BLADESWORN),
+    ("Electric Fence",62804, classes.BLADESWORN),
+    ("Overcharged Cartridges",68085, classes.BLADESWORN),
+    ("Flow Stabilizer",62967, classes.BLADESWORN),
+    ("Break Enchantments",43123, classes.SPELLBREAKER),
+    ("Imminent Threat",41919, classes.SPELLBREAKER),
+    ("Sight beyond Sight",43745, classes.SPELLBREAKER),
+    ("Featherfoot Grace",45380, classes.SPELLBREAKER),
+    ("Outrage",30258, classes.BERSERKER),
+    ("Sundering Leap",29613, classes.BERSERKER),
+    ("Shattering Blow",30074, classes.BERSERKER),
+    ("Wild Blow",29941, classes.BERSERKER),
+    ("Frenzy",14368, classes.WARRIOR),
+    ("Balanced Stance",14412, classes.WARRIOR),
+    ("Endure Pain",14392, classes.WARRIOR),
+    ("Berserker Stance",14406, classes.WARRIOR),
+    ("Banner of Tactics",14408, classes.WARRIOR),
+    ("Banner of Discipline",14407, classes.WARRIOR),
+    ("Banner of Strength",14405, classes.WARRIOR),
+    ("Banner of Defense",14528, classes.WARRIOR),
+    ("Fear Me!",14409, classes.WARRIOR),
+    ("On My Mark!",14575, classes.WARRIOR),
+    ("Shake It Off!",14372, classes.WARRIOR),
+    ("For Great Justice!",14403, classes.WARRIOR),
+    ("Dolyak Signet",14413, classes.WARRIOR),
+    ("Signet of Stamina",14479, classes.WARRIOR),
+    ("Signet of Fury",14410, classes.WARRIOR),
+    ("Signet of Might",14404, classes.WARRIOR),
+    ("Stomp",14388, classes.WARRIOR),
+    ("Bull's Charge",14516, classes.WARRIOR),
+    ("Throw Bolas",14354, classes.WARRIOR),
+    ("Kick",14502, classes.WARRIOR)
+  )
+
   private val warriorSkills:List[(String, String)] = List(
     ("Banner of Defense", classes.WARRIOR),
     ("Banner of Discipline", classes.WARRIOR),
@@ -39,6 +78,45 @@ class UtilitySkills {
     ("Electric Fence", classes.BLADESWORN),
     ("Flow Stabilizer", classes.BLADESWORN),
     ("Overcharged Cartridges", classes.BLADESWORN)
+  )
+
+  private val guardianSkillsV2:List[(String, Int, String)] = List(
+    ("Valorous Stance",77300, classes.LUMINARY),
+    ("Effulgent Stance",76813, classes.LUMINARY),
+    ("Piercing Stance",77078, classes.LUMINARY),
+    ("Stalwart Stance",77321, classes.LUMINARY),
+    ("Heel Crack",62549, classes.WILLBENDER),
+    ("Whirling Light",62565, classes.WILLBENDER),
+    ("Roiling Light",62521, classes.WILLBENDER),
+    ("Flash Combo",62608, classes.WILLBENDER),
+    ("Mantra of Lore",45460, classes.FIREBRAND),
+    ("Mantra of Truth",44080, classes.FIREBRAND),
+    ("Mantra of Flame",46148, classes.FIREBRAND),
+    ("Mantra of Potence",40915, classes.FIREBRAND),
+    ("Light's Judgment",30871, classes.DRAGONHUNTER),
+    ("Procession of Blades",30364, classes.DRAGONHUNTER),
+    ("Fragments of Faith",30553, classes.DRAGONHUNTER),
+    ("Test of Faith",29786, classes.DRAGONHUNTER),
+    ("Merciful Intervention",9246, classes.GUARDIAN),
+    ("Judge's Intervention",9247, classes.GUARDIAN),
+    ("Contemplation of Purity",9248, classes.GUARDIAN),
+    ("Smite Condition",9245, classes.GUARDIAN),
+    ("Sanctuary",9128, classes.GUARDIAN),
+    ("Hallowed Ground",9253, classes.GUARDIAN),
+    ("Purging Flames",9187, classes.GUARDIAN),
+    ("Wall of Reflection",9251, classes.GUARDIAN),
+    ("Hold the Line!",9152, classes.GUARDIAN),
+    ("Stand Your Ground!",9153, classes.GUARDIAN),
+    ("Save Yourselves!",9085, classes.GUARDIAN),
+    ("Advance!",9084, classes.GUARDIAN),
+    ("Signet of Mercy",9163, classes.GUARDIAN),
+    ("Signet of Wrath",9151, classes.GUARDIAN),
+    ("Signet of Judgment",9150, classes.GUARDIAN),
+    ("Bane Signet",9093, classes.GUARDIAN),
+    ("Shield of the Avenger",9182, classes.GUARDIAN),
+    ("Bow of Truth",9175, classes.GUARDIAN),
+    ("Sword of Justice",9168, classes.GUARDIAN),
+    ("Hammer of Wisdom",9125, classes.GUARDIAN)
   )
 
   private val guardianSkills:List[(String, String)] = List(
@@ -76,6 +154,17 @@ class UtilitySkills {
     ("Whirling Light", classes.WILLBENDER)
   )
 
+  private val revenantSkillsV2:List[(String, Int, String)] = List(
+    ("Legendary Assassin Stance", 0, classes.REVENANT),
+    ("Legendary Centaur Stance", 0, classes.REVENANT),
+    ("Legendary Demon Stance", 0, classes.REVENANT),
+    ("Legendary Dwarf Stance", 0, classes.REVENANT),
+    ("Legendary Dragon Stance", 0, classes.HERALD),
+    ("Legendary Renegade Stance", 0, classes.RENEGADE),
+    ("Legendary Alliance Stance", 0, classes.VINDICATOR),
+    ("Legendary Entity Stance", 0, classes.CONDUIT)
+  )
+
   private val revenantSkills:List[(String, String)] = List(
     ("Legendary Assassin Stance", classes.REVENANT),
     ("Legendary Centaur Stance", classes.REVENANT),
@@ -84,6 +173,45 @@ class UtilitySkills {
     ("Legendary Dragon Stance", classes.HERALD),
     ("Legendary Renegade Stance", classes.RENEGADE),
     ("Legendary Alliance Stance", classes.VINDICATOR)
+  )
+
+  private val engineerSkillsV2:List[(String, Int, String)] = List(
+    ("Plasmatic State",77209, classes.AMALGAM),
+    ("Gaseous State",77018, classes.AMALGAM),
+    ("Liquid State",76908, classes.AMALGAM),
+    ("Solid State",77069, classes.AMALGAM),
+    ("Spectrum Shield",41218, classes.HOLOSMITH),
+    ("Hard Light Arena",44646, classes.HOLOSMITH),
+    ("Laser Disk",42842, classes.HOLOSMITH),
+    ("Photon Wall",43739, classes.HOLOSMITH),
+    ("Superconducting Signet",63113, classes.MECHANIST),
+    ("Force Signet",63253, classes.MECHANIST),
+    ("Shift Signet",63111, classes.MECHANIST),
+    ("Barrier Signet",63262, classes.MECHANIST),
+    ("Shredder Gyro",29921, classes.SCRAPPER),
+    ("Blast Gyro",31248, classes.SCRAPPER),
+    ("Purge Gyro",29739, classes.SCRAPPER),
+    ("Bulwark Gyro",30101, classes.SCRAPPER),
+    ("Slick Shoes",5825, classes.ENGINEER),
+    ("Personal Battering Ram",5811, classes.ENGINEER),
+    ("Rocket Boots",5910, classes.ENGINEER),
+    ("Utility Goggles",5865, classes.ENGINEER),
+    ("Throw Mine",6161, classes.ENGINEER),
+    ("Tool Kit",5904, classes.ENGINEER),
+    ("Elixir Gun",5933, classes.ENGINEER),
+    ("Flamethrower",5927, classes.ENGINEER),
+    ("Bomb Kit",5812, classes.ENGINEER),
+    ("Grenade Kit",5805, classes.ENGINEER),
+    ("Elixir R",5968, classes.ENGINEER),
+    ("Elixir C",5860, classes.ENGINEER),
+    ("Elixir S",5861, classes.ENGINEER),
+    ("Elixir U",5862, classes.ENGINEER),
+    ("Elixir B",5821, classes.ENGINEER),
+    ("Rocket Turret",5912, classes.ENGINEER),
+    ("Thumper Turret",5838, classes.ENGINEER),
+    ("Net Turret",5837, classes.ENGINEER),
+    ("Flame Turret",5836, classes.ENGINEER),
+    ("Rifle Turret",5818, classes.ENGINEER)
   )
 
   private val engineerSkills:List[(String, String)] = List(
@@ -122,6 +250,45 @@ class UtilitySkills {
     ("Superconducting Signet", classes.MECHANIST)
   )
 
+  private val thiefSkillsV2:List[(String, Int, String)] = List(
+    ("Emergency Jade Shield",76879, classes.ANTIQUARY),
+    ("Canach-Coin Toss",77230, classes.ANTIQUARY),
+    ("Inquest Portal Device",76808, classes.ANTIQUARY),
+    ("Stone Summit Cannon",76725, classes.ANTIQUARY),
+    ("Well of Sorrow",63276, classes.SPECTER),
+    ("Well of Silence",63230, classes.SPECTER),
+    ("Well of Tears",63294, classes.SPECTER),
+    ("Well of Bounty",63323, classes.SPECTER),
+    ("Shadow Flare",41158, classes.DEADEYE),
+    ("Mercy",41372, classes.DEADEYE),
+    ("Binding Shadow",41205, classes.DEADEYE),
+    ("Shadow Gust",46335, classes.DEADEYE),
+    ("Impairing Daggers",30369, classes.DAREDEVIL),
+    ("Bandit's Defense",30661, classes.DAREDEVIL),
+    ("Distracting Daggers",30568, classes.DAREDEVIL),
+    ("Fist Flurry",30868, classes.DAREDEVIL),
+    ("Shadow Refuge",13117, classes.THIEF),
+    ("Smoke Screen",13065, classes.THIEF),
+    ("Blinding Powder",13044, classes.THIEF),
+    ("Shadowstep",13002, classes.THIEF),
+    ("Caltrops",13028, classes.THIEF),
+    ("Haste",13066, classes.THIEF),
+    ("Roll for Initiative",13035, classes.THIEF),
+    ("Scorpion Wire",13020, classes.THIEF),
+    ("Signet of Shadows",13060, classes.THIEF),
+    ("Signet of Agility",13062, classes.THIEF),
+    ("Infiltrator's Signet",13064, classes.THIEF),
+    ("Assassin's Signet",13046, classes.THIEF),
+    ("Prepare Seal Area",13056, classes.THIEF),
+    ("Prepare Shadow Portal",13038, classes.THIEF),
+    ("Prepare Thousand Needles",13026, classes.THIEF),
+    ("Prepare Pitfall",13057, classes.THIEF),
+    ("Devourer Venom",13093, classes.THIEF),
+    ("Ice Drake Venom",13096, classes.THIEF),
+    ("Skale Venom",13055, classes.THIEF),
+    ("Spider Venom",13037, classes.THIEF)
+  )
+
   private val thiefSkills:List[(String, String)] = List(
     ("Blinding Powder", classes.THIEF),
     ("Shadow Refuge", classes.THIEF),
@@ -155,6 +322,45 @@ class UtilitySkills {
     ("Well of Silence", classes.SPECTER),
     ("Well of Sorrow", classes.SPECTER),
     ("Well of Tears", classes.SPECTER)
+  )
+
+  private val rangerSkillsV2:List[(String, Int, String)] = List(
+    ("Mistral",76757, classes.GALESHOT),
+    ("Whirlwind",76619, classes.GALESHOT),
+    ("Wind Shear",77211, classes.GALESHOT),
+    ("Piercing Gales",77264, classes.GALESHOT),
+    ("Nature's Binding",63130, classes.UNTAMED),
+    ("Unnatural Traversal",63195, classes.UNTAMED),
+    ("Mutate Conditions",63256, classes.UNTAMED),
+    ("Exploding Spores",63157, classes.UNTAMED),
+    ("Vulture Stance",40498, classes.SOULBEAST),
+    ("Moa Stance",45970, classes.SOULBEAST),
+    ("Griffon Stance",45142, classes.SOULBEAST),
+    ("Dolyak Stance",45789, classes.SOULBEAST),
+    ("Glyph of the Tides",30238, classes.DRUID),
+    ("Glyph of Unity",31582, classes.DRUID),
+    ("Glyph of Equality",31746, classes.DRUID),
+    ("Glyph of Alignment",31322, classes.DRUID),
+    ("Search and Rescue!",34309, classes.RANGER),
+    ("Guard!",12632, classes.RANGER),
+    ("Protect Me!",12631, classes.RANGER),
+    ("Sic 'Em!",12633, classes.RANGER),
+    ("Storm Spirit",12493, classes.RANGER),
+    ("Frost Spirit",12497, classes.RANGER),
+    ("Stone Spirit",12495, classes.RANGER),
+    ("Sun Spirit",12498, classes.RANGER),
+    ("Quickening Zephyr",12550, classes.RANGER),
+    ("Muddy Terrain",12501, classes.RANGER),
+    ("Lightning Reflexes",12494, classes.RANGER),
+    ("Sharpening Stone",12537, classes.RANGER),
+    ("Signet of the Wild",12491, classes.RANGER),
+    ("Signet of Stone",12500, classes.RANGER),
+    ("Signet of the Hunt",12542, classes.RANGER),
+    ("Signet of Renewal",12502, classes.RANGER),
+    ("Frost Trap",12492, classes.RANGER),
+    ("Viper's Nest",12496, classes.RANGER),
+    ("Flame Trap",12499, classes.RANGER),
+    ("Spike Trap",12476, classes.RANGER)
   )
 
   private val rangerSkills:List[(String, String)] = List(
@@ -192,6 +398,45 @@ class UtilitySkills {
     ("Unnatural Traversal", classes.UNTAMED)
   )
 
+  private val mesmerSkillsV2:List[(String, Int, String)] = List(
+    ("Tale of the Valiant Marshal",77178, classes.TROUBADOUR),
+    ("Tale of the Honorable Rogue",76611, classes.TROUBADOUR),
+    ("Tale of the Tortured Mastermind",77066, classes.TROUBADOUR),
+    ("Tale of the Soulkeeper",76850, classes.TROUBADOUR),
+    ("Sword of Decimation",35637, classes.VIRTUOSO),
+    ("Blade Renewal",43343, classes.VIRTUOSO),
+    ("Rain of Swords",45425, classes.VIRTUOSO),
+    ("Psychic Force",62573, classes.VIRTUOSO),
+    ("Crystal Sands",41065, classes.MIRAGE),
+    ("Sand through Glass",43064, classes.MIRAGE),
+    ("Mirage Advance",42851, classes.MIRAGE),
+    ("Illusionary Ambush",45046, classes.MIRAGE),
+    ("Well of Action",30814, classes.CHRONOMANCER),
+    ("Well of Senility",29856, classes.CHRONOMANCER),
+    ("Well of Calamity",30525, classes.CHRONOMANCER),
+    ("Well of Precognition",29526, classes.CHRONOMANCER),
+    ("Veil",10187, classes.MESMER),
+    ("Portal Entre",10197, classes.MESMER),
+    ("Feedback",10302, classes.MESMER),
+    ("Null Field",10203, classes.MESMER),
+    ("Phantasmal Disenchanter",10267, classes.MESMER),
+    ("Phantasmal Defender",10341, classes.MESMER),
+    ("Mirror Images",10202, classes.MESMER),
+    ("Decoy",10201, classes.MESMER),
+    ("Mimic",29578, classes.MESMER),
+    ("Illusion of Life",10244, classes.MESMER),
+    ("Arcane Thievery",10185, classes.MESMER),
+    ("Blink",10200, classes.MESMER),
+    ("Mantra of Concentration",10237, classes.MESMER),
+    ("Mantra of Resolve",10207, classes.MESMER),
+    ("Mantra of Distraction",10204, classes.MESMER),
+    ("Mantra of Pain",10211, classes.MESMER),
+    ("Signet of Illusions",10247, classes.MESMER),
+    ("Signet of Midnight",10234, classes.MESMER),
+    ("Signet of Domination",10232, classes.MESMER),
+    ("Signet of Inspiration",10236, classes.MESMER)
+  )
+
   private val mesmerSkills:List[(String, String)] = List(
     ("Decoy", classes.MESMER),
     ("Mirror Images", classes.MESMER),
@@ -227,6 +472,45 @@ class UtilitySkills {
     ("Sword of Decimation", classes.VIRTUOSO)
   )
 
+  private val necromancerSkillsV2:List[(String, Int, String)] = List(
+    ("Weapon of Warding",76752, classes.RITUALIST),
+    ("Nightmare Weapon",76739, classes.RITUALIST),
+    ("Weapon of Remedy",77022, classes.RITUALIST),
+    ("Splinter Weapon",76975, classes.RITUALIST),
+    ("Elixir of Anguish",62662, classes.HARBINGER),
+    ("Elixir of Bliss",62514, classes.HARBINGER),
+    ("Elixir of Ignorance",62646, classes.HARBINGER),
+    ("Elixir of Risk",62530, classes.HARBINGER),
+    ("Serpent Siphon",41615, classes.SCOURGE),
+    ("Sand Swell",42917, classes.SCOURGE),
+    ("Desiccate",42935, classes.SCOURGE),
+    ("Trail of Anguish",40274, classes.SCOURGE),
+    ("Rise!",30772, classes.REAPER),
+    ("Nothing Can Save You!",29666, classes.REAPER),
+    ("Suffer!",30670, classes.REAPER),
+    ("You Are All Weaklings!",29414, classes.REAPER),
+    ("Blood Is Power",10544, classes.NECROMANCER),
+    ("Corrupt Boon",10602, classes.NECROMANCER),
+    ("Epidemic",10606, classes.NECROMANCER),
+    ("Corrosive Poison Cloud",10689, classes.NECROMANCER),
+    ("Spectral Walk",10685, classes.NECROMANCER),
+    ("Spectral Ring",10608, classes.NECROMANCER),
+    ("Spectral Grasp",10620, classes.NECROMANCER),
+    ("Spectral Armor",10583, classes.NECROMANCER),
+    ("Signet of Undeath",10611, classes.NECROMANCER),
+    ("Plague Signet",10562, classes.NECROMANCER),
+    ("Signet of the Locust",10612, classes.NECROMANCER),
+    ("Signet of Spite",10622, classes.NECROMANCER),
+    ("Summon Flesh Wurm",10543, classes.NECROMANCER),
+    ("Summon Shadow Fiend",10589, classes.NECROMANCER),
+    ("Summon Bone Fiend",10533, classes.NECROMANCER),
+    ("Summon Bone Minions",10541, classes.NECROMANCER),
+    ("Well of Darkness",10607, classes.NECROMANCER),
+    ("Well of Power",10609, classes.NECROMANCER),
+    ("Well of Corruption",10545, classes.NECROMANCER),
+    ("Well of Suffering",10546, classes.NECROMANCER)
+  )
+
   private val necromancerSkills:List[(String, String)] = List(
     ("Blood is Power", classes.NECROMANCER),
     ("Corrosive Poison Cloud", classes.NECROMANCER),
@@ -260,6 +544,45 @@ class UtilitySkills {
     ("Elixir of Bliss", classes.HARBINGER),
     ("Elixir of Ignorance", classes.HARBINGER),
     ("Elixir of Risk", classes.HARBINGER),
+  )
+
+  private val elementalSkillsV2:List[(String, Int, String)] = List(
+    ("Toad's Fortitude",77320, classes.EVOKER),
+    ("Hare's Agility",77038, classes.EVOKER),
+    ("Otter's Compassion",77190, classes.BLACK),
+    ("Fox's Fury",76711, classes.EVOKER),
+    ("Fortified Earth",62826, classes.CATALYST),
+    ("Invigorating Air",62982, classes.CATALYST),
+    ("Shattering Ice",62698, classes.CATALYST),
+    ("Relentless Fire",62965, classes.CATALYST),
+    ("Primordial Stance",40183, classes.WEAVER),
+    ("Twist of Fate",45746, classes.WEAVER),
+    ("Unravel",44612, classes.WEAVER),
+    ("Stone Resonance",44926, classes.WEAVER),
+    ("Aftershock!",30432, classes.TEMPEST),
+    ("Eye of the Storm!",30047, classes.TEMPEST),
+    ("Flash-Freeze!",29948, classes.TEMPEST),
+    ("Feel the Burn!",30662, classes.TEMPEST),
+    ("Conjure Earth Shield",5546, classes.ELEMENTALIST),
+    ("Conjure Lightning Hammer",5624, classes.ELEMENTALIST),
+    ("Conjure Frost Bow",5567, classes.ELEMENTALIST),
+    ("Conjure Flame Axe",5540, classes.ELEMENTALIST),
+    ("Armor of Earth",5639, classes.ELEMENTALIST),
+    ("Lightning Flash",5536, classes.ELEMENTALIST),
+    ("Mist Form",5554, classes.ELEMENTALIST),
+    ("Cleansing Fire",5535, classes.ELEMENTALIST),
+    ("Signet of Earth",5571, classes.ELEMENTALIST),
+    ("Signet of Air",5572, classes.ELEMENTALIST),
+    ("Signet of Water",5570, classes.ELEMENTALIST),
+    ("Signet of Fire",5542, classes.ELEMENTALIST),
+    ("Glyph of Renewal",5573, classes.ELEMENTALIST),
+    ("Glyph of Lesser Elementals",5502, classes.ELEMENTALIST),
+    ("Glyph of Storms",5734, classes.ELEMENTALIST),
+    ("Glyph of Elemental Power",5506, classes.ELEMENTALIST),
+    ("Arcane Blast",5539, classes.ELEMENTALIST),
+    ("Arcane Echo",5635, classes.ELEMENTALIST),
+    ("Arcane Shield",5641, classes.ELEMENTALIST),
+    ("Arcane Wave",5638, classes.ELEMENTALIST)
   )
 
   private val elementalistSkills:List[(String, String)] = List(
