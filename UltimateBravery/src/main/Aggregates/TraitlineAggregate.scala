@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.Gear.aggregates
+package UltimateBravery.src.main.Aggregates
 
 import UltimateBravery.src.main.ClassSpecific.TraitObjects.Traitline
 

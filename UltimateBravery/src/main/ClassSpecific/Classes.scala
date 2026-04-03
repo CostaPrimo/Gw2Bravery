@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.ClassSpecific.Collections
+package UltimateBravery.src.main.ClassSpecific
 
 class Classes {
 

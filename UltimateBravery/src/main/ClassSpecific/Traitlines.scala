@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.ClassSpecific.Collections
+package UltimateBravery.src.main.ClassSpecific
 
 import UltimateBravery.src.main.ClassSpecific.TraitObjects.{Gw2Trait, Traitline}
 

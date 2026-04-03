@@ -1,6 +1,6 @@
-package UltimateBravery.src.main.Gear.aggregates
+package UltimateBravery.src.main.Aggregates
 
-import UltimateBravery.src.main.Gear.GearObjects.Armour
+import UltimateBravery.src.main.Gear.Armour
 
 class ArmourAggregate(helmet: Armour, shoulders: Armour, chest: Armour, gloves: Armour, leggings: Armour, boots: Armour) {
   def getHelmet: Armour = this.helmet

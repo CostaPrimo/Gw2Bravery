@@ -1,6 +1,6 @@
-package UltimateBravery.src.main.Gear.aggregates
+package UltimateBravery.src.main.Aggregates
 
-import UltimateBravery.src.main.Gear.GearObjects.{Accessory, Backpack, Ring}
+import UltimateBravery.src.main.Gear.{Accessory, Backpack, Ring}
 
 class TrinketAggregate(amulet: String, backpack: Backpack, ring1: Ring, ring2: Ring, accessory1: Accessory, accessory2: Accessory) {
   def getAmulet: String = this.amulet

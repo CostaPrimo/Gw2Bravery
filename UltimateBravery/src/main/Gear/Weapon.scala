@@ -1,6 +1,6 @@
-package UltimateBravery.src.main.Gear.GearObjects
+package UltimateBravery.src.main.Gear
 
-import UltimateBravery.src.main.ClassSpecific.Collections.Weapons
+import UltimateBravery.src.main.ClassSpecific.Weapons
 import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Sigils, Stats}
 
 class Weapon(weapon: (String, String), weapons: Weapons, statRoller: Stats, sigilRoller: Sigils, infusionRoller: Infusions) {

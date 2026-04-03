@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.Gear.GearObjects
+package UltimateBravery.src.main.Gear
 
 class Backpack (stats: String, infusion1: String, infusion2: String){
   def getStats: String = this.stats

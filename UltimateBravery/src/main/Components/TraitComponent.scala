@@ -1,6 +1,6 @@
-package UltimateBravery.src.main.ClassSpecific
+package UltimateBravery.src.main.Components
 
-import UltimateBravery.src.main.ClassSpecific.Collections.Traitlines
+import UltimateBravery.src.main.ClassSpecific.Traitlines
 
 class TraitComponent(baseClass: String, classRoll: String) {
   private val traitRoller = new Traitlines()

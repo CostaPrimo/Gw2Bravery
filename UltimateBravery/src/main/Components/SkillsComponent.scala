@@ -1,7 +1,7 @@
-package UltimateBravery.src.main.Skills
+package UltimateBravery.src.main.Components
 
-import UltimateBravery.src.main.ClassSpecific.Collections.Classes
-import UltimateBravery.src.main.Skills.Collections.{EliteSkills, HealSkills, UtilitySkills}
+import UltimateBravery.src.main.ClassSpecific.Classes
+import UltimateBravery.src.main.Skills.{EliteSkills, HealSkills, UtilitySkills}
 
 class SkillsComponent(baseClass: String, classRoll: String) {
   private val classes = new Classes()

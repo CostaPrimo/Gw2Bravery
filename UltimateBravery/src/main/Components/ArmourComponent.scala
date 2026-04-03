@@ -1,6 +1,6 @@
-package UltimateBravery.src.main.Gear
+package UltimateBravery.src.main.Components
 
-import UltimateBravery.src.main.Gear.GearObjects.Armour
+import UltimateBravery.src.main.Gear.Armour
 import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Runes, Stats}
 
 class ArmourComponent {

@@ -1,8 +1,8 @@
-package UltimateBravery.src.main.Gear
+package UltimateBravery.src.main.Components
 
-import UltimateBravery.src.main.ClassSpecific.Collections.Weapons
-import UltimateBravery.src.main.Gear.GearObjects.Weapon
+import UltimateBravery.src.main.ClassSpecific.Weapons
 import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Sigils, Stats}
+import UltimateBravery.src.main.Gear.Weapon
 
 import scala.collection.mutable
 

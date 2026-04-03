@@ -1,6 +1,6 @@
-package UltimateBravery.src.main.Skills.Collections
+package UltimateBravery.src.main.Skills
 
-import UltimateBravery.src.main.ClassSpecific.Collections.Classes
+import UltimateBravery.src.main.ClassSpecific.Classes
 
 class EliteSkills {
 
