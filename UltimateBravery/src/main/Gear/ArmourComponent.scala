@@ -1,7 +1,7 @@
 package UltimateBravery.src.main.Gear
 
-import UltimateBravery.src.main.Gear.Pieces.Armour
-import UltimateBravery.src.main.Gear.Collections.{Infusions, Runes, Stats}
+import UltimateBravery.src.main.Gear.GearObjects.Armour
+import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Runes, Stats}
 
 class ArmourComponent {
   private val statRoller = new Stats()

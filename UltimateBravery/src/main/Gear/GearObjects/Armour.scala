@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.Gear.Pieces
+package UltimateBravery.src.main.Gear.GearObjects
 
 class Armour(stats: String, rune: String, infusion: String) {
 

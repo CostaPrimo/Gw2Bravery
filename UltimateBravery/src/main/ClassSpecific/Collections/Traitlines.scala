@@ -1,5 +1,7 @@
 package UltimateBravery.src.main.ClassSpecific.Collections
 
+import UltimateBravery.src.main.ClassSpecific.Objects.{Gw2Trait, Traitline}
+
 class Traitlines {
 
   private val classes: Classes = new Classes()

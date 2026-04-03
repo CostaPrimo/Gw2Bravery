@@ -1,7 +1,7 @@
 package UltimateBravery.src.main.Gear
 
-import UltimateBravery.src.main.Gear.Pieces.{Accessory, Backpack, Ring}
-import UltimateBravery.src.main.Gear.Collections.{Infusions, Stats}
+import UltimateBravery.src.main.Gear.GearObjects.{Accessory, Backpack, Ring}
+import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Stats}
 
 class TrinketComponent {
 

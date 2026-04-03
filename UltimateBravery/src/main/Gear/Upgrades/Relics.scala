@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.Gear
+package UltimateBravery.src.main.Gear.Upgrades
 
 class Relics {
 

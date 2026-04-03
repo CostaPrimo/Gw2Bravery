@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.Gear.Collections
+package UltimateBravery.src.main.Gear.Upgrades
 
 class Infusions {
 

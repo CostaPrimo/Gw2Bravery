@@ -1,6 +1,4 @@
-package UltimateBravery.src.main.Gear.Collections
-
-import UltimateBravery.src.main.ClassSpecific.Collections.Classes
+package UltimateBravery.src.main.ClassSpecific.Collections
 
 class Weapons {
 

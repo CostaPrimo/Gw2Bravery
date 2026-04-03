@@ -1,6 +1,7 @@
-package UltimateBravery.src.main.Gear.Pieces
+package UltimateBravery.src.main.Gear.GearObjects
 
-import UltimateBravery.src.main.Gear.Collections.{Infusions, Sigils, Stats, Weapons}
+import UltimateBravery.src.main.ClassSpecific.Collections.Weapons
+import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Sigils, Stats}
 
 class Weapon(weapon: (String, String), weapons: Weapons, statRoller: Stats, sigilRoller: Sigils, infusionRoller: Infusions) {
   private val stats = statRoller.ultimateBravery

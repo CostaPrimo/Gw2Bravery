@@ -546,7 +546,7 @@ class UtilitySkills {
     ("Elixir of Risk", classes.HARBINGER),
   )
 
-  private val elementalSkillsV2:List[Skill] = List(
+  private val elementalistSkillsV2:List[Skill] = List(
     new Skill("Toad's Fortitude",77320, classes.EVOKER),
     new Skill("Hare's Agility",77038, classes.EVOKER),
     new Skill("Otter's Compassion",77190, classes.BLACK),

@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.Gear.Pieces
+package UltimateBravery.src.main.Gear.GearObjects
 
 class Accessory(stats: String, infusion: String) {
   def getStats: String = this.stats

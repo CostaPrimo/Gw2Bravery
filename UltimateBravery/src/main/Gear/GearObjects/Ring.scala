@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.Gear.Pieces
+package UltimateBravery.src.main.Gear.GearObjects
 
 class Ring(stats: String, infusion1: String, infusion2: String, infusion3: String) {
 
