@@ -214,4 +214,9 @@ class Runes {
     name.concat(runes(roll))
   }
 
+  def ultimateBraveryV2: Rune = {
+    val roll = Math.round(Math.random() * (runesV2.size - 1)).toInt
+    runesV2(roll)
+  }
+
 }

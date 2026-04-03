@@ -1,30 +1,30 @@
 package UltimateBravery.src.main.Gear
 
-class Armour(stats: String, rune: String, infusion: String) {
+import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.{Rune, Stat}
 
-  def getStats: String = this.stats
+class Armour(stats: Stat, rune: Rune, infusion: String) {
 
-  def getRune: String = this.rune
-
+  def getStats: Stat = this.stats
+  def getRune: Rune = this.rune
   def getInfusion: String = this.infusion
 
   def toJsonString: String = {
-    "{\"Stats\": \"" + stats + "\"," +
-    "\"Rune\": \"" + rune + "\"," +
+    "{\"Stats\": \"" + stats.getName + "\"," +
+    "\"Rune\": \"" + rune.getName + "\"," +
     "\"Infusion\": \"" + infusion + "\"}"
   }
 
   def equals(armour: Armour): Boolean = {
-    if (this.stats.equalsIgnoreCase(armour.getStats)
-      && this.rune.equalsIgnoreCase(armour.getRune)
+    if (this.stats.equals(armour.getStats)
+      && this.rune.equals(armour.getRune)
       && this.infusion.equalsIgnoreCase(armour.getInfusion)
     ) return true
     false
   }
 
   def equalsLite(armour: Armour): Boolean = {
-    if (this.stats.equalsIgnoreCase(armour.getStats)
-      && this.rune.equalsIgnoreCase(armour.getRune)
+    if (this.stats.equals(armour.getStats)
+      && this.rune.equals(armour.getRune)
     ) return true
     false
   }
