@@ -1,11 +1,9 @@
 package UltimateBravery.src.main
 
-import UltimateBravery.src.main.ClassSpecific.Collections.Classes
-import UltimateBravery.src.main.ClassSpecific.TraitComponent
+import UltimateBravery.src.main.ClassSpecific.Classes
+import UltimateBravery.src.main.Components.{ArmourComponent, SkillsComponent, TraitComponent, TrinketComponent, WeaponComponent}
 import UltimateBravery.src.main.FoodUtility.{Food, Utility}
 import UltimateBravery.src.main.Gear.Upgrades.Relics
-import UltimateBravery.src.main.Gear.{ArmourComponent, TrinketComponent, WeaponComponent}
-import UltimateBravery.src.main.Skills.SkillsComponent
 
 class Build(chosenClass: String) {
   private val classes = new Classes
