@@ -112,6 +112,11 @@ class Stats {
     stats(roll)
   }
 
+  def ultimateBraveryV2: Stat = {
+    val roll = Math.round(Math.random() * (statsV2.size - 1)).toInt
+    statsV2(roll)
+  }
+
   def pvpBravery: String = {
     val roll = Math.round(Math.random() * (pvpStats.size - 1)).toInt
     pvpStats(roll)

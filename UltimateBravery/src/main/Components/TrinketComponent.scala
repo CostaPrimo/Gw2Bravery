@@ -8,24 +8,24 @@ class TrinketComponent {
   private val statRoller = new Stats()
   private val infusionRoller = new Infusions()
 
-  private val ring1 = new Ring(statRoller.ultimateBravery,
+  private val ring1 = new Ring(statRoller.ultimateBraveryV2,
     infusionRoller.ultimateBravery,
     infusionRoller.ultimateBravery,
     infusionRoller.ultimateBravery)
-  private val ring2 = new Ring(statRoller.ultimateBravery,
+  private val ring2 = new Ring(statRoller.ultimateBraveryV2,
     infusionRoller.ultimateBravery,
     infusionRoller.ultimateBravery,
     infusionRoller.ultimateBravery)
-  private val accessory1 = new Accessory(statRoller.ultimateBravery, infusionRoller.ultimateBravery)
-  private val accessory2 = new Accessory(statRoller.ultimateBravery, infusionRoller.ultimateBravery)
-  private val backpack = new Backpack(statRoller.ultimateBravery, infusionRoller.ultimateBravery, infusionRoller.ultimateBravery)
+  private val accessory1 = new Accessory(statRoller.ultimateBraveryV2, infusionRoller.ultimateBravery)
+  private val accessory2 = new Accessory(statRoller.ultimateBraveryV2, infusionRoller.ultimateBravery)
+  private val backpack = new Backpack(statRoller.ultimateBraveryV2, infusionRoller.ultimateBravery, infusionRoller.ultimateBravery)
   private val amulet = statRoller.ultimateBravery
 
   def toJsonString: String = {
     "{" +
       "\"Backpack\": " +
       "{" +
-        "\"Stats\": \"" + backpack.getStats + "\"," +
+        "\"Stats\": \"" + backpack.getStats.getName + "\"," +
         "\"Infusion1\": \"" + backpack.getInfusion1 + "\"," +
         "\"Infusion2\": \"" + backpack.getInfusion2 + "\"" +
       "}," +
@@ -42,7 +42,7 @@ class TrinketComponent {
 
   def toSimpleJsonString: String = {
     "{" +
-      "\"Stats\": \"" + backpack.getStats + "\"" +
+      "\"Stats\": \"" + backpack.getStats.getName + "\"" +
     "}"
   }
 

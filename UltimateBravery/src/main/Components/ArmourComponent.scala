@@ -4,18 +4,18 @@ import UltimateBravery.src.main.Gear.Armour
 import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Runes, Stats}
 
 class ArmourComponent {
-  private val statRoller = new Stats()
-  private val runeRoller = new Runes()
+  private val STATS = new Stats()
+  private val RUNES = new Runes()
   private val infusionRoller = new Infusions()
 
-  private val helmet = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
-  private val shoulders = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
-  private val chest = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
-  private val gloves = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
-  private val leggings = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
-  private val boots = new Armour(statRoller.ultimateBravery, runeRoller.ultimateBravery, infusionRoller.ultimateBravery)
+  private val helmet = new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, infusionRoller.ultimateBravery)
+  private val shoulders = new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, infusionRoller.ultimateBravery)
+  private val chest = new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, infusionRoller.ultimateBravery)
+  private val gloves = new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, infusionRoller.ultimateBravery)
+  private val leggings = new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, infusionRoller.ultimateBravery)
+  private val boots = new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, infusionRoller.ultimateBravery)
 
-  private val pvpStats = statRoller.pvpBravery
+  private val pvpStats = STATS.pvpBravery
 
   def toJsonString: String = {
     "{" +
@@ -30,15 +30,15 @@ class ArmourComponent {
 
   def toSimpleJsonString: String = {
     "{" +
-      "\"Stat\": \"" + helmet.getStats + "\"," +
-      "\"Rune\": \"" + helmet.getRune + "\"" +
+      "\"Stat\": \"" + helmet.getStats.getName + "\"," +
+      "\"Rune\": \"" + helmet.getRune.getName + "\"" +
     "}"
   }
 
   def toPvPJsonString: String = {
     "{" +
       "\"Stat\": \"" + pvpStats + "\"," +
-      "\"Rune\": \"" + helmet.getRune + "\"" +
+      "\"Rune\": \"" + helmet.getRune.getName + "\"" +
     "}"
   }
 }

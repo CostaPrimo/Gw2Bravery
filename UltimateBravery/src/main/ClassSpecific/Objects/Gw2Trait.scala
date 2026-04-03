@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.ClassSpecific.TraitObjects
+package UltimateBravery.src.main.ClassSpecific.Objects
 
 class Gw2Trait(position: String, id: Int){
   def getPosition: String = this.position

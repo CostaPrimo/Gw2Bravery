@@ -1,22 +1,24 @@
 package UltimateBravery.src.main.Gear
 
-class Accessory(stats: String, infusion: String) {
-  def getStats: String = this.stats
+import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.Stat
+
+class Accessory(stats: Stat, infusion: String) {
+  def getStats: Stat = this.stats
   def getInfusion: String = this.infusion
 
   def toJsonString: String = {
-    "{\"Stats\": \"" + this.getStats + "\"," +
+    "{\"Stats\": \"" + this.getStats.getName + "\"," +
     "\"Infusion\": \"" + this.getInfusion + "\"}"
   }
 
   def equals(accessory: Accessory): Boolean = {
-    if (this.stats.equalsIgnoreCase(accessory.getStats)
+    if (this.stats.equals(accessory.getStats)
       && this.infusion.equalsIgnoreCase(accessory.getInfusion)
     ) return true
     false
   }
 
   def equalsLite(accessory: Accessory): Boolean = {
-    this.stats.equalsIgnoreCase(accessory.getStats)
+    this.stats.equals(accessory.getStats)
   }
 }

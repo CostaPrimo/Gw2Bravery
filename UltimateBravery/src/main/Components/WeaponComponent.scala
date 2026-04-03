@@ -7,10 +7,10 @@ import UltimateBravery.src.main.Gear.Weapon
 import scala.collection.mutable
 
 class WeaponComponent(baseClass: String, classRoll: String) {
-  private val sigilRoller = new Sigils()
-  private val statRoller = new Stats()
+  private val SIGILS = new Sigils()
+  private val STATS = new Stats()
   private val infusionRoller = new Infusions()
-  private val weaponsRoller = new Weapons()
+  private val WEAPONS = new Weapons()
 
   private var weapon1: (Weapon, Boolean) = (null, false)
   private var weapon2: (Weapon, Boolean) = (null, false)
@@ -19,9 +19,10 @@ class WeaponComponent(baseClass: String, classRoll: String) {
 
   def generateWeapons(): WeaponComponent = {
     while (!weapon1._2 || !weapon2._2 || !weapon3._2 || !weapon4._2) {
-      val weapon = weaponsRoller.ultimateBravery(baseClass)
-      val toAdd = new Weapon(weapon, weaponsRoller, statRoller, sigilRoller, infusionRoller)
-      placeWeapon(toAdd, weapon._2)
+      val weaponBase = WEAPONS.ultimateBravery(baseClass)
+      val toAdd = new Weapon(STATS.ultimateBraveryV2, SIGILS.ultimateBraveryV2, SIGILS.ultimateBraveryV2,
+        infusionRoller.ultimateBravery, infusionRoller.ultimateBravery, weaponBase)
+      placeWeapon(toAdd, weaponBase.getHanding)
     }
     this
   }
@@ -56,7 +57,7 @@ class WeaponComponent(baseClass: String, classRoll: String) {
     sb.append("{")
       sb.append("\"Weapons\": " + simpleJsonWeapons)
       sb.append(",")
-      sb.append("\"Stats\": \"" + weapon1._1.getStat + "\"")
+      sb.append("\"Stats\": \"" + weapon1._1.getStats + "\"")
       sb.append(",")
       sb.append("\"Sigil1\": \"" + weapon1._1.getSigil1 + "\"")
       sb.append(",")
@@ -106,18 +107,18 @@ class WeaponComponent(baseClass: String, classRoll: String) {
     sb.append("{")
     sb.append("\"Weaponset 1\": ")
       sb.append("{")
-      sb.append("\"Mainhand\": \"" + weapon1._1.getWeapon + "\"")
+      sb.append("\"Mainhand\": \"" + weapon1._1.getWeaponBase + "\"")
     if (weapon2._1 != null) {
       sb.append(",")
-      sb.append("\"Offhand\": \"" + weapon2._1.getWeapon + "\"")
+      sb.append("\"Offhand\": \"" + weapon2._1.getWeaponBase + "\"")
     }
     sb.append("},")
     sb.append("\"Weaponset 2\": ")
       sb.append("{")
-      sb.append("\"Mainhand\": \"" + weapon3._1.getWeapon + "\"")
+      sb.append("\"Mainhand\": \"" + weapon3._1.getWeaponBase + "\"")
     if (weapon4._1 != null) {
       sb.append(",")
-      sb.append("\"Offhand\": \"" + weapon4._1.getWeapon + "\"")
+      sb.append("\"Offhand\": \"" + weapon4._1.getWeaponBase + "\"")
     }
     sb.append("}")
     sb.append("}")
@@ -126,13 +127,13 @@ class WeaponComponent(baseClass: String, classRoll: String) {
   }
 
   private def placeWeapon(weapon: Weapon, hand: String): Unit = {
-    if (hand == weaponsRoller.OFF && (!weapon2._2 || !weapon4._2)) {
+    if (hand == WEAPONS.OFF && (!weapon2._2 || !weapon4._2)) {
       if (!weapon2._2) weapon2 = (weapon, true)
       else weapon4 = (weapon, true)
-    } else if (hand == weaponsRoller.MAIN && (!weapon1._2 || !weapon3._2)) {
+    } else if (hand == WEAPONS.MAIN && (!weapon1._2 || !weapon3._2)) {
       if (!weapon1._2) weapon1 = (weapon, true)
       else weapon3 = (weapon, true)
-    } else if (hand == weaponsRoller.BOTH && ((!weapon1._2 && !weapon2._2) || (!weapon3._2 && !weapon4._2))) {
+    } else if (hand == WEAPONS.BOTH && ((!weapon1._2 && !weapon2._2) || (!weapon3._2 && !weapon4._2))) {
       if (!weapon1._2 && !weapon2._2) {
         weapon1 = (weapon, true)
         weapon2 = (null, true)

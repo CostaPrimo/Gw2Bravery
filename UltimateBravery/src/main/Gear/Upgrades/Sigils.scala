@@ -218,6 +218,11 @@ class Sigils {
     name.concat(all(roll))
   }
 
+  def ultimateBraveryV2: Sigil = {
+    val roll = Math.round(Math.random() * (sigilsV2.size - 1)).toInt
+    sigilsV2(roll)
+  }
+
   def prettyBrave: String = {
     val all = sigils ::: slayerSigils ::: stackingSigils
     val roll = Math.round(Math.random() * (all.size - 1)).toInt

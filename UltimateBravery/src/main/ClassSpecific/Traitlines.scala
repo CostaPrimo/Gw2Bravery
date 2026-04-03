@@ -1,6 +1,6 @@
 package UltimateBravery.src.main.ClassSpecific
 
-import UltimateBravery.src.main.ClassSpecific.TraitObjects.{Gw2Trait, Traitline}
+import UltimateBravery.src.main.ClassSpecific.Objects.{Gw2Trait, Traitline}
 
 class Traitlines {
 
