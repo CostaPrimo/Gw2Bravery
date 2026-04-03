@@ -192,6 +192,20 @@ class Weapons {
     }
   }
 
+  def ultimateBraveryV2(): String = {
+    val handingList = List(MAIN, BOTH)
+    val roll = Math.round(Math.random() * (handingList.length - 1)).toInt
+    handingList(roll)
+  }
+
+  def getRandomClassWeaponWithHanding(baseClass: String, handing: String): WeaponBase = {
+    val classWeapons = getWeaponList(baseClass)
+    val classWeaponsWithHanding = classWeapons.filter(w => w.getHanding.equalsIgnoreCase(handing))
+
+    val roll = Math.round(Math.random() * (classWeaponsWithHanding.length - 1)).toInt
+    classWeaponsWithHanding(roll)
+  }
+
   private def getWeaponList(baseClass: String): List[WeaponBase] = {
     for(weaponList <- weaponLists) {
       if(weaponList._2 == baseClass) return weaponList._1

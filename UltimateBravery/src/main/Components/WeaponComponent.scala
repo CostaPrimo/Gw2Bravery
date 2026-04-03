@@ -19,10 +19,12 @@ class WeaponComponent(baseClass: String, classRoll: String) {
 
   def generateWeapons(): WeaponComponent = {
     while (!weapon1._2 || !weapon2._2 || !weapon3._2 || !weapon4._2) {
-      val weaponBase = WEAPONS.ultimateBravery(baseClass)
-      val toAdd = new Weapon(STATS.ultimateBraveryV2, SIGILS.ultimateBraveryV2, SIGILS.ultimateBraveryV2,
-        infusionRoller.ultimateBravery, infusionRoller.ultimateBravery, weaponBase)
-      placeWeapon(toAdd, weaponBase.getHanding)
+      val randomHanding = WEAPONS.ultimateBraveryV2()
+      randomHanding match  {
+        case WEAPONS.MAIN => placeMainHand()
+        case WEAPONS.BOTH => placeBothHand()
+        case _ => _
+      }
     }
     this
   }
@@ -126,21 +128,31 @@ class WeaponComponent(baseClass: String, classRoll: String) {
     sb.result()
   }
 
-  private def placeWeapon(weapon: Weapon, hand: String): Unit = {
-    if (hand == WEAPONS.OFF && (!weapon2._2 || !weapon4._2)) {
-      if (!weapon2._2) weapon2 = (weapon, true)
-      else weapon4 = (weapon, true)
-    } else if (hand == WEAPONS.MAIN && (!weapon1._2 || !weapon3._2)) {
-      if (!weapon1._2) weapon1 = (weapon, true)
-      else weapon3 = (weapon, true)
-    } else if (hand == WEAPONS.BOTH && ((!weapon1._2 && !weapon2._2) || (!weapon3._2 && !weapon4._2))) {
-      if (!weapon1._2 && !weapon2._2) {
-        weapon1 = (weapon, true)
-        weapon2 = (null, true)
-      } else {
-        weapon3 = (weapon, true)
-        weapon4 = (null, true)
-      }
+  private def placeMainHand(): Unit = {
+    val mainWeapon: Weapon = new Weapon(STATS.ultimateBraveryV2, SIGILS.ultimateBraveryV2, SIGILS.ultimateBraveryV2,
+      infusionRoller.ultimateBravery, infusionRoller.ultimateBravery, WEAPONS.getRandomClassWeaponWithHanding(baseClass, WEAPONS.MAIN))
+    val offWeapon: Weapon = new Weapon(STATS.ultimateBraveryV2, SIGILS.ultimateBraveryV2, SIGILS.ultimateBraveryV2,
+      infusionRoller.ultimateBravery, infusionRoller.ultimateBravery, WEAPONS.getRandomClassWeaponWithHanding(baseClass, WEAPONS.OFF))
+
+    if (!weapon1._2) {
+      weapon1 = (mainWeapon, true)
+      weapon2 = (offWeapon, true)
+    } else if (!weapon3._2) {
+      weapon3 = (mainWeapon, true)
+      weapon4 = (offWeapon, true)
+    }
+  }
+
+  private def placeBothHand(): Unit = {
+    val bothWeapon: Weapon = new Weapon(STATS.ultimateBraveryV2, SIGILS.ultimateBraveryV2, SIGILS.ultimateBraveryV2,
+      infusionRoller.ultimateBravery, infusionRoller.ultimateBravery, WEAPONS.getRandomClassWeaponWithHanding(baseClass, WEAPONS.BOTH))
+
+    if (!weapon1._2) {
+      weapon1 = (bothWeapon, true)
+      weapon2 = (null, true)
+    } else if (!weapon3._2) {
+      weapon3 = (bothWeapon, true)
+      weapon4 = (null, true)
     }
   }
 

@@ -101,7 +101,7 @@ class Runes {
       new Rune("Superior Rune of the Weaver", List(91451, 83423)),
       new Rune("Superior Rune of the Wurm", List(91593, 24791)),
       new Rune("Superior Rune of the Zephyrite", List(91525, 88118)),
-      new Rune("Superior Rune of Thorns", List(91381)),
+      new Rune("Superior Rune of Thorns", List(91381, 72912)),
       new Rune("Superior Rune of Tormenting", List(91516, 44956)),
       new Rune("Superior Rune of Vampirism", List(91545, 24711))
   )
