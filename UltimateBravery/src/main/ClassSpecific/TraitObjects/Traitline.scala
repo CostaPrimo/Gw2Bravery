@@ -1,4 +1,4 @@
-package UltimateBravery.src.main.ClassSpecific.Objects
+package UltimateBravery.src.main.ClassSpecific.TraitObjects
 
 class Traitline(name: String, id: Int, adeptTraits: List[Gw2Trait], masterTraits: List[Gw2Trait], grandmasterTraits: List[Gw2Trait]) {
   def getName: String = this.name

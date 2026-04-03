@@ -1,6 +1,6 @@
 package UltimateBravery.src.main.Gear.aggregates
 
-import UltimateBravery.src.main.ClassSpecific.Objects.Traitline
+import UltimateBravery.src.main.ClassSpecific.TraitObjects.Traitline
 
 class TraitlineAggregate(traitline1: Traitline, traitline2: Traitline, traitline3: Traitline) {
   def getTraitline1: Traitline = this.traitline1

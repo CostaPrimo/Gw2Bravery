@@ -1,6 +1,6 @@
 package UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects
 
-class Rune (name: String, ids: List[Int]){
+class Relic (name: String, ids: List[Int]){
   def getName: String = this.name
 
   def getIds: List[Int] = this.ids
@@ -9,9 +9,9 @@ class Rune (name: String, ids: List[Int]){
     this.ids.contains(id)
   }
 
-  def equals(rune: Rune): Boolean = {
-    if (this.name.equalsIgnoreCase(rune.getName)
-      && rune.getIds.forall(p => this.containId(p))
+  def equals(relic: Relic): Boolean = {
+    if (this.name.equalsIgnoreCase(relic.getName)
+      && relic.getIds.forall(p => this.containId(p))
     ) return true
     false
   }

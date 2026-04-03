@@ -9,9 +9,9 @@ class Stat (name: String, ids: List[Int]){
     this.ids.contains(id)
   }
 
-  def equals(sigil: Sigil): Boolean = {
-    if (this.name.equalsIgnoreCase(sigil.getName)
-      && sigil.getIds.forall(p => this.containId(p))
+  def equals(stat: Stat): Boolean = {
+    if (this.name.equalsIgnoreCase(stat.getName)
+      && stat.getIds.forall(p => this.containId(p))
     ) return true
     false
   }
