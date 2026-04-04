@@ -1,7 +1,7 @@
 package UltimateBravery.src.main.Aggregates
 
-import UltimateBravery.src.main.ClassSpecific.Objects.Traitline
-import UltimateBravery.src.main.ClassSpecific.{Classes, Traitlines, Weapons}
+import UltimateBravery.src.main.ClassSpecific.Objects.{Legend, Pet, Traitline}
+import UltimateBravery.src.main.ClassSpecific.{Classes, Legends, Pets, Traitlines, Weapons}
 import UltimateBravery.src.main.Gear.{Accessory, Armour, Backpack, Ring, Weapon}
 import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Relics, Runes, Sigils, Stats}
 import UltimateBravery.src.main.Skills.{EliteSkills, HealSkills, Skill, UtilitySkills}
@@ -21,7 +21,10 @@ class BuildV2(chosenClass: String) {
   private val UTILITYSKILLS = new UtilitySkills
   private val ELITESKILLS = new EliteSkills
 
-  private val armourAggregate = new ArmourAggregate(
+  private val PETS = new Pets
+  private val LEGENDS = new Legends
+
+  private val armourAggregate: ArmourAggregate = new ArmourAggregate(
     new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBravery),
     new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBravery),
     new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBravery),
@@ -30,7 +33,7 @@ class BuildV2(chosenClass: String) {
     new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBravery)
   )
 
-  private val trinketAggregate = new TrinketAggregate(
+  private val trinketAggregate: TrinketAggregate = new TrinketAggregate(
     STATS.ultimateBraveryV2.getName,
     new Backpack(STATS.ultimateBraveryV2, INFUSIONS.ultimateBravery, INFUSIONS.ultimateBravery),
     new Ring(STATS.ultimateBraveryV2, INFUSIONS.ultimateBravery, INFUSIONS.ultimateBravery, INFUSIONS.ultimateBravery),
@@ -39,13 +42,13 @@ class BuildV2(chosenClass: String) {
     new Accessory(STATS.ultimateBraveryV2, INFUSIONS.ultimateBravery)
   )
 
-  private val weaponAggregate = createWeaponAggregate
+  private val weaponAggregate: WeaponAggregate = createWeaponAggregate
 
-  private val traitlineAggregate = createTraitLineAggregate
+  private val traitlineAggregate: TraitlineAggregate = createTraitLineAggregate
 
-  private val skillAggregate = createSkillAggregate
+  private val skillAggregate: SkillAggregate = createSkillAggregate
 
-  private val buildAggregate = new BuildAggregate(
+  val buildAggregate: BuildAggregate = new BuildAggregate(
     armourAggregate,
     trinketAggregate,
     weaponAggregate,
@@ -53,6 +56,10 @@ class BuildV2(chosenClass: String) {
     skillAggregate,
     RELICS.ultimateBraveryV2
   )
+
+  val pets: List[Pet] = createPets
+
+  val legends: List[Legend] = createLegends
 
   private def createWeaponAggregate: WeaponAggregate = {
     val weaponSet1Type = WEAPONS.ultimateBraveryV2()
@@ -133,6 +140,8 @@ class BuildV2(chosenClass: String) {
   }
 
   private def createSkillAggregate: SkillAggregate = {
+    if(BASECLASS.equalsIgnoreCase(CLASSES.REVENANT)) return new SkillAggregate(null, null, null, null, null)
+
     var generatedSkills: List[Skill] = List(UTILITYSKILLS.ultimateBraveryV2(chosenClass))
     while (generatedSkills.size < 3) {
       val currentSkills = generatedSkills.map(s => s.getName)
@@ -147,5 +156,27 @@ class BuildV2(chosenClass: String) {
       generatedSkills(2),
       ELITESKILLS.ultimateBraveryV2(chosenClass)
     )
+  }
+
+  private def createPets: List[Pet] = {
+    if(!BASECLASS.equalsIgnoreCase(CLASSES.RANGER)) return List()
+
+    var petList: List[Pet] = List(PETS.ultimateBravery)
+    while(petList.size < 2) {
+      val randomPet = PETS.ultimateBravery
+      if(!petList.head.equals(randomPet)) petList = randomPet :: petList
+    }
+    petList
+  }
+
+  private def createLegends: List[Legend] = {
+    if(!BASECLASS.equalsIgnoreCase(CLASSES.REVENANT)) return List()
+
+    var legendList: List[Legend] = List(LEGENDS.ultimateBravery)
+    while (legendList.size < 2) {
+      val randomLegend = LEGENDS.ultimateBravery
+      if (!legendList.head.equals(randomLegend)) legendList = randomLegend :: legendList
+    }
+    legendList
   }
 }

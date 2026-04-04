@@ -23,7 +23,7 @@ class WeaponComponent(baseClass: String, classRoll: String) {
       randomHanding match  {
         case WEAPONS.MAIN => placeMainHand()
         case WEAPONS.BOTH => placeBothHand()
-        case _ => _
+        case _ =>
       }
     }
     this

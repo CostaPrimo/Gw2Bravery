@@ -1,0 +1,78 @@
+package UltimateBravery.src.main.ClassSpecific
+
+import UltimateBravery.src.main.ClassSpecific.Objects.Pet
+
+class Pets {
+  val allPets: List[Pet] = List(
+    new Pet("Juvenile Cave Spider", 35),
+    new Pet("Juvenile Siege Turtle", 66),
+    new Pet("Juvenile Murellow", 20),
+//    new Pet("Juvenile Rainbow Jellyfish", 43),
+    new Pet("Juvenile Smokescale", 46),
+    new Pet("Juvenile Krytan Drakehound", 4),
+//    new Pet("Juvenile Armor Fish", 40),
+    new Pet("Juvenile Phoenix", 65),
+    new Pet("Juvenile River Drake", 19),
+    new Pet("Juvenile Siamoth", 38),
+    new Pet("Juvenile Pink Moa", 15),
+    new Pet("Juvenile White Tiger", 63),
+    new Pet("Juvenile Arctodus", 25),
+    new Pet("Juvenile White Raven", 32),
+    new Pet("Juvenile Raptor Swiftwing", 72),
+    new Pet("Juvenile Hyena", 28),
+    new Pet("Juvenile Electric Wyvern", 48),
+    new Pet("Juvenile Black Bear", 23),
+    new Pet("Juvenile Red Moa", 17),
+    new Pet("Juvenile Owl", 30),
+    new Pet("Juvenile Sky -Chak Striker", 68),
+    new Pet("Juvenile Lynx", 3),
+    new Pet("Juvenile White Moa", 14),
+//    new Pet("Juvenile Blue Jellyfish", 41),
+    new Pet("Juvenile Jaguar", 11),
+    new Pet("Juvenile Bristleback", 52),
+    new Pet("Juvenile Black Moa", 16),
+    new Pet("Juvenile Eagle", 31),
+    new Pet("Juvenile Blue Moa", 13),
+    new Pet("Juvenile Fern Hound", 22),
+    new Pet("Juvenile Marsh Drake", 12),
+    new Pet("Juvenile Forest Spider", 33),
+    new Pet("Juvenile Spinegazer", 69),
+    new Pet("Juvenile Ice Drake", 18),
+    new Pet("Juvenile Carrion Devourer", 6),
+    new Pet("Juvenile Salamander Drake", 7),
+    new Pet("Juvenile Aether Hunter", 67),
+    new Pet("Juvenile Lashtail Devourer", 27),
+    new Pet("Juvenile Snow Leopard", 9),
+    new Pet("Juvenile Hawk", 44),
+    new Pet("Juvenile Jungle Stalker", 1),
+//    new Pet("Juvenile Red Jellyfish", 42),
+    new Pet("Juvenile Janthiri Bee", 71),
+    new Pet("Juvenile Cheetah", 54),
+    new Pet("Juvenile Boar", 2),
+    new Pet("Juvenile Jacaranda", 57),
+    new Pet("Juvenile Warclaw", 70),
+    new Pet("Juvenile Reef Drake", 45),
+    new Pet("Juvenile Fire Wyvern", 51),
+    new Pet("Juvenile Wolf", 29),
+    new Pet("Juvenile Raven", 10),
+    new Pet("Juvenile Black Widow Spider", 36),
+    new Pet("Juvenile Rock Gazelle", 59),
+    new Pet("Juvenile Alpine Wolf", 8),
+    new Pet("Juvenile Pig", 39),
+    new Pet("Juvenile Fanged Iboga", 61),
+    new Pet("Juvenile Polar Bear", 24),
+    new Pet("Juvenile Whiptail Devourer", 26),
+    new Pet("Juvenile Brown Bear", 5),
+    new Pet("Juvenile Jungle Spider", 34),
+    new Pet("Juvenile Wallow", 64),
+    new Pet("Juvenile Sand Lion", 55),
+    new Pet("Juvenile Tiger", 47),
+//    new Pet("Juvenile Shark", 21),
+    new Pet("Juvenile Warthog", 37)
+  )
+
+  def ultimateBravery: Pet = {
+    val roll = Math.round(Math.random() * (allPets.size - 1)).toInt
+    allPets(roll)
+  }
+}
