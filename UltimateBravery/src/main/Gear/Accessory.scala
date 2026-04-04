@@ -1,6 +1,7 @@
 package UltimateBravery.src.main.Gear
 
 import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.Stat
+import org.json.JSONObject
 
 class Accessory(stats: Stat, infusion: String) {
   def getStats: Stat = this.stats
@@ -20,5 +21,11 @@ class Accessory(stats: Stat, infusion: String) {
 
   def equalsLite(accessory: Accessory): Boolean = {
     this.stats.equals(accessory.getStats)
+  }
+
+  def getJsonObject: JSONObject = {
+    new JSONObject()
+      .put("stats", this.stats.getJsonObject)
+      .put("infusion", this.infusion)
   }
 }

@@ -1,6 +1,7 @@
 package UltimateBravery.src.main.Aggregates
 
 import UltimateBravery.src.main.Gear.{Accessory, Backpack, Ring}
+import org.json.JSONObject
 
 class TrinketAggregate(amulet: String, backpack: Backpack, ring1: Ring, ring2: Ring, accessory1: Accessory, accessory2: Accessory) {
   def getAmulet: String = this.amulet
@@ -30,5 +31,15 @@ class TrinketAggregate(amulet: String, backpack: Backpack, ring1: Ring, ring2: R
       && this.accessory2.equalsLite(trinketAggregate.getAccessory2)
     ) return true
     false
+  }
+
+  def getJsonObject: JSONObject = {
+    new JSONObject()
+      .put("amulet", this.amulet)
+      .put("backpack", this.backpack.getJsonObject)
+      .put("ring1", this.ring1.getJsonObject)
+      .put("ring2", this.ring2.getJsonObject)
+      .put("accessory1", this.accessory1.getJsonObject)
+      .put("accessory2", this.accessory2.getJsonObject)
   }
 }

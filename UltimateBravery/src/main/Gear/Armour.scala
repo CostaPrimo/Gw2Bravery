@@ -1,6 +1,7 @@
 package UltimateBravery.src.main.Gear
 
 import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.{Rune, Stat}
+import org.json.JSONObject
 
 class Armour(stats: Stat, rune: Rune, infusion: String) {
 
@@ -27,6 +28,13 @@ class Armour(stats: Stat, rune: Rune, infusion: String) {
       && this.rune.equals(armour.getRune)
     ) return true
     false
+  }
+
+  def getJsonObject: JSONObject = {
+    new JSONObject()
+      .put("stats", this.stats.getJsonObject)
+      .put("rune", this.rune.getJsonObject)
+      .put("infusion", this.infusion)
   }
 
 }

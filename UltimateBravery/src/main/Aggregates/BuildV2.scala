@@ -5,6 +5,7 @@ import UltimateBravery.src.main.ClassSpecific.{Classes, Legends, Pets, Traitline
 import UltimateBravery.src.main.Gear.{Accessory, Armour, Backpack, Ring, Weapon}
 import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Relics, Runes, Sigils, Stats}
 import UltimateBravery.src.main.Skills.{EliteSkills, HealSkills, Skill, UtilitySkills}
+import org.json.{JSONArray, JSONObject}
 
 class BuildV2(chosenClass: String) {
   private val CLASSES = new Classes
@@ -60,6 +61,13 @@ class BuildV2(chosenClass: String) {
   val pets: List[Pet] = createPets
 
   val legends: List[Legend] = createLegends
+
+  def getJsonObject: JSONObject = {
+    new JSONObject()
+      .put("build", buildAggregate.getJsonObject)
+      .put("pets", if(pets.isEmpty) null else new JSONArray(this.pets.toArray))
+      .put("legends", if(legends.isEmpty) null else new JSONArray(this.legends.toArray))
+  }
 
   private def createWeaponAggregate: WeaponAggregate = {
     val weaponSet1Type = WEAPONS.ultimateBraveryV2()
@@ -172,9 +180,9 @@ class BuildV2(chosenClass: String) {
   private def createLegends: List[Legend] = {
     if(!BASECLASS.equalsIgnoreCase(CLASSES.REVENANT)) return List()
 
-    var legendList: List[Legend] = List(LEGENDS.ultimateBravery)
+    var legendList: List[Legend] = List(LEGENDS.ultimateBravery(chosenClass))
     while (legendList.size < 2) {
-      val randomLegend = LEGENDS.ultimateBravery
+      val randomLegend = LEGENDS.ultimateBravery(chosenClass)
       if (!legendList.head.equals(randomLegend)) legendList = randomLegend :: legendList
     }
     legendList

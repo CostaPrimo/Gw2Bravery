@@ -1,6 +1,7 @@
 package UltimateBravery.src.main.Aggregates
 
 import UltimateBravery.src.main.Gear.Armour
+import org.json.JSONObject
 
 class ArmourAggregate(helmet: Armour, shoulders: Armour, chest: Armour, gloves: Armour, leggings: Armour, boots: Armour) {
   def getHelmet: Armour = this.helmet
@@ -30,5 +31,15 @@ class ArmourAggregate(helmet: Armour, shoulders: Armour, chest: Armour, gloves: 
       && this.boots.equalsLite(armourAggregate.getBoots)
     ) return true
     false
+  }
+
+  def getJsonObject: JSONObject = {
+    new JSONObject()
+      .put("helmet", this.helmet.getJsonObject)
+      .put("shoulders", this.shoulders.getJsonObject)
+      .put("chest", this.chest.getJsonObject)
+      .put("gloves", this.gloves.getJsonObject)
+      .put("leggings", this.leggings.getJsonObject)
+      .put("boots", this.boots.getJsonObject)
   }
 }

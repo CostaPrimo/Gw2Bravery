@@ -2,7 +2,7 @@
 ## Core functionality
 - [x] Handle Revenant legends "Legend1", "Legend2" API BS
 - [x] Add Pet randomization for ranger
-- [ ] Introduce V2 into the backend
+- [x] Introduce V2 into the backend
 
 ## New features
 - [ ] Add build persistence and retrieval

@@ -3,11 +3,10 @@ package UltimateBravery.src.main.Gear
 import UltimateBravery.src.main.ClassSpecific.Objects.WeaponBase
 import UltimateBravery.src.main.ClassSpecific.Weapons
 import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.{Sigil, Stat}
-import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Sigils, Stats}
+import UltimateBravery.src.main.Gear.Upgrades.Sigils
+import org.json.JSONObject
 
-class Weapon(
-              stats: Stat, sigil1: Sigil, sigil2: Sigil, infusion1: String, infusion2: String,
-              weaponBase: WeaponBase) {
+class Weapon(stats: Stat, sigil1: Sigil, sigil2: Sigil, infusion1: String, infusion2: String, weaponBase: WeaponBase) {
 
   private val WEAPONS: Weapons = new Weapons
   private val SIGILS: Sigils = new Sigils
@@ -62,5 +61,17 @@ class Weapon(
       && this.sigil2.equals(weapon.getSigil2)
     ) return true
     false
+  }
+
+  if (sigil2 == null) {}
+
+  def getJsonObject: JSONObject = {
+    new JSONObject()
+      .put("stats", this.stats.getJsonObject)
+      .put("sigil1", if(sigil1 == null) { null } else { this.sigil1.getJsonObject })
+      .put("sigil2", if(sigil2 == null) { null } else { this.sigil2.getJsonObject })
+      .put("infusion1", if(infusion1 == null) { null } else { this.infusion1 })
+      .put("infusion2", if(infusion2 == null) { null } else { this.infusion2 })
+      .put("weapon", if(this.weaponBase == null) null else new JSONObject(this.weaponBase))
   }
 }

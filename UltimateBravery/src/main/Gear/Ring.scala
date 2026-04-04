@@ -1,6 +1,7 @@
 package UltimateBravery.src.main.Gear
 
 import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.Stat
+import org.json.JSONObject
 
 class Ring(stats: Stat, infusion1: String, infusion2: String, infusion3: String) {
 
@@ -27,5 +28,13 @@ class Ring(stats: Stat, infusion1: String, infusion2: String, infusion3: String)
 
   def equalsLite(ring: Ring): Boolean = {
     this.stats.equals(ring.getStats)
+  }
+
+  def getJsonObject: JSONObject = {
+    new JSONObject()
+      .put("stats", this.stats.getJsonObject)
+      .put("infusion1", this.infusion1)
+      .put("infusion2", this.infusion2)
+      .put("infusion3", this.infusion3)
   }
 }
