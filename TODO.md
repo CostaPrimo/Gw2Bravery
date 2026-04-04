@@ -5,6 +5,9 @@
 - [x] Introduce V2 into the backend
 
 ## New features
-- [ ] Add build persistence and retrieval
+- [ ] Add local build persistence and retrieval
 - [ ] Add API integration to validate a character build against a saved build
 - [ ] Mass periodic validation for tournament use
+
+## Could haves
+- Frontend
