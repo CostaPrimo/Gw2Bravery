@@ -216,6 +216,18 @@ class HealSkills {
     (elementalistSkills, classes.ELEMENTALIST)
   )
 
+  private val skillListsV2: List[(List[Skill], String)] = List(
+    (warriorSkillsV2, classes.WARRIOR),
+    (guardianSkillsV2, classes.GUARDIAN),
+    (revenantLegendsV2, classes.REVENANT),
+    (engineerSkillsV2, classes.ENGINEER),
+    (rangerSkillsV2, classes.RANGER),
+    (thiefSkillsV2, classes.THIEF),
+    (mesmerSkillsV2, classes.MESMER),
+    (necromancerSkillsV2, classes.NECROMANCER),
+    (elementalistSkillsV2, classes.ELEMENTALIST),
+  )
+
   def ultimateBravery(classRoll: String): String = {
     val baseClass = classes.getBaseClass(classRoll)
     val skillList = filterSkills(getSkillList(baseClass), baseClass, classRoll)
@@ -239,5 +251,30 @@ class HealSkills {
       if (skillList._2 == baseClass) return skillList._1
     }
     List()
+  }
+
+  def ultimateBraveryV2(classRoll: String): Skill = {
+    val baseClass = classes.getBaseClass(classRoll)
+    val skillList = filterSkillsV2(getSkillListV2(baseClass), baseClass, classRoll)
+    if (skillList.isEmpty) new Skill("Error", -1, "Error")
+    else {
+      val roll = Math.round(Math.random() * (skillList.length - 1)).toInt
+      skillList(roll)
+    }
+  }
+
+  def getSkillListV2(baseClass: String): List[Skill] = {
+    for (skillList <- skillListsV2) {
+      if (skillList._2 == baseClass) return skillList._1
+    }
+    List()
+  }
+
+  def filterSkillsV2(skillList: List[Skill], baseClass: String, chosenClass: String): List[Skill] = {
+    var newList: List[Skill] = List()
+    for (skill <- skillList) {
+      if (skill.getClassName.equalsIgnoreCase(baseClass) || skill.getClassName.equalsIgnoreCase(chosenClass)) newList = skill :: newList
+    }
+    newList
   }
 }

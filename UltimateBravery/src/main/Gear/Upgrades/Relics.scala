@@ -185,4 +185,9 @@ class Relics {
     "Relic of " + allRelics(roll)
   }
 
+  def ultimateBraveryV2: Relic = {
+    val roll = Math.round(Math.random() * (relicsV2.length - 1)).toInt
+    relicsV2(roll)
+  }
+
 }

@@ -543,11 +543,11 @@ class Traitlines {
       case classes.WEAVER => randomizeTraitline(List(weaverTraits), 0)
       case classes.CATALYST => randomizeTraitline(List(catalystTraits), 0)
       case classes.EVOKER => randomizeTraitline(List(evokerTraits), 0)
-      case _ => new Traitline("Error", 0, List(), List(), List())
+      case _ => ultimateBraveryV2(classRoll)
     }
   }
 
-  def newUltimateBravery(baseClass: String): Traitline = {
+  def ultimateBraveryV2(baseClass: String): Traitline = {
     val roll = rollRandomIndex(5)
     baseClass match {
       case classes.GUARDIAN => randomizeTraitline(guardianTraitsV2, roll)
