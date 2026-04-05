@@ -113,81 +113,8 @@ class Relics {
       new Relic("Relic of Zakiros", List(101955, 101944))
   )
 
-  private val allRelics: List[String] = List(
-    "Akeem",
-    "Antitoxin",
-    "Cerus",
-    "Dagda",
-    "Durability",
-    "Dwayna",
-    "Evasion",
-    "Febe",
-    "Fireworks",
-    "Isgarren",
-    "Karakosa",
-    "Leadership",
-    "Lyhr",
-    "Mabon",
-    "Mercy",
-    "Nayos",
-    "Nourys",
-    "Peitha",
-    "Resistance",
-    "Speed",
-    "the Adventurer",
-    "the Afflicted",
-    "the Aristocracy",
-    "the Astral Ward",
-    "the Brawler",
-    "the Cavalier",
-    "the Centaur",
-    "the Chronomancer",
-    "the Citadel",
-    "the Daredevil",
-    "the Deadeye",
-    "the Defender",
-    "the Demon Queen",
-    "the Dragonunter",
-    "the Firebrand",
-    "the Flock",
-    "the Fractal",
-    "the Herald",
-    "the Ice",
-    "the Krait",
-    "the Midnight King",
-    "the Mirage",
-    "the Monk",
-    "the Necromancer",
-    "the Nightmare",
-    "the Pack",
-    "the Reaper",
-    "the Scourge",
-    "the Sunless",
-    "the Thief",
-    "the Trooper",
-    "the Unseen Invasion",
-    "the Warrior",
-    "the Water",
-    "the Weaver",
-    "the Wizard's Tower",
-    "the Zephyrite",
-    "Vass",
-    "the Founding",
-    "Mosyn",
-    "the Sorcerer",
-    "the Twin Generals",
-    "the Wayfinder",
-    "Zakiros"
-  )
-
-  def ultimateBravery: String = {
-    val roll = Math.round(Math.random() * (allRelics.length - 1)).toInt
-    "Relic of " + allRelics(roll)
-  }
-
   def ultimateBraveryV2: Relic = {
     val roll = Math.round(Math.random() * (relicsV2.length - 1)).toInt
     relicsV2(roll)
   }
-
 }

@@ -1,10 +1,11 @@
 package UltimateBravery.src.main.Gear.Upgrades
 
 import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.Stat
+import UltimateBravery.src.main.util.utility.rollRandomIndex
 
 class Stats {
 
-  val statsV2: List[Stat] = List(
+  private val statsV2: List[Stat] = List(
     new Stat("Berserker's",List(1077, 1046, 599, 584, 161)),
     new Stat("Zealot's",List(1163, 799)),
     new Stat("Soldier's",List(1048, 601, 586, 162)),
@@ -45,48 +46,7 @@ class Stats {
     new Stat("Celestial",List(1052, 593, 588, 559))
   )
 
-  val stats: List[String] = List(
-    "Berserker's",
-    "Zealot's",
-    "Soldier's",
-    "Valkyrie",
-    "Harrier's",
-    "Commander's",
-    "Marauder",
-    "Vigilant",
-    "Crusader",
-    "Wanderer's",
-    "Diviner's",
-    "Dragon's",
-    "Viper's",
-    "Grieving",
-    "Marshal's",
-    "Rampager",
-    "Assassin's",
-    "Seraph",
-    "Knight's",
-    "Cavalier's",
-    "Nomad's",
-    "Settler's",
-    "Giver's",
-    "Trailblazer's",
-    "Minstrel's",
-    "Sentinel's",
-    "Shaman's",
-    "Ritualist's",
-    "Plaguedoctor's",
-    "Sinister",
-    "Carrion",
-    "Rabid",
-    "Dire",
-    "Bringer's",
-    "Cleric's",
-    "Magi's",
-    "Apothecary's",
-    "Celestial"
-  )
-
-  val pvpStats: List[String] = List(
+  private val pvpStats: List[String] = List(
     "Berserker's",
     "Valkyrie",
     "Heretic",
@@ -107,18 +67,13 @@ class Stats {
     "Rabid"
   )
 
-  def ultimateBravery: String = {
-    val roll = Math.round(Math.random() * (stats.size - 1)).toInt
-    stats(roll)
-  }
-
   def ultimateBraveryV2: Stat = {
-    val roll = Math.round(Math.random() * (statsV2.size - 1)).toInt
+    val roll = rollRandomIndex(statsV2.size)
     statsV2(roll)
   }
 
   def pvpBravery: String = {
-    val roll = Math.round(Math.random() * (pvpStats.size - 1)).toInt
+    val roll = rollRandomIndex(pvpStats.size)
     pvpStats(roll)
   }
 }

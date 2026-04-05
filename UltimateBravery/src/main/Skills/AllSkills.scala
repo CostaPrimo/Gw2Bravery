@@ -35,7 +35,7 @@ class AllSkills {
 
   private def getSkillList(baseClass: String, skillCollection: List[(List[Skill], String)]): List[Skill] = {
     for (skillList <- skillCollection) {
-      if (skillList._2 == baseClass) return skillList._1
+      if (skillList._2.equalsIgnoreCase(baseClass)) return skillList._1
     }
     List()
   }

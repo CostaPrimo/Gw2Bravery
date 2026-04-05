@@ -19,7 +19,7 @@ class TrinketComponent {
   private val accessory1 = new Accessory(statRoller.ultimateBraveryV2, infusionRoller.ultimateBravery)
   private val accessory2 = new Accessory(statRoller.ultimateBraveryV2, infusionRoller.ultimateBravery)
   private val backpack = new Backpack(statRoller.ultimateBraveryV2, infusionRoller.ultimateBravery, infusionRoller.ultimateBravery)
-  private val amulet = statRoller.ultimateBravery
+  private val amulet = statRoller.ultimateBraveryV2.getName
 
   def toJsonString: String = {
     "{" +

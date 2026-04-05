@@ -1,6 +1,6 @@
 package UltimateBravery.src.main.ClassSpecific.Objects
 
-import org.json.{JSONArray, JSONObject}
+import org.json.JSONObject
 
 class Traitline(name: String, id: Int, adeptTraits: List[Gw2Trait], masterTraits: List[Gw2Trait], grandmasterTraits: List[Gw2Trait]) {
   def getName: String = this.name

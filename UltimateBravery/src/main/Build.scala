@@ -20,22 +20,13 @@ class Build(chosenClass: String) {
 
   private val food = new Food().ultimateBravery
   private val utility = new Utility().ultimateBravery
-  private val relic = new Relics().ultimateBravery
+  private val relic = new Relics().ultimateBraveryV2
 
   private val keybinds = new Keybinds().ultimateBravery
-
-  def iAmBrave(): String = {
-    rollClass()
-    toJsonString
-    // println(toJsonString)
-    // println("---SUIT UP AND HEAD TO BATTLE!---")
-  }
 
   def iAmLessBrave(): String = {
     rollClass()
     toSimpleJsonString
-    // println(toSimpleJsonString)
-    // println("---SUIT UP AND HEAD TO BATTLE!---")
   }
 
   def iAmCorePvPBrave(): String = {
@@ -64,21 +55,6 @@ class Build(chosenClass: String) {
     skills = new SkillsComponent(baseClass, classRoll)
   }
 
-  private def toJsonString: String = {
-    "{\n" +
-      "\"Class\": \"" + classRoll + "\",\n" +
-      "\"Traits\": " + traits.toJsonString + ",\n" +
-      "\"Skills\": " + skills.toJsonString + ",\n" +
-      "\"Armour\": " + armour.toJsonString + ",\n" +
-      "\"Weapons\": " + weapons.toJsonString + ",\n" +
-      "\"Trinkets\": " + trinkets.toJsonString + ",\n" +
-      "\"Relic\":  \"" + relic + "\",\n" +
-      "\"Food\": \"" + food + "\",\n" +
-      "\"Utility\": \"" + utility + "\",\n" +
-      "\"Keybinds\": \"" + getKeybindString + "\"\n" +
-    "}"
-  }
-
   private def toSimpleJsonString: String = {
     "{\n" +
       "\"Class\": \"" + classRoll + "\",\n" +
@@ -87,7 +63,7 @@ class Build(chosenClass: String) {
       "\"Armour\": " + armour.toSimpleJsonString + ",\n" +
       "\"Weapons\": " + weapons.toSimpleJsonString + ",\n" +
       "\"Trinkets\": " + trinkets.toSimpleJsonString + ",\n" +
-      "\"Relic\":  \"" + relic + "\",\n" +
+      "\"Relic\":  \"" + relic.getName + "\",\n" +
       "\"Food\": \"" + food + "\",\n" +
       "\"Utility\": \"" + utility + "\",\n" +
       "\"Keybinds\": \"" + getKeybindString + "\"\n" +
@@ -101,7 +77,7 @@ class Build(chosenClass: String) {
       "\"Skills\": " + skills.toJsonString + ",\n" +
       "\"Weapons\": " + weapons.toPvpJsonString + ",\n" +
       "\"Amulet\": " + armour.toPvPJsonString + ",\n" +
-      "\"Relic\":  \"" + relic + "\"\n" +
+      "\"Relic\":  \"" + relic.getName + "\"\n" +
     "}"
   }
 

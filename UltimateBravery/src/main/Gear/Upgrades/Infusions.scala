@@ -1,5 +1,7 @@
 package UltimateBravery.src.main.Gear.Upgrades
 
+import UltimateBravery.src.main.util.utility.rollRandomIndex
+
 class Infusions {
 
   val infusions: List[String] = List(
@@ -14,7 +16,7 @@ class Infusions {
   )
 
   def ultimateBravery: String = {
-    val roll = Math.round(Math.random() * (infusions.length - 1)).toInt
+    val roll = rollRandomIndex(infusions.size)
     infusions(roll)
   }
 

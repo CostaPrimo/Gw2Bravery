@@ -1,6 +1,7 @@
 package UltimateBravery.src.main.ClassSpecific
 
 import UltimateBravery.src.main.ClassSpecific.Objects.{Gw2Trait, Traitline}
+import UltimateBravery.src.main.util.utility.rollRandomIndex
 
 class Traitlines {
 
@@ -9,12 +10,6 @@ class Traitlines {
   private val TOP = "Top"
   private val MIDDLE = "Middle"
   private val BOTTOM = "Bottom"
-
-  private val traitRow: List[String] = List(
-    "Top",
-    "Middle",
-    "Bottom"
-  )
 
   private val guardianTraitsV2: List[Traitline] = List(
     new Traitline("Zeal", 42,
@@ -412,99 +407,6 @@ class Traitlines {
       List(new Gw2Trait(TOP, 2343), new Gw2Trait(MIDDLE, 2367), new Gw2Trait(BOTTOM, 2422)),
       List(new Gw2Trait(TOP, 2353), new Gw2Trait(MIDDLE, 2414), new Gw2Trait(BOTTOM, 2441)))
 
-  private val guardianTraits: List[String] = List(
-    "Zeal",
-    "Radiance",
-    "Valor",
-    "Honor",
-    "Virtues"
-  )
-
-  private val revenantTraits: List[String] = List(
-    "Corruption",
-    "Retribution",
-    "Salvation",
-    "Invocation",
-    "Devastation",
-  )
-
-  private val warriorTraits: List[String] = List(
-    "Strength",
-    "Arms",
-    "Defense",
-    "Tactics",
-    "Discipline"
-  )
-
-  private val engineerTraits: List[String] = List(
-    "Explosives",
-    "Firearms",
-    "Inventions",
-    "Alchemy",
-    "Tools"
-  )
-
-  private val rangerTraits: List[String] = List(
-    "Marksmanship",
-    "Skirmishing",
-    "Wilderness Survival",
-    "Nature Magic",
-    "Beastmastery"
-  )
-
-  private val thiefTraits: List[String] = List(
-    "Deadly Arts",
-    "Critical Strikes",
-    "Shadows Arts",
-    "Acrobatics",
-    "Trickery"
-  )
-
-  private val elementalistTraits: List[String] = List(
-    "Fire",
-    "Water",
-    "Earth",
-    "Air",
-    "Arcane"
-  )
-
-  private val mesmerTraits: List[String] = List(
-    "Dueling",
-    "Inspiration",
-    "Illusions",
-    "Chaos",
-    "Domination"
-  )
-
-  private val necromancerTraits: List[String] = List(
-    "Spite",
-    "Curses",
-    "Death Magic",
-    "Blood Magic",
-    "Soul Reaping"
-  )
-
-  def ultimateBravery(baseClass: String): String ={
-    val roll = rollRandomIndex(5)
-    baseClass match {
-      case classes.GUARDIAN => guardianTraits(roll)
-      case classes.WARRIOR => warriorTraits(roll)
-      case classes.REVENANT => revenantTraits(roll)
-      case classes.ENGINEER => engineerTraits(roll)
-      case classes.RANGER => rangerTraits(roll)
-      case classes.THIEF => thiefTraits(roll)
-      case classes.ELEMENTALIST => elementalistTraits(roll)
-      case classes.MESMER => mesmerTraits(roll)
-      case classes.NECROMANCER => necromancerTraits(roll)
-      case _ => "Error"
-    }
-  }
-
-  def rollTraitRow: String = {
-    val roll = rollRandomIndex(traitRow.size)
-    traitRow(roll)
-  }
-
   def eliteUltimateBravery(classRoll: String): Traitline = {
     classRoll match {
       case classes.DRAGONHUNTER => randomizeTraitline(List(dragonhunterTraits), 0)
@@ -575,9 +477,5 @@ class Traitlines {
       List(traitline.getMasterTraits(masterRoll)),
       List(traitline.getGrandmasterTraits(grandmasterRoll))
     )
-  }
-
-  private def rollRandomIndex(indices: Int): Int = {
-    Math.round(Math.random() * (indices-1)).toInt
   }
 }

@@ -44,10 +44,7 @@ class Weapon(stats: Stat, sigil1: Sigil, sigil2: Sigil, infusion1: String, infus
   }
 
   def equals(weapon: Weapon): Boolean = {
-    if(this.weaponBase.equals(weapon.getWeaponBase)
-      && this.stats.equals(weapon.getStats)
-      && this.sigil1.equals(weapon.getSigil1)
-      && this.sigil2.equals(weapon.getSigil2)
+    if(equalsLite(weapon)
       && this.infusion1.equals(weapon.getInfusion1)
       && this.infusion2.equals(weapon.getInfusion2)
     ) return true
