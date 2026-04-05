@@ -1,6 +1,7 @@
 package UltimateBravery.src.main.Aggregates
 
 import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.Relic
+import UltimateBravery.src.main.util.utility.checkNull
 import org.json.JSONObject
 
 class BuildAggregate(armourAggregate: ArmourAggregate,
@@ -41,11 +42,11 @@ class BuildAggregate(armourAggregate: ArmourAggregate,
 
   def getJsonObject: JSONObject = {
     new JSONObject()
-      .put("armour", this.armourAggregate.getJsonObject)
-      .put("trinkets", this.trinketAggregate.getJsonObject)
-      .put("weapons", this.weaponAggregate.getJsonObject)
-      .put("traits", this.traitlineAggregate.getJsonObject)
-      .put("skills", new JSONObject(this.skillAggregate))
-      .put("relic", this.relic.getJsonObject)
+      .put("armour", checkNull(this.armourAggregate, this.armourAggregate.getJsonObject))
+      .put("trinkets", checkNull(this.trinketAggregate, this.trinketAggregate.getJsonObject))
+      .put("weapons", checkNull(this.weaponAggregate, this.weaponAggregate.getJsonObject))
+      .put("traits", checkNull(this.traitlineAggregate, this.traitlineAggregate.getJsonObject))
+      .put("skills", checkNull(this.skillAggregate, new JSONObject(this.skillAggregate)))
+      .put("relic", checkNull(this.relic, this.relic.getJsonObject))
   }
 }

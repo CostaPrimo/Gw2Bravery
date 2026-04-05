@@ -1,10 +1,11 @@
-package UltimateBravery.src.main.Aggregates
+package UltimateBravery.src.main
 
+import UltimateBravery.src.main.Aggregates._
 import UltimateBravery.src.main.ClassSpecific.Objects.{Legend, Pet, Traitline}
-import UltimateBravery.src.main.ClassSpecific.{Classes, Legends, Pets, Traitlines, Weapons}
-import UltimateBravery.src.main.Gear.{Accessory, Armour, Backpack, Ring, Weapon}
-import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Relics, Runes, Sigils, Stats}
-import UltimateBravery.src.main.Skills.{EliteSkills, HealSkills, Skill, UtilitySkills}
+import UltimateBravery.src.main.ClassSpecific._
+import UltimateBravery.src.main.Gear.Upgrades._
+import UltimateBravery.src.main.Gear._
+import UltimateBravery.src.main.Skills.{Skill, AllSkills}
 import org.json.{JSONArray, JSONObject}
 
 class BuildV2(chosenClass: String) {
@@ -18,9 +19,7 @@ class BuildV2(chosenClass: String) {
   private val WEAPONS = new Weapons
   private val RELICS = new Relics
   private val TRAITLINES = new Traitlines
-  private val HEALSKILLS = new HealSkills
-  private val UTILITYSKILLS = new UtilitySkills
-  private val ELITESKILLS = new EliteSkills
+  private val ALLSKILLS = new AllSkills
 
   private val PETS = new Pets
   private val LEGENDS = new Legends
@@ -150,19 +149,19 @@ class BuildV2(chosenClass: String) {
   private def createSkillAggregate: SkillAggregate = {
     if(BASECLASS.equalsIgnoreCase(CLASSES.REVENANT)) return new SkillAggregate(null, null, null, null, null)
 
-    var generatedSkills: List[Skill] = List(UTILITYSKILLS.ultimateBraveryV2(chosenClass))
+    var generatedSkills: List[Skill] = List(ALLSKILLS.ultimateBraveryUtility(chosenClass))
     while (generatedSkills.size < 3) {
       val currentSkills = generatedSkills.map(s => s.getName)
-      val randomSkill = UTILITYSKILLS.ultimateBraveryV2(chosenClass)
+      val randomSkill = ALLSKILLS.ultimateBraveryUtility(chosenClass)
       if (!currentSkills.contains(randomSkill.getName)) generatedSkills = randomSkill :: generatedSkills
     }
 
     new SkillAggregate(
-      HEALSKILLS.ultimateBraveryV2(chosenClass),
+      ALLSKILLS.ultimateBraveryHeal(chosenClass),
       generatedSkills(0),
       generatedSkills(1),
       generatedSkills(2),
-      ELITESKILLS.ultimateBraveryV2(chosenClass)
+      ALLSKILLS.ultimateBraveryElite(chosenClass)
     )
   }
 

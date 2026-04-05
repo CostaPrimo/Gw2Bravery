@@ -6,7 +6,7 @@ class EliteSkills {
 
   private val classes = new Classes
 
-  private val warriorSkillsV2: List[Skill] = List(
+  private val warriorEliteSkillsV2: List[Skill] = List(
     new Skill("We Will Never Yield!",76562, classes.PARAGON),
     new Skill("Tactical Reload",62901, classes.BLADESWORN),
     new Skill("Winds of Disenchantment",45333, classes.SPELLBREAKER),
@@ -16,16 +16,7 @@ class EliteSkills {
     new Skill("Battle Standard",14419, classes.WARRIOR)
   )
 
-  private val warriorSkills: List[(String, String)] = List(
-    ("Battle Standard", classes.WARRIOR),
-    ("Rampage", classes.WARRIOR),
-    ("Signet of Rage", classes.WARRIOR),
-    ("Head Butt", classes.BERSERKER),
-    ("Winds of Disenchantment", classes.SPELLBREAKER),
-    ("Tactical Reload", classes.BLADESWORN),
-  )
-
-  private val guardianSkillsV2: List[Skill] = List(
+  private val guardianEliteSkillsV2: List[Skill] = List(
     new Skill("Daring Advance",76687, classes.LUMINARY),
     new Skill("Heaven's Palm",62561, classes.WILLBENDER),
     new Skill("Mantra of Liberation",43357, classes.FIREBRAND),
@@ -35,16 +26,7 @@ class EliteSkills {
     new Skill("Feel My Wrath!",29965, classes.GUARDIAN)
   )
 
-  private val guardianSkills: List[(String, String)] = List(
-    ("Renewed Focus", classes.GUARDIAN),
-    ("Feel My Wrath!", classes.GUARDIAN),
-    ("Signet of Courage", classes.GUARDIAN),
-    ("Dragon's Maw", classes.DRAGONHUNTER),
-    ("Mantra of Liberation", classes.FIREBRAND),
-    ("Heaven's Palm", classes.WILLBENDER)
-  )
-
-  private val revenantSkillsV2: List[Skill] = List(
+  private val revenantEliteSkillsV2: List[Skill] = List(
     new Skill("Legendary Entity Stance",76968, classes.CONDUIT),
     new Skill("Legendary Alliance Stance",62942, classes.VINDICATOR),
     new Skill("Legendary Renegade Stance",45773, classes.RENEGADE),
@@ -55,17 +37,7 @@ class EliteSkills {
     new Skill("Legendary Dwarf Stance",27975, classes.REVENANT)
   )
 
-  private val revenantSkills: List[(String, String)] = List(
-    ("Legendary Assassin Stance", classes.REVENANT),
-    ("Legendary Centaur Stance", classes.REVENANT),
-    ("Legendary Demon Stance", classes.REVENANT),
-    ("Legendary Dwarf Stance", classes.REVENANT),
-    ("Legendary Dragon Stance", classes.HERALD),
-    ("Legendary Renegade Stance", classes.RENEGADE),
-    ("Legendary Alliance Stance", classes.VINDICATOR)
-  )
-
-  private val engineerSkillsV2: List[Skill] = List(
+  private val engineerEliteSkillsV2: List[Skill] = List(
     new Skill("Flux State",76993, classes.AMALGAM),
     new Skill("Prime Light Beam",42009, classes.HOLOSMITH),
     new Skill("Overclock Signet",63095, classes.MECHANIST),
@@ -75,16 +47,7 @@ class EliteSkills {
     new Skill("Supply Crate",5868, classes.ENGINEER)
   )
 
-  private val engineerSkills: List[(String, String)] = List(
-    ("Elixir X", classes.ENGINEER),
-    ("Elite Mortar Kit", classes.ENGINEER),
-    ("Supply Crate", classes.ENGINEER),
-    ("Sneak Gyro", classes.SCRAPPER),
-    ("Prime Light Beam", classes.HOLOSMITH),
-    ("Overclock Signet", classes.MECHANIST),
-  )
-
-  private val thiefSkillsV2: List[Skill] = List(
+  private val thiefEliteSkillsV2: List[Skill] = List(
     new Skill("Skritt Scuffle",77255, classes.ANTIQUARY),
     new Skill("Shadowfall",63275, classes.SPECTER),
     new Skill("Shadow Meld",45508, classes.DEADEYE),
@@ -94,16 +57,7 @@ class EliteSkills {
     new Skill("Thieves Guild",13082, classes.THIEF)
   )
 
-  private val thiefSkills: List[(String, String)] = List(
-    ("Thieves Guild", classes.THIEF),
-    ("Dagger Storm", classes.THIEF),
-    ("Basilisk Venom", classes.THIEF),
-    ("Impact Strike", classes.DAREDEVIL),
-    ("Shadow Meld", classes.DEADEYE),
-    ("Shadowfall", classes.SPECTER),
-  )
-
-  private val rangerSkillsV2: List[Skill] = List(
+  private val rangerEliteSkillsV2: List[Skill] = List(
     new Skill("Perfect Storm",76979, classes.GALESHOT),
     new Skill("Forest's Fortification",63163, classes.UNTAMED),
     new Skill("One Wolf Pack",45717, classes.SOULBEAST),
@@ -113,16 +67,7 @@ class EliteSkills {
     new Skill("Strength of the Pack!",12516, classes.RANGER)
   )
 
-  private val rangerSkills: List[(String, String)] = List(
-    ("Strength of the Pack!", classes.RANGER),
-    ("Spirit of Nature", classes.RANGER),
-    ("Entangle", classes.RANGER),
-    ("Glyph of the Stars", classes.DRUID),
-    ("One Wolf Pack", classes.SOULBEAST),
-    ("Forest's Fortification", classes.UNTAMED),
-  )
-
-  private val mesmerSkillsV2: List[Skill] = List(
+  private val mesmerEliteSkillsV2: List[Skill] = List(
     new Skill("Tale of the August Queen",76971, classes.TROUBADOUR),
     new Skill("Thousand Cuts",24755, classes.VIRTUOSO),
     new Skill("Jaunt",45449, classes.MIRAGE),
@@ -132,16 +77,7 @@ class EliteSkills {
     new Skill("Signet of Humility",29519, classes.MESMER)
   )
 
-  private val mesmerSkills: List[(String, String)] = List(
-    ("Time Warp", classes.MESMER),
-    ("Mass Invisibility", classes.MESMER),
-    ("Signet of Humility", classes.MESMER),
-    ("Gravity Well", classes.CHRONOMANCER),
-    ("Jaunt", classes.MIRAGE),
-    ("Thousand Cuts", classes.VIRTUOSO),
-  )
-
-  private val necromancerSkillsV2: List[Skill] = List(
+  private val necromancerEliteSkillsV2: List[Skill] = List(
     new Skill("Xinrae's Weapon",76941, classes.RITUALIST),
     new Skill("Elixir of Ambition",62655, classes.HARBINGER),
     new Skill("Ghastly Breach",42355, classes.SCOURGE),
@@ -151,16 +87,7 @@ class EliteSkills {
     new Skill("Plaguelands",10549, classes.NECROMANCER)
   )
 
-  private val necromancerSkills: List[(String, String)] = List(
-    ("Plaguelands", classes.NECROMANCER),
-    ("Summon Flesh Golem", classes.NECROMANCER),
-    ("Lich Form", classes.NECROMANCER),
-    ("Chilled to the Bone!", classes.REAPER),
-    ("Ghastly Breach", classes.SCOURGE),
-    ("Elixir of Ambition", classes.HARBINGER),
-  )
-
-  private val elementalistSkillsV2: List[Skill] = List(
+  private val elementalistEliteSkillsV2: List[Skill] = List(
     new Skill("Elemental Procession",76841, classes.EVOKER),
     new Skill("Elemental Celerity",62725, classes.CATALYST),
     new Skill("Weave Self",43638, classes.WEAVER),
@@ -170,87 +97,15 @@ class EliteSkills {
     new Skill("Glyph of Elementals",5666, classes.ELEMENTALIST)
   )
 
-  private val elementalistSkills: List[(String, String)] = List(
-    ("Tornado", classes.ELEMENTALIST),
-    ("Conjure Fiery Greatsword", classes.ELEMENTALIST),
-    ("Glyph of Elementals", classes.ELEMENTALIST),
-    ("Rebound!", classes.TEMPEST),
-    ("Weave Self", classes.WEAVER),
-    ("Elemental Celerity", classes.CATALYST),
+  val eliteSkillListsV2: List[(List[Skill], String)] = List(
+    (warriorEliteSkillsV2, classes.WARRIOR),
+    (guardianEliteSkillsV2, classes.GUARDIAN),
+    (revenantEliteSkillsV2, classes.REVENANT),
+    (engineerEliteSkillsV2, classes.ENGINEER),
+    (rangerEliteSkillsV2, classes.RANGER),
+    (thiefEliteSkillsV2, classes.THIEF),
+    (mesmerEliteSkillsV2, classes.MESMER),
+    (necromancerEliteSkillsV2, classes.NECROMANCER),
+    (elementalistEliteSkillsV2, classes.ELEMENTALIST)
   )
-
-  private val skillLists: List[(List[(String, String)], String)] = List(
-    (warriorSkills, classes.WARRIOR),
-    (guardianSkills, classes.GUARDIAN),
-    (revenantSkills, classes.REVENANT),
-    (engineerSkills, classes.ENGINEER),
-    (rangerSkills, classes.RANGER),
-    (thiefSkills, classes.THIEF),
-    (mesmerSkills, classes.MESMER),
-    (necromancerSkills, classes.NECROMANCER),
-    (elementalistSkills, classes.ELEMENTALIST)
-  )
-
-  private val skillListsV2: List[(List[Skill], String)] = List(
-    (warriorSkillsV2, classes.WARRIOR),
-    (guardianSkillsV2, classes.GUARDIAN),
-    (revenantSkillsV2, classes.REVENANT),
-    (engineerSkillsV2, classes.ENGINEER),
-    (rangerSkillsV2, classes.RANGER),
-    (thiefSkillsV2, classes.THIEF),
-    (mesmerSkillsV2, classes.MESMER),
-    (necromancerSkillsV2, classes.NECROMANCER),
-    (elementalistSkillsV2, classes.ELEMENTALIST)
-  )
-
-  def ultimateBravery(classRoll: String): String = {
-    val baseClass = classes.getBaseClass(classRoll)
-    val skillList = filterSkills(getSkillList(baseClass), baseClass, classRoll)
-    if(skillList.isEmpty) "error"
-    else {
-      val roll = Math.round(Math.random() * (skillList.length - 1)).toInt
-      skillList(roll)._1
-    }
-  }
-
-  private def filterSkills(skillList: List[(String, String)], baseClass: String, eliteSpec: String): List[(String, String)] = {
-    var newList: List[(String, String)] = List()
-    for (skill <- skillList) {
-      if (skill._2 == baseClass || skill._2 == eliteSpec) newList = skill :: newList
-    }
-    newList
-  }
-
-  private def getSkillList(baseClass: String): List[(String, String)] = {
-    for(skillList <- skillLists) {
-      if(skillList._2 == baseClass) return skillList._1
-    }
-    List()
-  }
-
-  def ultimateBraveryV2(classRoll: String): Skill = {
-    val baseClass = classes.getBaseClass(classRoll)
-    val skillList = filterSkillsV2(getSkillListV2(baseClass), baseClass, classRoll)
-    if (skillList.isEmpty) new Skill("Error", -1, "Error")
-    else {
-      val roll = Math.round(Math.random() * (skillList.length - 1)).toInt
-      skillList(roll)
-    }
-  }
-
-  def getSkillListV2(baseClass: String): List[Skill] = {
-    for (skillList <- skillListsV2) {
-      if (skillList._2 == baseClass) return skillList._1
-    }
-    List()
-  }
-
-  def filterSkillsV2(skillList: List[Skill], baseClass: String, chosenClass: String): List[Skill] = {
-    var newList: List[Skill] = List()
-    for (skill <- skillList) {
-      if (skill.getClassName.equalsIgnoreCase(baseClass) || skill.getClassName.equalsIgnoreCase(chosenClass)) newList = skill :: newList
-    }
-    newList
-  }
-
 }

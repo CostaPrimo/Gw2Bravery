@@ -1,7 +1,6 @@
 package UltimateBravery
 
-import UltimateBravery.src.main.Aggregates.BuildV2
-import UltimateBravery.src.main.Build
+import UltimateBravery.src.main.{Build, BuildV2}
 import UltimateBravery.src.main.ClassSpecific.Classes
 import com.sun.net.httpserver.{HttpExchange, HttpHandler, HttpServer}
 import org.json.JSONArray
@@ -17,7 +16,6 @@ object Backend {
   def main(args: Array[String]): Unit = {
     val server: HttpServer = HttpServer.create(new InetSocketAddress(8080), 0)
     server.createContext("/ultimatebravery/simple", new SimpleHandler())
-    server.createContext("/ultimatebravery/complex", new ComplexHandler())
     server.createContext("/v2/ultimatebravery/complex", new ComplexHandlerV2())
     server.createContext("/ultimatebravery/pvp", new PvPHandler())
     server.createContext("/apitest", new ApiHandler())
@@ -80,21 +78,6 @@ object Backend {
       println("Received request")
       val build = new Build("random")
       val response = build.iAmCorePvPBrave()
-      exchange.getResponseHeaders.set("Access-Control-Allow-Origin", "*")
-      exchange.sendResponseHeaders(200, response.length)
-      val os: OutputStream = exchange.getResponseBody
-      os.write(response.getBytes)
-      os.close()
-    }
-  }
-
-  class ComplexHandler extends HttpHandler {
-    override def handle(exchange: HttpExchange): Unit = {
-      println("Received request")
-      val query = exchange.getRequestURI.getQuery
-      val chosenClass = extractClassFromQueryParams(query)
-      val build = new Build(chosenClass)
-      val response = build.iAmBrave()
       exchange.getResponseHeaders.set("Access-Control-Allow-Origin", "*")
       exchange.sendResponseHeaders(200, response.length)
       val os: OutputStream = exchange.getResponseBody
