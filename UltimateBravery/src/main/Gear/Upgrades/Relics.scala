@@ -113,8 +113,16 @@ class Relics {
       new Relic("Relic of Zakiros", List(101955, 101944))
   )
 
-  def ultimateBraveryV2: Relic = {
-    val roll = Math.round(Math.random() * (relicsV2.length - 1)).toInt
-    relicsV2(roll)
-  }
+    def ultimateBraveryV2: Relic = {
+        val roll = Math.round(Math.random() * (relicsV2.length - 1)).toInt
+        relicsV2(roll)
+    }
+
+    def getRelicById(id: Int): Relic = {
+        for(relic <- relicsV2) {
+            if(relic.containId(id)) return relic
+        }
+        new Relic("Error", List())
+    }
+
 }

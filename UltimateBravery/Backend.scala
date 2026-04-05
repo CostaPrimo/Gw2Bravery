@@ -1,9 +1,9 @@
 package UltimateBravery
 
-import UltimateBravery.src.main.{Build, BuildV2}
+import UltimateBravery.src.main.{ApiHelpers, Build, BuildV2}
 import UltimateBravery.src.main.ClassSpecific.Classes
 import com.sun.net.httpserver.{HttpExchange, HttpHandler, HttpServer}
-import org.json.JSONArray
+import org.json.{JSONArray, JSONObject}
 
 import java.io.OutputStream
 import java.net.{InetSocketAddress, URI, URLEncoder}
@@ -16,7 +16,7 @@ object Backend {
   def main(args: Array[String]): Unit = {
     val server: HttpServer = HttpServer.create(new InetSocketAddress(8080), 0)
     server.createContext("/ultimatebravery/simple", new SimpleHandler())
-    server.createContext("/v2/ultimatebravery/complex", new ComplexHandlerV2())
+    server.createContext("/v2/ultimatebravery", new ComplexHandlerV2())
     server.createContext("/ultimatebravery/pvp", new PvPHandler())
     server.createContext("/apitest", new ApiHandler())
     server.setExecutor(null)
@@ -26,12 +26,18 @@ object Backend {
   }
 
   class ApiHandler extends HttpHandler {
+    private val ApiHelpers: ApiHelpers = new ApiHelpers
+
     override def handle(exchange: HttpExchange): Unit = {
       println("Received api request")
-      val api_key = ""
-      val charName = URLEncoder.encode("", "UTF-8")
 
-      val auth = String.format("Bearer %s", api_key)
+      val query = exchange.getRequestURI.getQuery
+      val apiKey = extractQueryParamFromQueryParams(query, "apikey")
+      val character = extractQueryParamFromQueryParams(query, "character")
+
+      val charName = URLEncoder.encode(character, "UTF-8")
+
+      val auth = String.format("Bearer %s", apiKey)
       val path = String.format("https://api.guildwars2.com/v2/characters?id=%s", charName)
       // https://api.guildwars2.com/v2/characters/%s/skills
       // https://api.guildwars2.com/v2/characters/%s/specializations
@@ -45,16 +51,14 @@ object Backend {
           .build()
         println("Sending request")
         val response = client.send(request, HttpResponse.BodyHandlers.ofString())
-        val body: JSONArray = new JSONArray(response.body())
-      } catch {
-        case e: Exception => println(e)
-      }
+        val body = ApiHelpers.convertCharacterObjectToAggregates(new JSONObject(response.body()))
 
-      exchange.getResponseHeaders.set("Access-Control-Allow-Origin", "*")
-      exchange.sendResponseHeaders(200, "OK".length)
-      val os: OutputStream = exchange.getResponseBody
-      os.write("OK".getBytes())
-      os.close()
+        closeExchangeWithStatusAndBody(exchange, 200, body.getJsonObject.toString)
+      } catch {
+        case e: Exception =>
+          e.printStackTrace()
+          closeExchangeWithStatusAndBody(exchange, 500, e.getMessage)
+      }
     }
   }
 
@@ -62,14 +66,10 @@ object Backend {
     override def handle(exchange: HttpExchange): Unit = {
       println("Received request")
       val query = exchange.getRequestURI.getQuery
-      val chosenClass = extractClassFromQueryParams(query)
+      val chosenClass = extractQueryParamFromQueryParams(query, "class")
       val build = new Build(chosenClass)
       val response = build.iAmLessBrave()
-      exchange.getResponseHeaders.set("Access-Control-Allow-Origin", "*")
-      exchange.sendResponseHeaders(200, response.length)
-      val os: OutputStream = exchange.getResponseBody
-      os.write(response.getBytes)
-      os.close()
+      closeExchangeWithStatusAndBody(exchange, 200, response)
     }
   }
 
@@ -78,11 +78,7 @@ object Backend {
       println("Received request")
       val build = new Build("random")
       val response = build.iAmCorePvPBrave()
-      exchange.getResponseHeaders.set("Access-Control-Allow-Origin", "*")
-      exchange.sendResponseHeaders(200, response.length)
-      val os: OutputStream = exchange.getResponseBody
-      os.write(response.getBytes)
-      os.close()
+      closeExchangeWithStatusAndBody(exchange, 200, response)
     }
   }
 
@@ -90,7 +86,7 @@ object Backend {
     override def handle(exchange: HttpExchange): Unit = {
       println("Received request")
       val query = exchange.getRequestURI.getQuery
-      val chosenClass = extractClassFromQueryParams(query)
+      val chosenClass = extractQueryParamFromQueryParams(query, "class")
       var classRoll = ""
 
       if (CLASSES.getAllClasses.contains(chosenClass)) {
@@ -101,21 +97,23 @@ object Backend {
 
       val build = new BuildV2(classRoll)
       val response = build.getJsonObject.toString
-      exchange.getResponseHeaders.set("Access-Control-Allow-Origin", "*")
-      exchange.sendResponseHeaders(200, response.length)
-      val os: OutputStream = exchange.getResponseBody
-      os.write(response.getBytes)
-      os.close()
+      closeExchangeWithStatusAndBody(exchange, 200, response)
     }
   }
 
+  private def closeExchangeWithStatusAndBody(exchange: HttpExchange, status: Int, responseBody: String): Unit = {
+    exchange.getResponseHeaders.set("Access-Control-Allow-Origin", "*")
+    exchange.sendResponseHeaders(status, responseBody.length)
+    val os: OutputStream = exchange.getResponseBody
+    os.write(responseBody.getBytes)
+    os.close()
+  }
 
-
-  def extractClassFromQueryParams(query: String): String = {
+  private def extractQueryParamFromQueryParams(query: String, param: String): String = {
     val queryParams = query.split("&")
     for (i <- queryParams) {
       val queryDef = i.split("=")
-      if (queryDef(0).toLowerCase == "class") {
+      if (queryDef(0).toLowerCase.equalsIgnoreCase(param)) {
         return queryDef(1).capitalize
       }
     }

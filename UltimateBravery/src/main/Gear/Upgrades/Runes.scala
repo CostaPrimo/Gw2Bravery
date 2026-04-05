@@ -110,4 +110,11 @@ class Runes {
     val roll = Math.round(Math.random() * (runesV2.size - 1)).toInt
     runesV2(roll)
   }
+
+  def getRunebyId(id: Int): Rune = {
+    for(rune <- runesV2){
+        if(rune.containId(id)) return rune
+    }
+    new Rune("Error", List())
+  }
 }

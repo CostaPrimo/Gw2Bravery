@@ -67,6 +67,13 @@ class Stats {
     "Rabid"
   )
 
+  def getStatById(id: Int): Stat = {
+    for (stat <- statsV2) {
+      if (stat.getIds.contains(id)) return stat
+    }
+    new Stat("Error", List())
+  }
+
   def ultimateBraveryV2: Stat = {
     val roll = rollRandomIndex(statsV2.size)
     statsV2(roll)

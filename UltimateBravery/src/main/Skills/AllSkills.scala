@@ -23,6 +23,27 @@ class AllSkills {
     ultimateBravery(classRoll, eliteSkills.eliteSkillListsV2)
   }
 
+  def getHealSkillByIdAndBaseClass(id: Int, baseClass: String): Skill = {
+    getSkillByIdAndBaseClass(healSkills.healSkillListsV2, id, baseClass)
+  }
+
+  def getUtilitySkillByIdAndBaseClass(id: Int, baseClass: String): Skill = {
+    getSkillByIdAndBaseClass(utilitySkills.utilitySkillListsV2, id, baseClass)
+  }
+
+  def getEliteSkillByIdAndBaseClass(id: Int, baseClass: String): Skill = {
+    getSkillByIdAndBaseClass(eliteSkills.eliteSkillListsV2, id, baseClass)
+  }
+
+  private def getSkillByIdAndBaseClass(skillLists: List[(List[Skill], String)], id: Int, baseClass: String): Skill = {
+    val allSkills = getSkillList(baseClass, skillLists)
+
+    for(skill <- allSkills) {
+      if (skill.getId == id) return skill
+    }
+    new Skill("Error", -1, "Error")
+  }
+
   private def ultimateBravery(classRoll: String, skillLists: List[(List[Skill], String)]): Skill = {
     val baseClass = CLASSES.getBaseClass(classRoll)
     val skillList = filterSkills(getSkillList(baseClass, skillLists), baseClass, classRoll)

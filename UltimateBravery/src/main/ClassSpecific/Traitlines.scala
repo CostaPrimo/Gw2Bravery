@@ -407,6 +407,56 @@ class Traitlines {
       List(new Gw2Trait(TOP, 2343), new Gw2Trait(MIDDLE, 2367), new Gw2Trait(BOTTOM, 2422)),
       List(new Gw2Trait(TOP, 2353), new Gw2Trait(MIDDLE, 2414), new Gw2Trait(BOTTOM, 2441)))
 
+  private val allGuardianTraitLines: List[Traitline] = guardianTraitsV2 :::
+  List(dragonhunterTraits, firebrandTraits, willbenderTraits, luminaryTraits)
+
+  private val allRevenantTraitLines: List[Traitline] = revenantTraitsV2 :::
+    List(heraldTraits, renegadeTraits, vindicatorTraits, conduitTraits)
+
+  private val allWarriorTraitLines: List[Traitline] = warriorTraitsV2 :::
+    List(berserkerTraits, spellbreakerTraits, bladeswornTraits, paragonTraits)
+
+  private val allEngineerTraitLines: List[Traitline] = engineerTraitsV2 :::
+    List(scrapperTraits, holosmithTraits, mechanistTraits, amalgamTraits)
+
+  private val allRangerTraitLines: List[Traitline] = rangerTraitsV2 :::
+    List(druidTraits, soulbeastTraits, untamedTraits, galeshotTraits)
+
+  private val allThiefTraitLines: List[Traitline] = thiefTraitsV2 :::
+    List(daredevilTraits, deadeyeTraits, specterTraits, antiquaryTraits)
+
+  private val allElementalistTraitLines: List[Traitline] = elementalistTraitsV2 :::
+    List(tempestTraits, weaverTraits, conduitTraits, evokerTraits)
+
+  private val allMesmerTraitLines: List[Traitline] = mesmerTraitsV2 :::
+    List(chronomancerTraits, mirageTraits, virtuosoTraits, troubadourTraits)
+
+  private val allNecromanerTraitLines: List[Traitline] = necromancerTraitsV2 :::
+    List(reaperTraits, scourgeTraits, harbingerTraits, ritualistTraits)
+
+
+  def getTraitLineByIdAndBaseClass(id: Int, baseClass: String): Traitline = {
+    baseClass match {
+      case classes.WARRIOR => findTraitlineWithId(id, allWarriorTraitLines)
+      case classes.GUARDIAN => findTraitlineWithId(id, allGuardianTraitLines)
+      case classes.REVENANT => findTraitlineWithId(id, allRevenantTraitLines)
+      case classes.ENGINEER => findTraitlineWithId(id, allEngineerTraitLines)
+      case classes.RANGER => findTraitlineWithId(id, allRangerTraitLines)
+      case classes.THIEF => findTraitlineWithId(id, allThiefTraitLines)
+      case classes.ELEMENTALIST => findTraitlineWithId(id, allElementalistTraitLines)
+      case classes.MESMER => findTraitlineWithId(id, allMesmerTraitLines)
+      case classes.NECROMANCER => findTraitlineWithId(id, allNecromanerTraitLines)
+      case _ => new Traitline("Error", -1, List(), List(), List())
+    }
+  }
+
+  private def findTraitlineWithId(id: Int, traitlines: List[Traitline]): Traitline = {
+    for(t <- traitlines) {
+      if (t.getId == id) return t
+    }
+    new Traitline("Error", -1, List(), List(), List())
+  }
+
   def eliteUltimateBravery(classRoll: String): Traitline = {
     classRoll match {
       case classes.DRAGONHUNTER => randomizeTraitline(List(dragonhunterTraits), 0)

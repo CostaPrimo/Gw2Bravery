@@ -1,7 +1,6 @@
 package UltimateBravery.src.main.Aggregates
 
 import UltimateBravery.src.main.Gear.Weapon
-import UltimateBravery.src.main.util.utility.checkNull
 import org.json.JSONObject
 
 class WeaponAggregate (weaponA1: Weapon, weaponA2: Weapon, weaponB1: Weapon, weaponB2: Weapon){
@@ -31,12 +30,12 @@ class WeaponAggregate (weaponA1: Weapon, weaponA2: Weapon, weaponB1: Weapon, wea
   def getJsonObject: JSONObject = {
     new JSONObject()
       .put("weaponset 1", new JSONObject()
-        .put("mainHand", checkNull(this.weaponA1, this.weaponA1.getJsonObject))
-        .put("offHand", checkNull(this.weaponA2, this.weaponA2.getJsonObject))
+        .put("mainHand", if(this.weaponA1 == null) null else this.weaponA1.getJsonObject)
+        .put("offHand", if(this.weaponA2 == null) null else this.weaponA2.getJsonObject)
       )
       .put("weaponset 2", new JSONObject()
-        .put("mainHand", checkNull(this.weaponB1, this.weaponB1.getJsonObject))
-        .put("offHand", checkNull(this.weaponB2, this.weaponB2.getJsonObject))
+        .put("mainHand", if(this.weaponB1 == null) null else this.weaponB1.getJsonObject)
+        .put("offHand", if(this.weaponB2 == null) null else this.weaponB2.getJsonObject)
       )
   }
 }

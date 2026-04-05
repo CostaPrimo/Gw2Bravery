@@ -1,13 +1,15 @@
 package UltimateBravery.src.main.util
 
-object utility {
+import org.json.JSONObject
 
-  def checkNull(obj: Object, toReturn: Object): Object = {
-    if (obj == null) null
-    else toReturn
-  }
+object utility {
 
   def rollRandomIndex(size: Int): Int = {
     Math.round(Math.random() * (size-1)).toInt
+  }
+
+  def getValueIfKeyExists(jsonObject: JSONObject, key: String): JSONObject = {
+    if(jsonObject.has(key)) new JSONObject(jsonObject.get(key).toString)
+    else new JSONObject()
   }
 }
