@@ -2,11 +2,11 @@ package UltimateBravery.src.main.Gear
 
 import UltimateBravery.src.main.ClassSpecific.Objects.WeaponBase
 import UltimateBravery.src.main.ClassSpecific.Weapons
-import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.{Sigil, Stat}
+import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.{Infusion, Sigil, Stat}
 import UltimateBravery.src.main.Gear.Upgrades.Sigils
 import org.json.JSONObject
 
-class Weapon(stats: Stat, sigil1: Sigil, sigil2: Sigil, infusion1: String, infusion2: String, weaponBase: WeaponBase) {
+class Weapon(stats: Stat, sigil1: Sigil, sigil2: Sigil, infusion1: Infusion, infusion2: Infusion, weaponBase: WeaponBase) {
 
   private val WEAPONS: Weapons = new Weapons
   private val SIGILS: Sigils = new Sigils
@@ -19,8 +19,8 @@ class Weapon(stats: Stat, sigil1: Sigil, sigil2: Sigil, infusion1: String, infus
   def getStats: Stat = this.stats
   def getSigil1: Sigil = this.sigil1
   def getSigil2: Sigil = this.sigil2
-  def getInfusion1: String = this.infusion1
-  def getInfusion2: String = this.infusion2
+  def getInfusion1: Infusion = this.infusion1
+  def getInfusion2: Infusion = this.infusion2
   def getWeaponBase: WeaponBase = this.weaponBase
 
   def toJsonString: String = {
@@ -30,15 +30,15 @@ class Weapon(stats: Stat, sigil1: Sigil, sigil2: Sigil, infusion1: String, infus
         "\"Stats\": \"" + stats.getName + "\"," +
         "\"Sigil1\": \"" + sigil1.getName + "\"," +
         "\"Sigil2\": \"" + sigil2.getName + "\"," +
-        "\"Infusion1\": \"" + infusion1 + "\"," +
-        "\"Infusion2\": \"" + infusion2 + "\"" +
+        "\"Infusion1\": \"" + infusion1.getAttribute + "\"," +
+        "\"Infusion2\": \"" + infusion2.getAttribute + "\"" +
       "}"
     } else {
       "{" +
         "\"Weapon\": \"" + weaponBase.getName + "\"," +
         "\"Stats\": \"" + stats.getName + "\"," +
         "\"Sigil\": \"" + sigil1.getName + "\"," +
-        "\"Infusion\": \"" + infusion1 + "\"" +
+        "\"Infusion\": \"" + infusion1.getAttribute + "\"" +
       "}"
     }
   }
@@ -60,15 +60,13 @@ class Weapon(stats: Stat, sigil1: Sigil, sigil2: Sigil, infusion1: String, infus
     false
   }
 
-  if (sigil2 == null) {}
-
   def getJsonObject: JSONObject = {
     new JSONObject()
       .put("stats", this.stats.getJsonObject)
       .put("sigil1", if(sigil1 == null) { null } else { this.sigil1.getJsonObject })
       .put("sigil2", if(sigil2 == null) { null } else { this.sigil2.getJsonObject })
-      .put("infusion1", if(infusion1 == null) { null } else { this.infusion1 })
-      .put("infusion2", if(infusion2 == null) { null } else { this.infusion2 })
-      .put("weapon", if(this.weaponBase == null) null else new JSONObject(this.weaponBase))
+      .put("infusion1", if(infusion1 == null) { null } else { this.infusion1.getJsonObject })
+      .put("infusion2", if(infusion2 == null) { null } else { this.infusion2.getJsonObject })
+      .put("weapon", if(this.weaponBase == null) null else this.weaponBase.getJsonObject)
   }
 }

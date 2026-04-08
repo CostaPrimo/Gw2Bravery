@@ -25,21 +25,21 @@ class BuildV2(chosenClass: String) {
   private val LEGENDS = new Legends
 
   private val armourAggregate: ArmourAggregate = new ArmourAggregate(
-    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBravery),
-    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBravery),
-    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBravery),
-    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBravery),
-    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBravery),
-    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBravery)
+    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2),
+    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2),
+    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2),
+    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2),
+    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2),
+    new Armour(STATS.ultimateBraveryV2, RUNES.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2)
   )
 
   private val trinketAggregate: TrinketAggregate = new TrinketAggregate(
     STATS.ultimateBraveryV2.getName,
-    new Backpack(STATS.ultimateBraveryV2, INFUSIONS.ultimateBravery, INFUSIONS.ultimateBravery),
-    new Ring(STATS.ultimateBraveryV2, INFUSIONS.ultimateBravery, INFUSIONS.ultimateBravery, INFUSIONS.ultimateBravery),
-    new Ring(STATS.ultimateBraveryV2, INFUSIONS.ultimateBravery, INFUSIONS.ultimateBravery, INFUSIONS.ultimateBravery),
-    new Accessory(STATS.ultimateBraveryV2, INFUSIONS.ultimateBravery),
-    new Accessory(STATS.ultimateBraveryV2, INFUSIONS.ultimateBravery)
+    new Backpack(STATS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2),
+    new Ring(STATS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2),
+    new Ring(STATS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2),
+    new Accessory(STATS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2),
+    new Accessory(STATS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2)
   )
 
   private val weaponAggregate: WeaponAggregate = createWeaponAggregate
@@ -77,50 +77,27 @@ class BuildV2(chosenClass: String) {
     var weaponB1: Weapon = null
     var weaponB2: Weapon = null
 
-    weaponSet1Type match {
-      case WEAPONS.MAIN =>
-        weaponA1 = new Weapon(STATS.ultimateBraveryV2,
-          SIGILS.ultimateBraveryV2, null,
-          INFUSIONS.ultimateBravery, null,
-          WEAPONS.getRandomClassWeaponWithHanding(BASECLASS, WEAPONS.MAIN)
-        )
-        weaponA2 = new Weapon(STATS.ultimateBraveryV2,
-          SIGILS.ultimateBraveryV2, null,
-          INFUSIONS.ultimateBravery, null,
-          WEAPONS.getRandomClassWeaponWithHanding(BASECLASS, WEAPONS.OFF)
-        )
-      case WEAPONS.BOTH =>
-        weaponA1 = new Weapon(STATS.ultimateBraveryV2,
-          SIGILS.ultimateBraveryV2, SIGILS.ultimateBraveryV2,
-          INFUSIONS.ultimateBravery, INFUSIONS.ultimateBravery,
-          WEAPONS.getRandomClassWeaponWithHanding(BASECLASS, WEAPONS.BOTH)
-        )
-        weaponA2 = null
-      case _ =>
-    }
-    weaponSet2Type match {
-      case WEAPONS.MAIN =>
-        weaponB1 = new Weapon(
-          STATS.ultimateBraveryV2,
-          SIGILS.ultimateBraveryV2, null,
-          INFUSIONS.ultimateBravery, null,
-          WEAPONS.getRandomClassWeaponWithHanding(BASECLASS, WEAPONS.MAIN)
-        )
-        weaponB2 = new Weapon(
-          STATS.ultimateBraveryV2,
-          SIGILS.ultimateBraveryV2, null,
-          INFUSIONS.ultimateBravery, null,
-          WEAPONS.getRandomClassWeaponWithHanding(BASECLASS, WEAPONS.OFF)
-        )
-      case WEAPONS.BOTH =>
-        weaponB1 = new Weapon(
-          STATS.ultimateBraveryV2,
-          SIGILS.ultimateBraveryV2, SIGILS.ultimateBraveryV2,
-          INFUSIONS.ultimateBravery, INFUSIONS.ultimateBravery,
-          WEAPONS.getRandomClassWeaponWithHanding(BASECLASS, WEAPONS.BOTH)
-        )
+    (weaponSet1Type, weaponSet2Type) match {
+      case (WEAPONS.MAIN, WEAPONS.MAIN) =>
+        weaponA1 = createWeaponWithHanding(WEAPONS.MAIN)
+        weaponA2 = createWeaponWithHanding(WEAPONS.OFF)
+        weaponB1 = createWeaponWithHanding(WEAPONS.MAIN)
+        weaponB2 = createWeaponWithHanding(WEAPONS.OFF)
+      case (WEAPONS.MAIN, WEAPONS.BOTH) =>
+        weaponA1 = createWeaponWithHanding(WEAPONS.MAIN)
+        weaponA2 = createWeaponWithHanding(WEAPONS.OFF)
+        weaponB1 = createWeaponWithHanding(WEAPONS.BOTH)
         weaponB2 = null
-      case _ =>
+      case (WEAPONS.BOTH, WEAPONS.MAIN) =>
+        weaponA1 = createWeaponWithHanding(WEAPONS.BOTH)
+        weaponA2 = null
+        weaponB1 = createWeaponWithHanding(WEAPONS.MAIN)
+        weaponB2 = createWeaponWithHanding(WEAPONS.OFF)
+      case (WEAPONS.BOTH, WEAPONS.BOTH) =>
+        weaponA1 = createWeaponWithHanding(WEAPONS.BOTH)
+        weaponA2 = null
+        weaponB1 = createWeaponWithHanding(WEAPONS.BOTH)
+        weaponB2 = null
     }
 
     new WeaponAggregate(
@@ -129,6 +106,27 @@ class BuildV2(chosenClass: String) {
       weaponB1,
       weaponB2
     )
+  }
+
+  private def createWeaponWithHanding(handing: String): Weapon = {
+    handing match {
+      case WEAPONS.MAIN => new Weapon(
+        STATS.ultimateBraveryV2,
+        SIGILS.ultimateBraveryV2, null,
+        INFUSIONS.ultimateBraveryV2, null,
+        WEAPONS.getRandomClassWeaponWithHanding(BASECLASS, WEAPONS.MAIN))
+      case WEAPONS.OFF => new Weapon(
+        STATS.ultimateBraveryV2,
+        SIGILS.ultimateBraveryV2, null,
+        INFUSIONS.ultimateBraveryV2, null,
+        WEAPONS.getRandomClassWeaponWithHanding(BASECLASS, WEAPONS.OFF))
+      case WEAPONS.BOTH => new Weapon(
+        STATS.ultimateBraveryV2,
+        SIGILS.ultimateBraveryV2, SIGILS.ultimateBraveryV2,
+        INFUSIONS.ultimateBraveryV2, INFUSIONS.ultimateBraveryV2,
+        WEAPONS.getRandomClassWeaponWithHanding(BASECLASS, WEAPONS.BOTH))
+      case _ => new Weapon(null, null, null, null, null, null)
+    }
   }
 
   private def createTraitLineAggregate: TraitlineAggregate = {

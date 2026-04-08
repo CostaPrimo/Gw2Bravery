@@ -13,9 +13,9 @@ class Traitline(name: String, id: Int, adeptTraits: List[Gw2Trait], masterTraits
     new JSONObject()
       .put("name", this.name)
       .put("id", this.id)
-      .put("adeptTrait", new JSONObject(this.adeptTraits.head))
-      .put("masterTrait", new JSONObject(this.masterTraits.head))
-      .put("grandmasterTrait", new JSONObject(this.grandmasterTraits.head))
+      .put("adeptTrait", if(this.getAdeptTraits == null) null else new JSONObject(this.adeptTraits.head))
+      .put("masterTrait", if(this.getAdeptTraits == null) null else new JSONObject(this.masterTraits.head))
+      .put("grandmasterTrait", if(this.getAdeptTraits == null) null else new JSONObject(this.grandmasterTraits.head))
   }
 
   def equals(traitline: Traitline): Boolean = {

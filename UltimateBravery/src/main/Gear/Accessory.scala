@@ -1,20 +1,21 @@
 package UltimateBravery.src.main.Gear
 
-import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.Stat
+import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.{Infusion, Stat}
 import org.json.JSONObject
 
-class Accessory(stats: Stat, infusion: String) {
+class Accessory(stats: Stat, infusion: Infusion) {
   def getStats: Stat = this.stats
-  def getInfusion: String = this.infusion
+
+  def getInfusion: Infusion = this.infusion
 
   def toJsonString: String = {
     "{\"Stats\": \"" + this.getStats.getName + "\"," +
-    "\"Infusion\": \"" + this.getInfusion + "\"}"
+    "\"Infusion\": \"" + this.getInfusion.getAttribute + "\"}"
   }
 
   def equals(accessory: Accessory): Boolean = {
     if (this.stats.equals(accessory.getStats)
-      && this.infusion.equalsIgnoreCase(accessory.getInfusion)
+      && this.infusion.equals(accessory.getInfusion)
     ) return true
     false
   }
@@ -26,6 +27,6 @@ class Accessory(stats: Stat, infusion: String) {
   def getJsonObject: JSONObject = {
     new JSONObject()
       .put("stats", this.stats.getJsonObject)
-      .put("infusion", this.infusion)
+      .put("infusion", if(this.infusion == null) null else this.infusion.getJsonObject)
   }
 }

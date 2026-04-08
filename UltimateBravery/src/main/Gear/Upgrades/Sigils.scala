@@ -123,6 +123,13 @@ class Sigils {
     "Venom"
   )
 
+  def getSigilById(id: Int): Sigil = {
+    for(sigil <- sigilsV2){
+      if(sigil.containId(id)) return sigil
+    }
+    new Sigil("Error", List())
+  }
+
   def ultimateBraveryV2: Sigil = {
     val roll = Math.round(Math.random() * (sigilsV2.size - 1)).toInt
     sigilsV2(roll)

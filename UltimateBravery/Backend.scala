@@ -1,9 +1,9 @@
 package UltimateBravery
 
-import UltimateBravery.src.main.{ApiHelpers, Build, BuildV2}
+import UltimateBravery.src.main.{ApiHelpers, BuildV2}
 import UltimateBravery.src.main.ClassSpecific.Classes
 import com.sun.net.httpserver.{HttpExchange, HttpHandler, HttpServer}
-import org.json.{JSONArray, JSONObject}
+import org.json.JSONObject
 
 import java.io.OutputStream
 import java.net.{InetSocketAddress, URI, URLEncoder}
@@ -15,9 +15,7 @@ object Backend {
 
   def main(args: Array[String]): Unit = {
     val server: HttpServer = HttpServer.create(new InetSocketAddress(8080), 0)
-    server.createContext("/ultimatebravery/simple", new SimpleHandler())
     server.createContext("/v2/ultimatebravery", new ComplexHandlerV2())
-    server.createContext("/ultimatebravery/pvp", new PvPHandler())
     server.createContext("/apitest", new ApiHandler())
     server.setExecutor(null)
     server.start()
@@ -39,8 +37,6 @@ object Backend {
 
       val auth = String.format("Bearer %s", apiKey)
       val path = String.format("https://api.guildwars2.com/v2/characters?id=%s", charName)
-      // https://api.guildwars2.com/v2/characters/%s/skills
-      // https://api.guildwars2.com/v2/characters/%s/specializations
       val client: HttpClient = HttpClient.newHttpClient()
 
       try {
@@ -53,32 +49,12 @@ object Backend {
         val response = client.send(request, HttpResponse.BodyHandlers.ofString())
         val body = ApiHelpers.convertCharacterObjectToAggregates(new JSONObject(response.body()))
 
-        closeExchangeWithStatusAndBody(exchange, 200, body.getJsonObject.toString)
+        closeExchangeWithStatusAndBody(exchange, 200, body.toString)
       } catch {
         case e: Exception =>
           e.printStackTrace()
           closeExchangeWithStatusAndBody(exchange, 500, e.getMessage)
       }
-    }
-  }
-
-  class SimpleHandler extends HttpHandler {
-    override def handle(exchange: HttpExchange): Unit = {
-      println("Received request")
-      val query = exchange.getRequestURI.getQuery
-      val chosenClass = extractQueryParamFromQueryParams(query, "class")
-      val build = new Build(chosenClass)
-      val response = build.iAmLessBrave()
-      closeExchangeWithStatusAndBody(exchange, 200, response)
-    }
-  }
-
-  class PvPHandler extends HttpHandler {
-    override def handle(exchange: HttpExchange): Unit = {
-      println("Received request")
-      val build = new Build("random")
-      val response = build.iAmCorePvPBrave()
-      closeExchangeWithStatusAndBody(exchange, 200, response)
     }
   }
 

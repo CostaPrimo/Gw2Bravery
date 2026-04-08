@@ -75,4 +75,11 @@ class Pets {
     val roll = Math.round(Math.random() * (allPets.size - 1)).toInt
     allPets(roll)
   }
+
+  def getPetById(id: Int): Pet = {
+    for(pet <- allPets) {
+      if(pet.getId == id) return pet
+    }
+    new Pet("Error", -1)
+  }
 }

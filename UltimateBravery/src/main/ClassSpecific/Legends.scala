@@ -18,6 +18,8 @@ class Legends {
   private val vindicatorLegend: Legend = new Legend("Legendary Alliance Stance", 7)
   private val conduitLegend: Legend = new Legend("Legendary Entity Stance", 8)
 
+  private val allLegends: List[Legend] = List(heraldLegend, renegadeLegend, vindicatorLegend, conduitLegend) ::: baseLegends
+
   def ultimateBravery(chosenClass: String): Legend = {
     var legendList = baseLegends
     chosenClass match {
@@ -29,5 +31,12 @@ class Legends {
 
     val roll = Math.round(Math.random() * (legendList.length - 1)).toInt
     legendList(roll)
+  }
+
+  def getLegendById(id: Int): Legend = {
+    for(legend <- allLegends){
+      if(legend.getId == id) return legend
+    }
+    new Legend("Error", -1)
   }
 }
