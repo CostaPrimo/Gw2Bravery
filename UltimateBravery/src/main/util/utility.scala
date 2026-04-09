@@ -9,7 +9,7 @@ object utility {
   }
 
   def getValueIfKeyExists(jsonObject: JSONObject, key: String): JSONObject = {
-    if(jsonObject.has(key)) new JSONObject(jsonObject.get(key).toString)
+    if(jsonObject.has(key)) jsonObject.getJSONObject(key)
     else new JSONObject()
   }
 }

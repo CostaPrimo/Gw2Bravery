@@ -3,7 +3,7 @@ package UltimateBravery.src.main
 import UltimateBravery.src.main.Aggregates.{ArmourAggregate, BuildAggregate, SkillAggregate, TraitlineAggregate, TrinketAggregate, WeaponAggregate}
 import UltimateBravery.src.main.ClassSpecific.Objects.{Gw2Trait, Legend, Pet, Traitline, WeaponBase}
 import UltimateBravery.src.main.ClassSpecific.{Classes, Legends, Pets, Traitlines, Weapons}
-import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.{Relic, Stat}
+import UltimateBravery.src.main.Gear.Upgrades.UpgradeObjects.{Infusion, Relic, Stat}
 import UltimateBravery.src.main.Gear.Upgrades.{Infusions, Relics, Runes, Sigils, Stats}
 import UltimateBravery.src.main.Gear.{Accessory, Armour, Backpack, Ring, Weapon}
 import UltimateBravery.src.main.Skills.{AllSkills, Skill}
@@ -17,7 +17,6 @@ import scala.util.matching.Regex
 class ApiHelpers {
 
   private val STATS: Stats = new Stats
-  private val INFUSIONS: Infusions = new Infusions
   private val WEAPONS: Weapons = new Weapons
 
   def convertCharacterObjectToAggregates(jsonObject: JSONObject): JSONObject = {
@@ -26,7 +25,7 @@ class ApiHelpers {
 
     val specializations: JSONObject = getValueIfKeyExists(jsonObject, "specializations")
     val skills: JSONObject = getValueIfKeyExists(jsonObject, "skills")
-    val equipment: JSONArray = new JSONArray(jsonObject.get("equipment").toString)
+    val equipment: JSONArray = jsonObject.getJSONArray("equipment")
     var equipmentList: List[JSONObject] = List()
 
     equipment.forEach(e => equipmentList = new JSONObject(e.toString) :: equipmentList)
@@ -52,19 +51,16 @@ class ApiHelpers {
     val relics = new Relics
 
     var relic: Relic = null
-
     var weaponA1: Weapon = null
     var weaponA2: Weapon = null
     var weaponB1: Weapon = null
     var weaponB2: Weapon = null
-
     var helmet: Armour = null
     var shoulders: Armour = null
     var coat: Armour = null
     var gloves: Armour = null
     var leggings: Armour = null
     var boots: Armour = null
-
     var amulet: String = null
     var backpack: Backpack = null
     var ring1: Ring = null
@@ -79,7 +75,7 @@ class ApiHelpers {
         case "weapona2" => weaponA2 = extractWeaponFromJson(baseClass, WEAPONS.OFF, obj)
         case "weaponb1" => weaponB1 = extractWeaponFromJson(baseClass, WEAPONS.MAIN, obj)
         case "weaponb2" => weaponB2 = extractWeaponFromJson(baseClass, WEAPONS.OFF, obj)
-        case "amulet" => amulet = STATS.getStatById(new JSONObject(obj.get("stats").toString).getInt("id")).getName
+        case "amulet" => amulet = getStatFromApiJson(obj).getName
         case "backpack" => backpack = extractBackpackFromJson(obj)
         case "ring1" => ring1 = extractRingFromJson(obj)
         case "ring2" => ring2 = extractRingFromJson(obj)
@@ -107,65 +103,78 @@ class ApiHelpers {
   private def extractWeaponFromJson(baseClass: String, handing: String, jsonObject: JSONObject): Weapon = {
     val SIGILS: Sigils = new Sigils
 
-    val infusions: List[Int] = if(jsonObject.has("infusions")) getIntListFromJsonObjectElement(jsonObject, "infusions") else List()
+    val infusions: List[Infusion] = getInfusionsFromApiJson(jsonObject)
     val weaponBase: WeaponBase = WEAPONS.getWeaponByBaseClassAndId(baseClass, handing, jsonObject.getInt("id"))
     val upgrades: List[Int] = getIntListFromJsonObjectElement(jsonObject, "upgrades")
 
     new Weapon(
-      getStatFromJson(jsonObject),
+      getStatFromApiJson(jsonObject),
       if (upgrades.isEmpty) null else SIGILS.getSigilById(upgrades.head),
       if (upgrades.size <= 1) null else SIGILS.getSigilById(upgrades(1)),
-      if (infusions.isEmpty) null else INFUSIONS.getInfusionById(infusions.head),
-      if (infusions.size <= 1) null else INFUSIONS.getInfusionById(infusions(1)),
+      if (infusions.isEmpty) null else infusions.head,
+      if (infusions.size <= 1) null else infusions(1),
       weaponBase
     )
   }
 
   private def extractBackpackFromJson(jsonObject: JSONObject): Backpack = {
-    val infusionList: List[Int] = if(jsonObject.has("infusions")) getIntListFromJsonObjectElement(jsonObject, "infusions") else List()
+    val extract = extractTrinketStatsAndInfusions(jsonObject)
+    val stats = extract._1
+    val infusions = extract._2
 
     new Backpack(
-      getStatFromJson(jsonObject),
-      if(infusionList.isEmpty) null else INFUSIONS.getInfusionById(infusionList.head),
-      if(infusionList.size <= 1) null else INFUSIONS.getInfusionById(infusionList(1))
+      stats,
+      if(infusions.isEmpty) null else infusions.head,
+      if(infusions.size <= 1) null else infusions(1)
     )
   }
 
   private def extractRingFromJson(jsonObject: JSONObject): Ring = {
-    val infusionList: List[Int] = if(jsonObject.has("infusions")) getIntListFromJsonObjectElement(jsonObject, "infusions") else List()
+    val extract = extractTrinketStatsAndInfusions(jsonObject)
+    val stats = extract._1
+    val infusions = extract._2
 
     new Ring(
-      getStatFromJson(jsonObject),
-      if(infusionList.isEmpty) null else INFUSIONS.getInfusionById(infusionList.head),
-      if(infusionList.size <= 1) null else INFUSIONS.getInfusionById(infusionList(1)),
-      if(infusionList.size <= 2) null else INFUSIONS.getInfusionById(infusionList(2))
+      stats,
+      if(infusions.isEmpty) null else infusions.head,
+      if(infusions.size <= 1) null else infusions(1),
+      if(infusions.size <= 2) null else infusions(2)
     )
   }
 
   private def extractAccessoryFromJson(jsonObject: JSONObject): Accessory = {
-    val infusionList: List[Int] = if(jsonObject.has("infusions")) getIntListFromJsonObjectElement(jsonObject, "infusions") else List()
+    val extract = extractTrinketStatsAndInfusions(jsonObject)
+    val stats = extract._1
+    val infusions = extract._2
 
     new Accessory(
-      getStatFromJson(jsonObject),
-      if(infusionList.isEmpty) null else INFUSIONS.getInfusionById(infusionList.head)
+      stats,
+      if(infusions.isEmpty) null else infusions.head
     )
+  }
+
+  private def extractTrinketStatsAndInfusions(jsonObject: JSONObject): (Stat, List[Infusion]) = {
+    val stat = getStatFromApiJson(jsonObject)
+    val infusionList: List[Infusion] = getInfusionsFromApiJson(jsonObject)
+
+    (stat, infusionList)
   }
 
   private def extractArmourFromJson(jsonObject: JSONObject): Armour = {
     val runes = new Runes
 
     val upgrades = new JSONArray(jsonObject.get("upgrades").toString)
-    val infusionList: List[Int] = if(jsonObject.has("infusions")) getIntListFromJsonObjectElement(jsonObject, "infusions") else List()
+    val infusionList: List[Infusion] = getInfusionsFromApiJson(jsonObject)
 
     new Armour(
-      getStatFromJson(jsonObject),
-      if (upgrades.length() > 1) null else runes.getRunebyId(upgrades.getInt(0)),
-      if (infusionList.isEmpty) null else INFUSIONS.getInfusionById(infusionList.head)
+      getStatFromApiJson(jsonObject),
+      if (upgrades.length() < 1) null else runes.getRunebyId(upgrades.getInt(0)),
+      if (infusionList.isEmpty) null else infusionList.head
     )
   }
 
   private def createTraitlineAggregateFromJson(specializationJson: JSONObject, baseClass: String): TraitlineAggregate = {
-    val jsonTraitsLines = new JSONArray(specializationJson.get("pve").toString)
+    val jsonTraitsLines = specializationJson.getJSONArray("pve")
     var traitLineList: List[Traitline] = List()
 
     jsonTraitsLines.forEach(tl =>
@@ -188,9 +197,9 @@ class ApiHelpers {
     new Traitline(
       traitline.getName,
       traitline.getId,
-      if(!traitIds.isEmpty) List(getTraitInTraitListThatMatchesIdInList(traitIds, traitline.getAdeptTraits)) else null,
-      if(!traitIds.isEmpty) List(getTraitInTraitListThatMatchesIdInList(traitIds, traitline.getMasterTraits)) else null,
-      if(!traitIds.isEmpty) List(getTraitInTraitListThatMatchesIdInList(traitIds, traitline.getGrandmasterTraits)) else null
+      if(traitIds.nonEmpty) List(getTraitInTraitListThatMatchesIdInList(traitIds, traitline.getAdeptTraits)) else null,
+      if(traitIds.nonEmpty) List(getTraitInTraitListThatMatchesIdInList(traitIds, traitline.getMasterTraits)) else null,
+      if(traitIds.nonEmpty) List(getTraitInTraitListThatMatchesIdInList(traitIds, traitline.getGrandmasterTraits)) else null
     )
   }
 
@@ -225,23 +234,9 @@ class ApiHelpers {
       eliteSkill)
   }
 
-  private def getIntListFromJsonObjectElement(jsonObject: JSONObject, element: String): List[Int] = {
-    var intList: List[Int] = List()
-    val integerElements = new JSONArray(if(jsonObject.has(element)) jsonObject.get(element).toString else "")
-    integerElements.forEach(i =>
-      try { intList = Integer.valueOf(i.toString) :: intList }
-      catch { case e: NumberFormatException => println("Caught non integer string")})
-
-    intList
-  }
-
   private def getPets(jsonObject: JSONObject): List[Pet] = {
     val PETS = new Pets
-
-    val pve = new JSONObject(jsonObject.get("pve").toString)
-    val petsJson = new JSONObject(pve.get("pets").toString)
-    val terrestrial = new JSONArray(petsJson.get("terrestrial").toString)
-
+    val terrestrial = jsonObject.getJSONObject("pve").getJSONObject("pets").getJSONArray("terrestrial")
     var petList: List[Pet] = List()
 
     terrestrial.forEach(p => petList = PETS.getPetById(Integer.valueOf(p.toString)) :: petList)
@@ -251,10 +246,7 @@ class ApiHelpers {
 
   private def getLegends(jsonObject: JSONObject): List[Legend] = {
     val LEGENDS = new Legends
-
-    val pve = new JSONObject(jsonObject.get("pve").toString)
-    val legendsJson = new JSONArray(pve.get("legends").toString)
-
+    val legendsJson = jsonObject.getJSONObject("pve").getJSONArray("legends")
     val legendPattern: Regex = "legend(.)".r
 
     var legendList: List[Legend] = List()
@@ -265,8 +257,8 @@ class ApiHelpers {
     legendList
   }
 
-  private def getStatFromJson(jsonObject: JSONObject): Stat = {
-    if(jsonObject.has("stats")) STATS.getStatById(new JSONObject(jsonObject.get("stats").toString).getInt("id"))
+  private def getStatFromApiJson(jsonObject: JSONObject): Stat = {
+    if(jsonObject.has("stats")) STATS.getStatById(jsonObject.getJSONObject("stats").getInt("id"))
     else {
       val path = String.format("https://api.guildwars2.com/v2/items/%s", jsonObject.getInt("id"))
       val request: HttpRequest = HttpRequest.newBuilder()
@@ -274,12 +266,27 @@ class ApiHelpers {
         .uri(URI.create(path))
         .build()
       val response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString())
-      val bodyJson = new JSONObject(response.body())
-      val details = new JSONObject(bodyJson.get("details").toString)
-      val infix_upgrade = new JSONObject(details.get("infix_upgrade").toString)
+      val infix_upgrade = new JSONObject(response.body())
+        .getJSONObject("details")
+        .getJSONObject("infix_upgrade")
 
       STATS.getStatById(infix_upgrade.getInt("id"))
     }
+  }
+
+  private def getInfusionsFromApiJson(jsonObject: JSONObject): List[Infusion] = {
+    val INFUSIONS: Infusions = new Infusions
+    val infusions: List[Int] = if(jsonObject.has("infusions")) getIntListFromJsonObjectElement(jsonObject, "infusions") else List()
+    infusions.map(i => INFUSIONS.getInfusionById(i))
+  }
+
+  private def getIntListFromJsonObjectElement(jsonObject: JSONObject, element: String): List[Int] = {
+    var intList: List[Int] = List()
+    val integerElements = if(jsonObject.has(element)) jsonObject.getJSONArray(element) else new JSONArray()
+    integerElements.forEach(i =>
+      try { intList = Integer.valueOf(i.toString) :: intList }
+      catch { case e: NumberFormatException => println("Caught non integer string")})
+    intList
   }
 
 }
